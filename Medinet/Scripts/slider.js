@@ -1,0 +1,1 @@
+﻿$(function () { $("#slider1").anythingSlider({ width: 665, height: 312, easing: "easeInOutExpo" }) })

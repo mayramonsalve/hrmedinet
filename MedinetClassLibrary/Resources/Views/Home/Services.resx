@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Benefits" xml:space="preserve">
+    <value>Benefits</value>
+  </data>
+  <data name="COdescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Dmsj1" xml:space="preserve">
+    <value>Measures of Laboral Climate allows you to set strategies that optimize productive behavior in employees, helping the employees to work enthusiastically and effectively. The results that you could obtain trough this kind of assessment, allow you to understand the actions and reactions of employees in their work environment, as well as their responsibility, commitment, productivity and respect for the rules and policies of the company.</value>
+  </data>
+  <data name="Dmsj2" xml:space="preserve">
+    <value>Recently, Perez de Maldonado (2004) argues that the work environment or organizational environment can be understood as a "socially constructed phenomenon, arising from individual-group interactions- laboral conditions, and results in a meaningfully experience both individual and as a group, because what belongs and occurs in the organization affects and interacts with everything in it. Laboral Climate are precisely the result of these interactions, that occur in a dynamic, changing and emotional way".</value>
+  </data>
+  <data name="E360msj1" xml:space="preserve">
+    <value>The 360º assessment is a technique that is increasingly used in modern companies.  Also known as integrated assessment, it aims to provide employees with an overview of its performance as reliable as possible, obtaining information from all possible points of view, including managers, colleagues, internal and external customers and subordinates.</value>
+  </data>
+  <data name="E360msj2" xml:space="preserve">
+    <value>The goal of this integrated assessment is to provide the employee or the company full and objective feedback, necessary to take the actions in order to improve employee performance in his workplace.</value>
+  </data>
+  <data name="E360msj3" xml:space="preserve">
+    <value>Through its enforcement, we could obtain invaluable information for the Human Resources department, as it provides the guide to actions to be taken in short, medium and long term.</value>
+  </data>
+  <data name="E360msj4" xml:space="preserve">
+    <value>It helps you to determine the performance of each of the evaluated according to the competencies, skills and behaviors that are important for the company.</value>
+  </data>
+  <data name="E360msj5" xml:space="preserve">
+    <value>Identifies individual skill levels in different areas.</value>
+  </data>
+  <data name="E360msj6" xml:space="preserve">
+    <value>Makes it possible to undertake specific actions to improve and develop the employees’ performance.</value>
+  </data>
+  <data name="E360msj7" xml:space="preserve">
+    <value>Finally, this evaluation benefits human development, producing a positive impact on the progress of the company, increasing the effective actions and working performance.  At the end of the day, you will get a significance increase in quality of products or services offered by the company.</value>
+  </data>
+  <data name="ENDmsj1" xml:space="preserve">
+    <value>Lately there has been a important increase in the competencies investigation, which has provided significant contributions to the business field, associated largely with the develop and optimization of Human Resources processes.  Competencies are individual underlying factors, which are related to a number of skills, behavioral tendencies, knowledge and attitudes that explains the effective and successful performance in work environment.</value>
+  </data>
+  <data name="ENDmsj2" xml:space="preserve">
+    <value>Its features are: &lt;br /&gt;
+1. They are permanent.&lt;br /&gt;
+2. They find its way out when the employees execute a task related with their job.&lt;br /&gt;
+3. They  actually caused the work performance, not only are related with it.&lt;br /&gt;
+4. They show themselves up in several activities.&lt;br /&gt;</value>
+  </data>
+  <data name="ENDmsj3" xml:space="preserve">
+    <value>The possibility to diagnose competencies in a company, implies the possibility to know which behaviors, attitudes and skills are required to be successful as a employee in it, providing the necessary information to create the different job profiles to the Human Resources department. Likewise it allows them to make the correct matches position-employee, according with the competencies related with each position.</value>
+  </data>
+  <data name="ENDmsj4" xml:space="preserve">
+    <value>In addition, the correct competencies diagnose allows you to design developing plans to your employees, in order to increase their competencies level when they are very low or nonexistent.</value>
+  </data>
+  <data name="ENDTitle" xml:space="preserve">
+    <value>Competencies Assessment (Assessment Centres)</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Specifically, applying a measurement of  Laboral Climate, allows companies to:</value>
+  </data>
+  <data name="Path" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Subitem1" xml:space="preserve">
+    <value>Identify strengths and weaknesses in the work environment.</value>
+  </data>
+  <data name="Subitem2" xml:space="preserve">
+    <value>Have qualitative and quantitative indicators of the main processes and human management variables.</value>
+  </data>
+  <data name="Subitem3" xml:space="preserve">
+    <value>Identifiy critical points that require priority attention.</value>
+  </data>
+  <data name="Subitem4" xml:space="preserve">
+    <value>Identify the focus of the weaknesses that the organization can present</value>
+  </data>
+  <data name="Subitem5" xml:space="preserve">
+    <value>Establish improvement and action plans.</value>
+  </data>
+  <data name="Text1" xml:space="preserve">
+    <value>We provide a wide variety of specialized services in organizational and business consulting, based on the real needs of our clients. The results of the evaluations, measurements and investigations are generated on a Web page, guaranteeing the security, saving paper and confidentiality of the information collected.</value>
+  </data>
+  <data name="Text2" xml:space="preserve">
+    <value>Currently, we offer the following services:</value>
+  </data>
+  <data name="Text3" xml:space="preserve">
+    <value>Measurement of Laboral Climate.</value>
+  </data>
+  <data name="Text4" xml:space="preserve">
+    <value>Measurement of Competencies Assessment (Assessment Centres).</value>
+  </data>
+  <data name="Text5" xml:space="preserve">
+    <value>Performance 360°.</value>
+  </data>
+  <data name="Text6" xml:space="preserve">
+    <value>Design of an intervention plan.</value>
+  </data>
+  <data name="Text7" xml:space="preserve">
+    <value>Preparation of workshops and conferences.</value>
+  </data>
+  <data name="Text8" xml:space="preserve">
+    <value>Designs and implementations of surveys.</value>
+  </data>
+  <data name="Text9" xml:space="preserve">
+    <value>Processing, instruments, automation and measurements.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="OrganizationalClimateTitle" xml:space="preserve">
+    <value>Laboral Climate</value>
+  </data>
+  <data name="BackToServices" xml:space="preserve">
+    <value>Back to our services</value>
+  </data>
+  <data name="Service1" xml:space="preserve">
+    <value>Organizational diagnostics</value>
+  </data>
+  <data name="Service2" xml:space="preserve">
+    <value>Organizational climate and culture</value>
+  </data>
+  <data name="Service3" xml:space="preserve">
+    <value>Mysterious client</value>
+  </data>
+  <data name="Service4" xml:space="preserve">
+    <value>Surveys for market research</value>
+  </data>
+  <data name="Service5" xml:space="preserve">
+    <value>Surveys tailored to customer requirements.</value>
+  </data>
+</root>

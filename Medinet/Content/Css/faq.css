@@ -1,0 +1,49 @@
+/* The expand / collapse button */
+
+a.button{
+	background:url(../../Content/Images/buttons.png) no-repeat;
+	width:80px;
+	height:38px;
+	position:absolute;
+	text-indent:-9999px;
+	overflow:hidden;
+	border:none !important;
+	margin-top: -6px;
+	margin-left: 30px;
+}
+
+a.button.expand:hover{ background-position:0 -38px;}
+a.button.collapse{ background-position:0 -76px;}
+a.button.collapse:hover{ background-position:0 bottom;}
+
+/* Definition Lists */
+
+dt{
+	color:#777;
+	font-size:14px;
+	margin-top:30px;
+	position:relative;
+	cursor:pointer;
+	border:1px solid transparent;
+}
+
+dt:hover{ color:#AAA;}
+
+dt .icon{
+	background:url(../../Content/Images/bullets.png) no-repeat;
+	height:12px;
+	left:0;
+	position:absolute;
+	top: 5px;
+	width: 12px;
+}
+
+dt.opened .icon{ background-position:left bottom;}
+
+dd{
+	font-size:12px;
+	line-height:1.5;
+	padding:15px 0 0 0;
+	width:580px;
+	display:none;
+}

@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Benefits" xml:space="preserve">
+    <value>Beneficios</value>
+  </data>
+  <data name="COdescription" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="Dmsj1" xml:space="preserve">
+    <value>La medición del Clima Organizacional permite establecer estrategias que optimizan el comportamiento organizacional y promueven en las personas el trabajar con entusiasmo y de manera efectiva en sus entornos laborales. Los resultados que se obtienen de su estudio, permiten entender acciones y reacciones de la gente dentro del contexto de trabajo, como su responsabilidad, compromiso, productividad y el respeto a las normas y políticas de la empresa.</value>
+  </data>
+  <data name="Dmsj2" xml:space="preserve">
+    <value>Recientemente, Pérez de Maldonado (2004) plantea que el ambiente de trabajo o clima organizacional puede ser entendido como un “fenómeno socialmente construido, que surge de las interacciones individuo-grupo-condiciones de trabajo, que da como resultado un significado a las experiencias individual y grupal, debido a que lo que pertenece y ocurre en la organización afecta e interactúa con todo. Los resultados organizacionales son precisamente consecuencia de estas interacciones, que se dan de manera dinámica, cambiante y cargada de afectividad”.</value>
+  </data>
+  <data name="E360msj1" xml:space="preserve">
+    <value>La evaluación 360º es una técnica que cada día es más empleada en las organizaciones modernas, conocida también como evaluación integral,  pretende ofrecer a los empleados una perspectiva de su desempeño lo más confiable posible, obteniendo información desde todos los ángulos posibles incluyendo a  jefes o supervisores, compañeros, clientes (internos o externos) y subordinados.</value>
+  </data>
+  <data name="E360msj2" xml:space="preserve">
+    <value>El objetivo de esta evaluación integral es brindar al empleado o a la empresa una retroalimentación lo más completa y objetiva posible, necesaria para tomar las medidas que conduzcan a  mejorar el desempeño del empleado en su cargo.</value>
+  </data>
+  <data name="E360msj3" xml:space="preserve">
+    <value>A través de su medición  diagnostico, se obtiene información valiosa para el área de Recursos Humanos de las empresas, ya que les facilita la toma de decisiones respecto a acciones o intervenciones favorables que deben seguirse a corto, mediano y a largo plazo.</value>
+  </data>
+  <data name="E360msj4" xml:space="preserve">
+    <value>Facilita conocer el desempeño de cada uno de los evaluados  de acuerdo a diferentes competencias, habilidades, destrezas y comportamientos importantes para la organización.</value>
+  </data>
+  <data name="E360msj5" xml:space="preserve">
+    <value>Permite identificar los niveles de competencias individuales en diversas áreas.</value>
+  </data>
+  <data name="E360msj6" xml:space="preserve">
+    <value>Posibilita el emprendimiento de acciones precisas para mejorar y desarrollar el desempeño del personal y, por lo tanto, de la organización.</value>
+  </data>
+  <data name="E360msj7" xml:space="preserve">
+    <value>Finalmente, esta evaluación lo que busca es el desarrollo humano, repercutiendo positivamente en el progreso de la organización, en el incremento de las acciones eficaces y en los avances en el rendimiento y calidad de los productos o servicios ofrecidos por la organización.</value>
+  </data>
+  <data name="ENDmsj1" xml:space="preserve">
+    <value>El crecimiento del interés en el estudio de las competencias ha brindando aportes importantes y funcionales al ámbito organizacional y empresarial. Dichos aportes, están asociados con la búsqueda del desarrollo y optimización del área de Recursos Humanos dentro de las Organizaciones.  Una competencia puede ser definida como una característica subyacente de un individuo, que está asociada a conjuntos de conocimientos, habilidades, disposiciones y conductas, que están causalmente relacionadas con un rendimiento efectivo o superior en una situación o trabajo, permitiendo la realización exitosa de las actividades.</value>
+  </data>
+  <data name="ENDmsj2" xml:space="preserve">
+    <value>Las competencias en general, contemplan los siguientes aspectos: &lt;br /&gt;
+1. Son características permanentes de una persona. &lt;br /&gt;
+2. Se ponen de manifiesto cuando se ejecuta una tarea o se realiza un trabajo. &lt;br /&gt;
+3. Tienen una relación causal con el rendimiento laboral, es decir, no están solamente asociadas con el éxito, sino que se asume que realmente lo causan. &lt;br /&gt;
+4. Pueden ser generalizables a más de una actividad.&lt;br /&gt;</value>
+  </data>
+  <data name="ENDmsj3" xml:space="preserve">
+    <value>La posibilidad de diagnosticar y conocer las competencias explican el comportamiento, el rendimiento y las reacciones de los individuos en su lugar de trabajo, provee a los departamentos de recursos humanos información de vital importancia para lograr un ajuste optimo entre las características que requieren los diversos cargos laborales con las personas más adecuadas para desempeñarlos, ya que se contratarían a aquellos individuos que presenten las competencias necesarias y suficientes para desenvolverse exitosamente en el mismo.</value>
+  </data>
+  <data name="ENDmsj4" xml:space="preserve">
+    <value>Igualmente, a través del diagnostico es posible diseñar planes de intervención efectivos con el objetivo de modificar, mejorar o desarrollar aquellas competencias que estén presentes en niveles bajos o que estén ausentes en el evaluado</value>
+  </data>
+  <data name="ENDTitle" xml:space="preserve">
+    <value>Evaluación de Competencias de Candidatos (Assessment Centres)</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Específicamente, el aplicar una medición de clima organizacional, permite a las empresas:</value>
+  </data>
+  <data name="Path" xml:space="preserve">
+    <value> Servicios</value>
+  </data>
+  <data name="Subitem1" xml:space="preserve">
+    <value>Identificar fortalezas y debilidades en el clima de trabajo.</value>
+  </data>
+  <data name="Subitem2" xml:space="preserve">
+    <value>Contar con indicadores cualitativos y cuantitativos de los principales procesos y  variables de Gestión Humana.</value>
+  </data>
+  <data name="Subitem3" xml:space="preserve">
+    <value>Identificar poblaciones críticas que requieren atención prioritaria.</value>
+  </data>
+  <data name="Subitem4" xml:space="preserve">
+    <value>Localizar el foco de atención de las debilidades que pueda presentar la organización.</value>
+  </data>
+  <data name="Subitem5" xml:space="preserve">
+    <value>Establecer planes de mejoramiento y acción.</value>
+  </data>
+  <data name="Text1" xml:space="preserve">
+    <value>Brindamos una amplia variedad de servicios especializados en consultoría organizacional y empresarial, en función de las necesidades reales de nuestros clientes. Los resultados de las evaluaciones, mediciones e investigaciones son generados en una página Web, garantizando la seguridad, ahorro de papel y confidencialidad de la información recopilada.</value>
+  </data>
+  <data name="Text2" xml:space="preserve">
+    <value>En la actualidad, ofrecemos los siguientes servicios:</value>
+  </data>
+  <data name="Text3" xml:space="preserve">
+    <value>Medición de Clima Organizacional.</value>
+  </data>
+  <data name="Text4" xml:space="preserve">
+    <value>Medición de Competencias Generales de Candidatos.</value>
+  </data>
+  <data name="Text5" xml:space="preserve">
+    <value>Evaluación del Desempeño 360°</value>
+  </data>
+  <data name="Text6" xml:space="preserve">
+    <value>Diseño de plan de intervención.</value>
+  </data>
+  <data name="Text7" xml:space="preserve">
+    <value>Preparación de talleres y conferencias.</value>
+  </data>
+  <data name="Text8" xml:space="preserve">
+    <value>Diseño y aplicación de encuestas.</value>
+  </data>
+  <data name="Text9" xml:space="preserve">
+    <value>Procesamiento, automatización de instrumentos y mediciones.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Servicios</value>
+  </data>
+  <data name="OrganizationalClimateTitle" xml:space="preserve">
+    <value>Clima Organizacional</value>
+  </data>
+  <data name="BackToServices" xml:space="preserve">
+    <value>Volver a nuestros servicios</value>
+  </data>
+  <data name="Service1" xml:space="preserve">
+    <value>Diagnósticos organizacionales</value>
+  </data>
+  <data name="Service2" xml:space="preserve">
+    <value>Clima y cultura organizacional</value>
+  </data>
+  <data name="Service3" xml:space="preserve">
+    <value>Cliente misterioso</value>
+  </data>
+  <data name="Service4" xml:space="preserve">
+    <value>Encuestas para investigación de mercados</value>
+  </data>
+  <data name="Service5" xml:space="preserve">
+    <value>Encuestas a la medida de los requerimientos de los clientes.</value>
+  </data>
+</root>

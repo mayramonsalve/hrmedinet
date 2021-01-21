@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <link href="/Content/Css/liquid.css" rel="stylesheet" type="text/css" media="screen,projection" />
+    <link rel="stylesheet" href="/Content/Css/estilo.css" />  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'/>
+</head>
+    <body>
+        <div id="wraper" class="container">
+            <div id="header" class="span-24 last">
+               <div id="fondo-menu">
+                    <div id="logo"></div><!--end logo-->   
+                    <% if (Request.IsAuthenticated)
+                       { %>
+                            <div id="logout" class="span-14 column">
+                                <span class="ui-icon ui-icon-person column"></span> 
+                                <div class="span-16 column alignLeft"><%: HttpContext.Current.User.Identity.Name%> | <a href="/Account/LogOff"><%: ViewRes.Views.Shared.Shared.Logout %></a></div>
+                            </div>
+                    <%} %>
+	                <% if (Roles.IsUserInRole("Administrator"))
+                   { %>     
+                        <% Html.RenderPartial("AdminMenu"); %> 
+                    <%} %> 
+                    <% if (Roles.IsUserInRole("HRAdministrator"))
+                        { %>     
+                        <% Html.RenderPartial("HrAdminMenu"); %> 
+                    <%} %>     
+                    <% if (Roles.IsUserInRole("CompanyAppManager"))
+                    { %>     
+                        <% Html.RenderPartial("CompanyAppManagerMenu"); %> 
+                    <%} %>     
+                    <% if (Roles.IsUserInRole("CompanyManager"))
+                    { %>     
+                        <% Html.RenderPartial("CompanyManagerMenu"); %> 
+                    <%} %>     
+                    <% if (Roles.IsUserInRole("HRCompany"))
+                    { %>     
+                        <% Html.RenderPartial("HrCompanyMenu"); %> 
+                    <%} %>   
+                </div>
+            </div> 
+        <div id="content" class="span-24 last"> 
+
+        </div>
+        </div><!--end wrapper-->
+         <% Html.RenderPartial("Footer"); %> 
+        <div id="copyright" class="span-24 last">
+		    <%: ViewRes.Views.Shared.Shared.Copyright %>
+	    </div>  
+    </body>
+</html>

@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AgeTab" xml:space="preserve">
+    <value>Age ranges</value>
+  </data>
+  <data name="Average" xml:space="preserve">
+    <value>Average</value>
+  </data>
+  <data name="AxisX" xml:space="preserve">
+    <value>Axis X: </value>
+  </data>
+  <data name="AxisY" xml:space="preserve">
+    <value>Axis Y: </value>
+  </data>
+  <data name="BivariateTitle" xml:space="preserve">
+    <value>Dual graphics</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Categories: </value>
+  </data>
+  <data name="ChiSquareValue" xml:space="preserve">
+    <value>Critical chi-square</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments: </value>
+  </data>
+  <data name="Conclusion" xml:space="preserve">
+    <value>Conclusion</value>
+  </data>
+  <data name="CountryTab" xml:space="preserve">
+    <value>Countries</value>
+  </data>
+  <data name="Demographics" xml:space="preserve">
+    <value>Demographics</value>
+  </data>
+  <data name="EditResultsTitle" xml:space="preserve">
+    <value>Edit results</value>
+  </data>
+  <data name="GenderTab" xml:space="preserve">
+    <value>Genders</value>
+  </data>
+  <data name="InstructionLevelTab" xml:space="preserve">
+    <value>Instruction levels</value>
+  </data>
+  <data name="LocationTab" xml:space="preserve">
+    <value>Branches</value>
+  </data>
+  <data name="Median" xml:space="preserve">
+    <value>Median</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NoSatisfied" xml:space="preserve">
+    <value>Non-satisfied</value>
+  </data>
+  <data name="OurChiSquare" xml:space="preserve">
+    <value>Our chi-square value</value>
+  </data>
+  <data name="Parametres" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="PerformanceTab" xml:space="preserve">
+    <value>Performance evaluations</value>
+  </data>
+  <data name="PopulationTitle" xml:space="preserve">
+    <value>Population graphics</value>
+  </data>
+  <data name="PositionLevelTab" xml:space="preserve">
+    <value>Position levels</value>
+  </data>
+  <data name="PValue" xml:space="preserve">
+    <value>PValue:</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Questions: </value>
+  </data>
+  <data name="RegionTab" xml:space="preserve">
+    <value>Regions</value>
+  </data>
+  <data name="Satisfied" xml:space="preserve">
+    <value>Satisfied</value>
+  </data>
+  <data name="SeniorityTab" xml:space="preserve">
+    <value>Seniority ranges</value>
+  </data>
+  <data name="TableTitle" xml:space="preserve">
+    <value>Title: </value>
+  </data>
+  <data name="UnivariateTitle" xml:space="preserve">
+    <value>Univariate graphics</value>
+  </data>
+  <data name="SignificanceLevel" xml:space="preserve">
+    <value>Significance level: </value>
+  </data>
+  <data name="CategoryTab" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="CompanyTab" xml:space="preserve">
+    <value>Companies</value>
+  </data>
+  <data name="FOrganizationTab" xml:space="preserve">
+    <value>Functional structures</value>
+  </data>
+  <data name="FOTypeTab" xml:space="preserve">
+    <value>Functional structure types</value>
+  </data>
+  <data name="OptionTab" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="QuestionnaireTab" xml:space="preserve">
+    <value>Questionnaires</value>
+  </data>
+  <data name="QuestionTab" xml:space="preserve">
+    <value>Questions</value>
+  </data>
+  <data name="TestTab" xml:space="preserve">
+    <value>Tests</value>
+  </data>
+  <data name="StateTab" xml:space="preserve">
+    <value>States of </value>
+  </data>
+  <data name="UserTab" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="OneDemographicImage" xml:space="preserve">
+    <value>../../Content/Images/icon-system/OneDemographic.png</value>
+  </data>
+  <data name="GeneralClimate" xml:space="preserve">
+    <value>General Result</value>
+  </data>
+  <data name="BivariateSelect" xml:space="preserve">
+    <value>Select the demographics</value>
+  </data>
+  <data name="SampleReceived" xml:space="preserve">
+    <value>Sample received</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value> of </value>
+  </data>
+  <data name="FeatureTab" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="PrintPopulation" xml:space="preserve">
+    <value>Population graphics</value>
+  </data>
+  <data name="NoEvaluationsText" xml:space="preserve">
+    <value>No evaluations available at this time to view reports of the test </value>
+  </data>
+  <data name="NoEvaluationsTitle" xml:space="preserve">
+    <value>Attention!</value>
+  </data>
+  <data name="FeedbackTab" xml:space="preserve">
+    <value>Feedbacks</value>
+  </data>
+  <data name="Acquired" xml:space="preserve">
+    <value> obteined </value>
+  </data>
+  <data name="Analysis" xml:space="preserve">
+    <value>Asociation analysis/ correlation/ significative difference.</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value> and </value>
+  </data>
+  <data name="AndResult" xml:space="preserve">
+    <value> and result</value>
+  </data>
+  <data name="Areas" xml:space="preserve">
+    <value> areas.</value>
+  </data>
+  <data name="ByCategory" xml:space="preserve">
+    <value>By category</value>
+  </data>
+  <data name="ByQuestion" xml:space="preserve">
+    <value>By question</value>
+  </data>
+  <data name="ColorState" xml:space="preserve">
+    <value> state, </value>
+  </data>
+  <data name="Companies" xml:space="preserve">
+    <value> companies.</value>
+  </data>
+  <data name="ComparativeByCategory" xml:space="preserve">
+    <value>Comparative by category</value>
+  </data>
+  <data name="ComparativeByQuestion" xml:space="preserve">
+    <value>Comparative by question</value>
+  </data>
+  <data name="Compare" xml:space="preserve">
+    <value>Compare with:</value>
+  </data>
+  <data name="ConfidenceTip" xml:space="preserve">
+    <value>Validez de la muestra en términos estadísticos. Señala la probabilidad de que el parámetro poblacional se encuentre dentro del intervalo de confianza a generar.</value>
+  </data>
+  <data name="Corresponding" xml:space="preserve">
+    <value>corresponding to a </value>
+  </data>
+  <data name="DescriptiveAnalysis" xml:space="preserve">
+    <value>Descriptive analysis</value>
+  </data>
+  <data name="Difference" xml:space="preserve">
+    <value>Difference</value>
+  </data>
+  <data name="Dimensions" xml:space="preserve">
+    <value> dimensions.</value>
+  </data>
+  <data name="EmployeesUsed" xml:space="preserve">
+    <value>Number of employees used for measurement: </value>
+  </data>
+  <data name="EmployeesWhoPerformed" xml:space="preserve">
+    <value>Number of employees who performed the measurements: </value>
+  </data>
+  <data name="ErrorTip" xml:space="preserve">
+    <value>The maximum difference between the statistic and the population parameter, usually an error greater than 6% is considered, in most cases, as a high level error.</value>
+  </data>
+  <data name="ExecutiveReport" xml:space="preserve">
+    <value>Executive report</value>
+  </data>
+  <data name="ExecutiveReportTitle" xml:space="preserve">
+    <value>Executive report</value>
+  </data>
+  <data name="FromANumber" xml:space="preserve">
+    <value> location from a number of </value>
+  </data>
+  <data name="FunctionallyHighest" xml:space="preserve">
+    <value>Functionally, the best results resulted in the </value>
+  </data>
+  <data name="FunctionallyLowest" xml:space="preserve">
+    <value> areas; whereas, the lowest results correspond to the </value>
+  </data>
+  <data name="GeneralAverage" xml:space="preserve">
+    <value>General Average</value>
+  </data>
+  <data name="GeneralResult" xml:space="preserve">
+    <value>General result for measurement </value>
+  </data>
+  <data name="HRMedinetPerformed" xml:space="preserve">
+    <value>In order to determine the most significant differences in variables, hrmedinet performed an analysis between climate and said variables. Following are the results:</value>
+  </data>
+  <data name="HRPerformedMultivariable" xml:space="preserve">
+    <value>Hrmedinet performed a multivariable analysis in order to determine the variables affecting variation of climate level. The results, which involve 95% of the variations, are as follows:</value>
+  </data>
+  <data name="IsPlaced" xml:space="preserve">
+    <value> is placed at number </value>
+  </data>
+  <data name="MyCompany" xml:space="preserve">
+    <value>My company</value>
+  </data>
+  <data name="NegativePercentage" xml:space="preserve">
+    <value>% of negative feedback</value>
+  </data>
+  <data name="NeutralPercentage" xml:space="preserve">
+    <value>% of neutral feedback</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>-- None --</value>
+  </data>
+  <data name="NoVariables" xml:space="preserve">
+    <value>No variables with significant association were found.</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>Period: </value>
+  </data>
+  <data name="PositiveByCategory" xml:space="preserve">
+    <value>Positive feedback per category</value>
+  </data>
+  <data name="PositiveByQuestion" xml:space="preserve">
+    <value>Positive feedback per question</value>
+  </data>
+  <data name="PositiveMarket" xml:space="preserve">
+    <value>% of positive market feedback</value>
+  </data>
+  <data name="PositivePercentage" xml:space="preserve">
+    <value>% of positive feedback</value>
+  </data>
+  <data name="PrintGraphics" xml:space="preserve">
+    <value>Print graphics</value>
+  </data>
+  <data name="PrintRanking" xml:space="preserve">
+    <value>Print ranking</value>
+  </data>
+  <data name="PrintReport" xml:space="preserve">
+    <value>Print report</value>
+  </data>
+  <data name="PrintResults" xml:space="preserve">
+    <value>Print results</value>
+  </data>
+  <data name="PrintSection" xml:space="preserve">
+    <value>Print this section</value>
+  </data>
+  <data name="Purpose" xml:space="preserve">
+    <value>The purpose of this report is to summarize general aspects of organizational climate for the country/region/department among others.</value>
+  </data>
+  <data name="Questionnaire" xml:space="preserve">
+    <value>Questionnaire</value>
+  </data>
+  <data name="Ranking" xml:space="preserve">
+    <value>Ranking</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value> result.</value>
+  </data>
+  <data name="Sector" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="SelectQuestionnaireAndSector" xml:space="preserve">
+    <value>You must select a questionnaire and a company sector.</value>
+  </data>
+  <data name="SignificanceTip" xml:space="preserve">
+    <value>Refers to the maximum probability required to reject a null hypothesis. Null hypothesis or of no relation between variables. By default, a significance level of 0.05 is considered to be a 'medium' level.</value>
+  </data>
+  <data name="StatisticalReports" xml:space="preserve">
+    <value>Statistical reports</value>
+  </data>
+  <data name="StrataLevel" xml:space="preserve">
+    <value>At a strata level, the results show that employees of job positions </value>
+  </data>
+  <data name="StrataLevelEmployees" xml:space="preserve">
+    <value> of positive feedback; whereas, employees of other job positions obtained  </value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test: </value>
+  </data>
+  <data name="TheComparativeRanking" xml:space="preserve">
+    <value>The comparative results show that from a selected sample of companies to compare by client. </value>
+  </data>
+  <data name="TheGeneralResultsIndicate" xml:space="preserve">
+    <value>The general results indicate that the climate level of your company is </value>
+  </data>
+  <data name="TheHighestCategoryResults" xml:space="preserve">
+    <value>The highest results are shown in </value>
+  </data>
+  <data name="TheLowestCategoryResults" xml:space="preserve">
+    <value> dimensions, whereas the lowest results are shown in </value>
+  </data>
+  <data name="Variables" xml:space="preserve">
+    <value>Variables with significant association: </value>
+  </data>
+  <data name="VariablesAffecting" xml:space="preserve">
+    <value>Variables affecting climate level.</value>
+  </data>
+  <data name="NoMinimumRequired" xml:space="preserve">
+    <value>No available results yet due to lack of minimum-required evaluations set by your company.</value>
+  </data>
+  <data name="InternalRanking" xml:space="preserve">
+    <value>Internal ranking</value>
+  </data>
+  <data name="ExternalRanking" xml:space="preserve">
+    <value>External ranking</value>
+  </data>
+  <data name="Registering" xml:space="preserve">
+    <value>registering a percentage of favorable-results of employees of </value>
+  </data>
+  <data name="GeneralSample" xml:space="preserve">
+    <value>General Sample</value>
+  </data>
+  <data name="PercentageEvaluationReceived" xml:space="preserve">
+    <value>Percentage of received evaluations: </value>
+  </data>
+  <data name="Branches" xml:space="preserve">
+    <value>branches.</value>
+  </data>
+  <data name="TheHighestBranchResults" xml:space="preserve">
+    <value>The highest results are shown in </value>
+  </data>
+  <data name="TheLowestBranchResults" xml:space="preserve">
+    <value> branches, whereas the lowest results are shown in </value>
+  </data>
+  <data name="Sample" xml:space="preserve">
+    <value>Sample</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value> in </value>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value> region</value>
+  </data>
+  <data name="BranchesTitle" xml:space="preserve">
+    <value>Branch results</value>
+  </data>
+  <data name="DimensionsTitle" xml:space="preserve">
+    <value>Dimension results</value>
+  </data>
+  <data name="Climate" xml:space="preserve">
+    <value>Climate</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="PopulationNroPeople" xml:space="preserve">
+    <value># people</value>
+  </data>
+  <data name="PopulationPctPeople" xml:space="preserve">
+    <value>% people</value>
+  </data>
+  <data name="AllTests" xml:space="preserve">
+    <value>All tests</value>
+  </data>
+  <data name="GeneralAnswers" xml:space="preserve">
+    <value>General Answers</value>
+  </data>
+  <data name="SelectQuestion" xml:space="preserve">
+    <value>You must select a question to see results.</value>
+  </data>
+  <data name="FrequencyTitle" xml:space="preserve">
+    <value>Frequency graphics</value>
+  </data>
+  <data name="GeneralFrequency" xml:space="preserve">
+    <value>General Frequency</value>
+  </data>
+  <data name="CategoryTitle" xml:space="preserve">
+    <value>Category graphics</value>
+  </data>
+  <data name="GeneralCategory" xml:space="preserve">
+    <value>General Categories</value>
+  </data>
+  <data name="ClimateRangeTab" xml:space="preserve">
+    <value>Climate ranges</value>
+  </data>
+  <data name="ClimateScaleTab" xml:space="preserve">
+    <value>Climate scales</value>
+  </data>
+  <data name="ComparativeTitle" xml:space="preserve">
+    <value>Comparative graphics</value>
+  </data>
+  <data name="Population" xml:space="preserve">
+    <value>Population</value>
+  </data>
+  <data name="Years" xml:space="preserve">
+    <value>Years</value>
+  </data>
+  <data name="SatisfactionTitle" xml:space="preserve">
+    <value>Satisfaction tables</value>
+  </data>
+  <data name="Periods" xml:space="preserve">
+    <value>Periods</value>
+  </data>
+  <data name="ChooseSection" xml:space="preserve">
+    <value>Choose the section:</value>
+  </data>
+  <data name="Columns" xml:space="preserve">
+    <value>Columns</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="TextAnswersTitle" xml:space="preserve">
+    <value>Text Answers</value>
+  </data>
+  <data name="DemographicsEquals" xml:space="preserve">
+    <value>Select different demographic</value>
+  </data>
+  <data name="SelectDemographic" xml:space="preserve">
+    <value>You must select a demographic to see results.</value>
+  </data>
+  <data name="Column" xml:space="preserve">
+    <value>Column</value>
+  </data>
+  <data name="NotReceived" xml:space="preserve">
+    <value>Not Received</value>
+  </data>
+  <data name="Received" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="AgeRanges" xml:space="preserve">
+    <value>age ranges.</value>
+  </data>
+  <data name="AgeRangesTitle" xml:space="preserve">
+    <value>Age range results</value>
+  </data>
+  <data name="FOTypesTitle" xml:space="preserve">
+    <value>Functional organization type results</value>
+  </data>
+  <data name="TheHighestAgeRangeResults" xml:space="preserve">
+    <value>The highest results are shown in </value>
+  </data>
+  <data name="TheHighestFOTypeResults" xml:space="preserve">
+    <value>The highest results are shown in </value>
+  </data>
+  <data name="TheLowestAgeRangeResults" xml:space="preserve">
+    <value> age ranges, whereas the lowest results are shown in </value>
+  </data>
+  <data name="TheLowestFOTypeResults" xml:space="preserve">
+    <value>, whereas the lowest results are shown in </value>
+  </data>
+  <data name="DownloadImage" xml:space="preserve">
+    <value>Download chart</value>
+  </data>
+</root>

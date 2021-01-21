@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutomatedAnalysisText" xml:space="preserve">
+    <value>With its powerful statistical processing module, the data analysis is performed by the application and completely online, identifying the significant factors affecting your company’s climate.</value>
+  </data>
+  <data name="AutomatedAnalysisTitle" xml:space="preserve">
+    <value>Automated analysis</value>
+  </data>
+  <data name="AutomatedDataCollectionText" xml:space="preserve">
+    <value>You decide when to apply a test - It is easy and simple. Just select an option and the system prepares instantly an evaluation and sends it to the people you want to measure. Once the application form is completed, the information is stored in our servers and processed automatically.</value>
+  </data>
+  <data name="AutomatedDataCollectionTitle" xml:space="preserve">
+    <value>Automated  data collection</value>
+  </data>
+  <data name="FeaturesText1" xml:space="preserve">
+    <value>Our measurements are handled in the strictest confidentiality</value>
+  </data>
+  <data name="FeaturesText2" xml:space="preserve">
+    <value>There is no need to use paper, all surveys are electronic</value>
+  </data>
+  <data name="FeaturesText3" xml:space="preserve">
+    <value>The analysis is automated; you can review it at any time</value>
+  </data>
+  <data name="FeaturesText4" xml:space="preserve">
+    <value>Detailed statistics with easily-presented results</value>
+  </data>
+  <data name="FeaturesText5" xml:space="preserve">
+    <value>Ability to perform ranking in your company’s market sector</value>
+  </data>
+  <data name="FeaturesText6" xml:space="preserve">
+    <value>Global scope, you can analyze all your offices around the world.</value>
+  </data>
+  <data name="FeaturesTitle" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="FreeDemo" xml:space="preserve">
+    <value>Ask for a free service demo! Contact us!</value>
+  </data>
+  <data name="GlobalScopeText" xml:space="preserve">
+    <value>Will allow you to have an overview of your organization. Through using streetlight analogy, you will be able to identify your company’s strengths and hotspots, to review each office, region or country analysis, and also to apply new measurement surveys when you need it.</value>
+  </data>
+  <data name="GlobalScopeTitle" xml:space="preserve">
+    <value>Global scope</value>
+  </data>
+  <data name="MainText" xml:space="preserve">
+    <value>It is the tool of our system &amp;lt;strong&amp;gt;T360&amp;lt;/strong&amp;gt; &amp;lt;a target="_blank" href="https://www.talentoen360.com"&amp;gt;www.talentoen360.com&amp;lt;/a&amp;gt; that allows to proactively carry out massive evaluations using measurement instruments, with immediate processing and with global reach, speeding up decision-making, due to its robust statistical analysis capacity. No matter where you are, you can analyze data or apply evaluations with just one click, without costly travel and without using paper.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Achieve the best climate for your organization</value>
+  </data>
+  <data name="VarietyOfRportsText" xml:space="preserve">
+    <value>It offers a variety of reports that will allow you to make the best decisions. From data analysis on the study sample to executive reports, it even allows you to have a ranking where you can compare yourself with our measurement base.</value>
+  </data>
+  <data name="VarietyOfRportsTitle" xml:space="preserve">
+    <value>Variety of reports</value>
+  </data>
+</root>

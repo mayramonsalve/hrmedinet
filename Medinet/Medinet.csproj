@@ -1,0 +1,1535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D7622528-B7A7-47D2-A96F-9A68B64C9EE4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Medinet</RootNamespace>
+    <AssemblyName>Medinet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="evohtmltopdf, Version=2.3.0.0, Culture=neutral, PublicKeyToken=5b5f377bc08a4d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Extreme.Generic.Net40, Version=4.0.10170.0, Culture=neutral, PublicKeyToken=9e513770f58567b2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Extreme.Generic.Net40.dll</HintPath>
+    </Reference>
+    <Reference Include="Extreme.Numerics.Net40, Version=4.2.11333.0, Culture=neutral, PublicKeyToken=9e513770f58567b2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Extreme.Numerics.Net40.dll</HintPath>
+    </Reference>
+    <Reference Include="Extreme.Numerics.SinglePrecision.Net40, Version=4.0.10170.0, Culture=neutral, PublicKeyToken=9e513770f58567b2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20505.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AgesController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\ChartReportsController.cs" />
+    <Compile Include="Controllers\ClimateRangesController.cs" />
+    <Compile Include="Controllers\ClimateScalesController.cs" />
+    <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\DemosController.cs" />
+    <Compile Include="Controllers\PositionLevelsController.cs" />
+    <Compile Include="Controllers\InstructionLevelsController.cs" />
+    <Compile Include="Controllers\FeaturesController.cs" />
+    <Compile Include="Controllers\FeedbacksController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\FunctionalOrganizationsController.cs" />
+    <Compile Include="Controllers\FunctionalOrganizationTypesController.cs" />
+    <Compile Include="Controllers\SenioritiesController.cs" />
+    <Compile Include="Controllers\CountriesController.cs" />
+    <Compile Include="Controllers\EvaluationsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OptionsController.cs" />
+    <Compile Include="Controllers\PerformanceEvaluationsController.cs" />
+    <Compile Include="Controllers\QuestionnairesController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\StatesController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\TestsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Models\CustomActionResults\PdfResult.cs" />
+    <Compile Include="Models\AccountModels.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Helpers\CustomHtmlHelpers.cs" />
+    <Compile Include="Models\ViewModels\CategoryViewModel.cs" />
+    <Compile Include="Models\ViewModels\ChartReportViewModel.cs" />
+    <Compile Include="Models\ViewModels\AgeViewModel.cs" />
+    <Compile Include="Models\ViewModels\ClimateRangeViewModel.cs" />
+    <Compile Include="Models\ViewModels\ClimateScaleViewModel.cs" />
+    <Compile Include="Models\ViewModels\ContactUsViewModel.cs" />
+    <Compile Include="Models\ViewModels\AnalyticalReportViewModel.cs" />
+    <Compile Include="Models\ViewModels\RankingViewModel.cs" />
+    <Compile Include="Models\ViewModels\DemoViewModel.cs" />
+    <Compile Include="Models\ViewModels\PositionLevelViewModel.cs" />
+    <Compile Include="Models\ViewModels\InstructionLevelViewModel.cs" />
+    <Compile Include="Models\ViewModels\FeatureViewModel.cs" />
+    <Compile Include="Models\ViewModels\FeedbackViewModel.cs" />
+    <Compile Include="Models\ViewModels\ResultViewModel.cs" />
+    <Compile Include="Models\ViewModels\FunctionalOrganizationViewModel.cs" />
+    <Compile Include="Models\ViewModels\FunctionalOrganizationTypeViewModel.cs" />
+    <Compile Include="Models\ViewModels\SeniorityViewModel.cs" />
+    <Compile Include="Models\ViewModels\EvaluationViewModel.cs" />
+    <Compile Include="Models\ViewModels\OptionViewModel.cs" />
+    <Compile Include="Models\ViewModels\PerformanceEvaluationviewModel.cs" />
+    <Compile Include="Models\ViewModels\QuestionnaireViewModel.cs" />
+    <Compile Include="Models\ViewModels\QuestionViewModel.cs" />
+    <Compile Include="Models\ViewModels\RegionViewModel.cs" />
+    <Compile Include="Models\ViewModels\CountryViewModel.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\RegionsController.cs" />
+    <Compile Include="Models\CustomActionResults\ExcelControllerExtensions.cs" />
+    <Compile Include="Models\CustomActionResults\ExcelResult.cs" />
+    <Compile Include="Models\ViewModels\CompanyViewModel.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModels\LocationViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReportViewModel.cs" />
+    <Compile Include="Models\ViewModels\StateViewModel.cs" />
+    <Compile Include="Models\ViewModels\TestViewModel.cs" />
+    <Compile Include="Models\ViewModels\TicketViewModel.cs" />
+    <Compile Include="Models\ViewModels\UserviewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Content\Css\anythingslider-ie.css" />
+    <Content Include="Content\Css\anythingslider.css" />
+    <Content Include="Content\Css\base.css" />
+    <Content Include="Content\Css\Blueprint\ie.css" />
+    <Content Include="Content\Css\Blueprint\print.css" />
+    <Content Include="Content\Css\Blueprint\screen.css" />
+    <Content Include="Content\Css\csskit.css" />
+    <Content Include="Content\Css\CustomValidationError.css" />
+    <Content Include="Content\Css\default.css" />
+    <Content Include="Content\Css\demo_page.css" />
+    <Content Include="Content\Css\demo_table.css" />
+    <Content Include="Content\Css\demo_table_jui.css" />
+    <Content Include="Content\Css\estilo.css" />
+    <Content Include="Content\Css\faq.css" />
+    <Content Include="Content\Css\farbtastic.css" />
+    <Content Include="Content\Css\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Content\Css\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Content\Css\jquery-ui-1.8.20.custom.css" />
+    <Content Include="Content\Css\jquery.multipage.css" />
+    <Content Include="Content\Css\jquery.ui.stars.css" />
+    <Content Include="Content\Css\jquery.ui.stars.min.css" />
+    <Content Include="Content\Css\jquery.vector-map.css" />
+    <Content Include="Content\Css\liquid.css" />
+    <Content Include="Content\Css\menu.css" />
+    <Content Include="Content\Css\multiselect.css" />
+    <Content Include="Content\Css\pagination.css" />
+    <Content Include="Content\Css\print.css" />
+    <Content Include="Content\Css\theme-metallic.css" />
+    <Content Include="Content\Css\ui.core.css" />
+    <Content Include="Content\Css\ui.progressbar.css" />
+    <Content Include="Content\Css\ui.theme.css" />
+    <Content Include="Content\Css\wide.css" />
+    <Content Include="Content\Css\nivo-slider.css" />
+    <Content Include="Content\Css\style.css" />
+    <Content Include="Content\Css\ui.jqgrid.css" />
+    <Content Include="Content\Images\1335190734_social_twitter_box_blue.png" />
+    <Content Include="Content\Images\1335190756_social_facebook_box_blue.png" />
+    <Content Include="Content\Images\1335190782_social_linkedin_box_blue.png" />
+    <Content Include="Content\Images\1335190817_social_rss_box_orange.png" />
+    <Content Include="Content\Images\1335190845_youtube.png" />
+    <Content Include="Content\Images\aboutUs.png" />
+    <Content Include="Content\Images\arrow.gif" />
+    <Content Include="Content\Images\arrow.png" />
+    <Content Include="Content\Images\arrowleft.png" />
+    <Content Include="Content\Images\arrowright.png" />
+    <Content Include="Content\Images\arrows-metallic.png" />
+    <Content Include="Content\Images\arrowsub.gif" />
+    <Content Include="Content\Images\arrow_over.gif" />
+    <Content Include="Content\Images\Background\background-home.png" />
+    <Content Include="Content\Images\Background\background-iconos-impresion.png" />
+    <Content Include="Content\Images\Background\background-reports-en.png" />
+    <Content Include="Content\Images\Background\background-reports-es.png" />
+    <Content Include="Content\Images\Background\background-top.png" />
+    <Content Include="Content\Images\Background\DenasecaLogo.png" />
+    <Content Include="Content\Images\Background\header-sprite.png" />
+    <Content Include="Content\Images\Background\home-icons.png" />
+    <Content Include="Content\Images\Background\Logos.png" />
+    <Content Include="Content\Images\Background\Logo_Medinet.png" />
+    <Content Include="Content\Images\Background\medinet-bg.png" />
+    <Content Include="Content\Images\Background\module-gradient2.png" />
+    <Content Include="Content\Images\Background\MonacaLogo.png" />
+    <Content Include="Content\Images\Background\sprite.png" />
+    <Content Include="Content\Images\Background\top.png" />
+    <Content Include="Content\Images\Background\top2.png" />
+    <Content Include="Content\Images\back_disabled.jpg" />
+    <Content Include="Content\Images\back_enabled.jpg" />
+    <Content Include="Content\Images\bannerCigeh.jpg" />
+    <Content Include="Content\Images\bg-box-login.png" />
+    <Content Include="Content\Images\bg-content-inner.jpg" />
+    <Content Include="Content\Images\bg-footer.jpg" />
+    <Content Include="Content\Images\bg_hover_menu.png" />
+    <Content Include="Content\Images\bg_hover_menu2.png" />
+    <Content Include="Content\Images\bg_hover_menu_2.png" />
+    <Content Include="Content\Images\bigLoading.gif" />
+    <Content Include="Content\Images\boton_derecha_slider.png" />
+    <Content Include="Content\Images\boton_izquierda_slider.png" />
+    <Content Include="Content\Images\bullets.png" />
+    <Content Include="Content\Images\buttons.png" />
+    <Content Include="Content\Images\clientes-footer.png" />
+    <Content Include="Content\Images\Clima_organizacional.jpg" />
+    <Content Include="Content\Images\colormap.gif" />
+    <Content Include="Content\Images\CommonSprite.png" />
+    <Content Include="Content\Images\Companies\201106230313562.png" />
+    <Content Include="Content\Images\Companies\201107071137102.jpg" />
+    <Content Include="Content\Images\Companies\201108290456452.jpg" />
+    <Content Include="Content\Images\Companies\2012050703353420.png" />
+    <Content Include="Content\Images\Companies\2013060502470947.jpg" />
+    <Content Include="Content\Images\Companies\2013060608514847.jpg" />
+    <Content Include="Content\Images\Companies\AssociatedImage.png" />
+    <Content Include="Content\Images\Companies\CustomerImage.png" />
+    <Content Include="Content\Images\Companies\default.png" />
+    <Content Include="Content\Images\Companies\EmptyImage.png" />
+    <Content Include="Content\Images\Companies\OwnerImage.png" />
+    <Content Include="Content\Images\contactUs.png" />
+    <Content Include="Content\Images\contenidos-2 %282%29.png" />
+    <Content Include="Content\Images\contenidos-2-1.png" />
+    <Content Include="Content\Images\contenidos-2.png" />
+    <Content Include="Content\Images\contenidos.png" />
+    <Content Include="Content\Images\contenidosModificado.png" />
+    <Content Include="Content\Images\create.png" />
+    <Content Include="Content\Images\cross.gif" />
+    <Content Include="Content\Images\cuadroejemplo-oferts.png" />
+    <Content Include="Content\Images\default.png" />
+    <Content Include="Content\Images\email-footer-contact.png" />
+    <Content Include="Content\Images\eng_flag.png" />
+    <Content Include="Content\Images\enviar.png" />
+    <Content Include="Content\Images\enviar_2.png" />
+    <Content Include="Content\Images\enviar_2_hover.png" />
+    <Content Include="Content\Images\es_flag.png" />
+    <Content Include="Content\Images\exclamation.png" />
+    <Content Include="Content\Images\facebook.png" />
+    <Content Include="Content\Images\faq_bg.jpg" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\Flags\Colombia.png" />
+    <Content Include="Content\Images\Flags\Dominican_Republic.png" />
+    <Content Include="Content\Images\Flags\Puerto_Rico.png" />
+    <Content Include="Content\Images\Flags\United_States_of_America.png" />
+    <Content Include="Content\Images\Flags\Venezuela.png" />
+    <Content Include="Content\Images\flecha-der.png" />
+    <Content Include="Content\Images\flecha-izq.png" />
+    <Content Include="Content\Images\fondo-2.png" />
+    <Content Include="Content\Images\fondo-interna.png" />
+    <Content Include="Content\Images\fondo-menu-2.png" />
+    <Content Include="Content\Images\fondo-menu.png" />
+    <Content Include="Content\Images\fondo.png" />
+    <Content Include="Content\Images\footer-internas.png" />
+    <Content Include="Content\Images\footertalento360.jpg" />
+    <Content Include="Content\Images\form.png" />
+    <Content Include="Content\Images\Forms\fondo-interna.png" />
+    <Content Include="Content\Images\Forms\form-Area.png" />
+    <Content Include="Content\Images\Forms\form-large.png" />
+    <Content Include="Content\Images\Forms\form-short.png" />
+    <Content Include="Content\Images\Forms\login.png" />
+    <Content Include="Content\Images\Forms\modulo1.png" />
+    <Content Include="Content\Images\Forms\modulo2.png" />
+    <Content Include="Content\Images\Forms\radio-m.png" />
+    <Content Include="Content\Images\forward_disabled.jpg" />
+    <Content Include="Content\Images\forward_enabled.jpg" />
+    <Content Include="Content\Images\globe.png" />
+    <Content Include="Content\Images\graph.png" />
+    <Content Include="Content\Images\headertalento360.jpg" />
+    <Content Include="Content\Images\home.png" />
+    <Content Include="Content\Images\homefootercontact.png" />
+    <Content Include="Content\Images\HomeSprite.png" />
+    <Content Include="Content\Images\hs.png" />
+    <Content Include="Content\Images\hv.png" />
+    <Content Include="Content\Images\icon-system\bivariate.es.png" />
+    <Content Include="Content\Images\icon-system\bivariate.png" />
+    <Content Include="Content\Images\icon-system\category.es.png" />
+    <Content Include="Content\Images\icon-system\category.png" />
+    <Content Include="Content\Images\icon-system\changePassword.png" />
+    <Content Include="Content\Images\icon-system\companies.png" />
+    <Content Include="Content\Images\icon-system\crystal-stars.png" />
+    <Content Include="Content\Images\icon-system\Error.png" />
+    <Content Include="Content\Images\icon-system\evaluationNotSent.png" />
+    <Content Include="Content\Images\icon-system\evaluationSent.png" />
+    <Content Include="Content\Images\icon-system\feedbacks.es.png" />
+    <Content Include="Content\Images\icon-system\feedbacks.png" />
+    <Content Include="Content\Images\icon-system\feedbacksList.png" />
+    <Content Include="Content\Images\icon-system\frequency.es.png" />
+    <Content Include="Content\Images\icon-system\frequency.png" />
+    <Content Include="Content\Images\icon-system\help.es.png" />
+    <Content Include="Content\Images\icon-system\help.png" />
+    <Content Include="Content\Images\icon-system\hoja.png" />
+    <Content Include="Content\Images\icon-system\jquery.ui.stars.gif" />
+    <Content Include="Content\Images\icon-system\locationsList.png" />
+    <Content Include="Content\Images\icon-system\messs.png" />
+    <Content Include="Content\Images\icon-system\NotFound.png" />
+    <Content Include="Content\Images\icon-system\ok-pembe.png" />
+    <Content Include="Content\Images\icon-system\OneDemographic.es.jpg" />
+    <Content Include="Content\Images\icon-system\OneDemographic.jpg" />
+    <Content Include="Content\Images\icon-system\Password.png" />
+    <Content Include="Content\Images\icon-system\population.es.png" />
+    <Content Include="Content\Images\icon-system\population.png" />
+    <Content Include="Content\Images\icon-system\ranking.es.png" />
+    <Content Include="Content\Images\icon-system\ranking.png" />
+    <Content Include="Content\Images\icon-system\regression.es.png" />
+    <Content Include="Content\Images\icon-system\regression.png" />
+    <Content Include="Content\Images\icon-system\report.es.png" />
+    <Content Include="Content\Images\icon-system\report.png" />
+    <Content Include="Content\Images\icon-system\reportMap.png" />
+    <Content Include="Content\Images\icon-system\reports.jpg" />
+    <Content Include="Content\Images\icon-system\reports.png" />
+    <Content Include="Content\Images\icon-system\sent.png" />
+    <Content Include="Content\Images\icon-system\survey.png" />
+    <Content Include="Content\Images\icon-system\text.es.png" />
+    <Content Include="Content\Images\icon-system\text.png" />
+    <Content Include="Content\Images\icon-system\TR12_Logo.jpg" />
+    <Content Include="Content\Images\icon-system\univariate.es.png" />
+    <Content Include="Content\Images\icon-system\univariate.png" />
+    <Content Include="Content\Images\icon-system\user.png" />
+    <Content Include="Content\Images\icon-system\usersList.png" />
+    <Content Include="Content\Images\icon-system\viewer.png" />
+    <Content Include="Content\Images\Icustomers\f-logo-1.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-10.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-11.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-2.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-3.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-4.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-5.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-6.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-7.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-8.jpg" />
+    <Content Include="Content\Images\Icustomers\f-logo-9.jpg" />
+    <Content Include="Content\Images\img-galeria\.jpg" />
+    <Content Include="Content\Images\img-galeria\analisis-es.png" />
+    <Content Include="Content\Images\img-galeria\analisis.png" />
+    <Content Include="Content\Images\img-galeria\analysis.es.png" />
+    <Content Include="Content\Images\img-galeria\analysis.png" />
+    <Content Include="Content\Images\img-galeria\estadisticas-es.png" />
+    <Content Include="Content\Images\img-galeria\estadisticas.png" />
+    <Content Include="Content\Images\img-galeria\flexibilidad-es.png" />
+    <Content Include="Content\Images\img-galeria\flexibilidad.png" />
+    <Content Include="Content\Images\img-galeria\flexibility.es.png" />
+    <Content Include="Content\Images\img-galeria\flexibility.png" />
+    <Content Include="Content\Images\img-galeria\RRHH.jpg" />
+    <Content Include="Content\Images\img-galeria\uno.jpg" />
+    <Content Include="Content\Images\InternasSprite.png" />
+    <Content Include="Content\Images\linea-footer.png" />
+    <Content Include="Content\Images\linea-sidebar.png" />
+    <Content Include="Content\Images\littleLoading.gif" />
+    <Content Include="Content\Images\logo-footer.png" />
+    <Content Include="Content\Images\logo360.png" />
+    <Content Include="Content\Images\mainbk.png" />
+    <Content Include="Content\Images\map.png" />
+    <Content Include="Content\Images\middleLoading.gif" />
+    <Content Include="Content\Images\NoEvaluations.png" />
+    <Content Include="Content\Images\ofertas.png" />
+    <Content Include="Content\Images\Options\2012111212044254.png" />
+    <Content Include="Content\Images\Options\2012111212082854.png" />
+    <Content Include="Content\Images\Options\2013020610214855.png" />
+    <Content Include="Content\Images\Options\2013020610221855.bmp" />
+    <Content Include="Content\Images\Options\2013022809354078.png" />
+    <Content Include="Content\Images\Options\2013022809360979.png" />
+    <Content Include="Content\Images\Options\2013022809363480.png" />
+    <Content Include="Content\Images\Options\2013022809365081.png" />
+    <Content Include="Content\Images\Options\2013022809371382.png" />
+    <Content Include="Content\Images\Options\2013022809373083.png" />
+    <Content Include="Content\Images\Options\Affirmative.png" />
+    <Content Include="Content\Images\Options\Negative.png" />
+    <Content Include="Content\Images\Plus__Orange.png" />
+    <Content Include="Content\Images\process.png" />
+    <Content Include="Content\Images\readon2-l.png" />
+    <Content Include="Content\Images\readon2-r.png" />
+    <Content Include="Content\Images\reportlist_sprite.png" />
+    <Content Include="Content\Images\reports.png" />
+    <Content Include="Content\Images\reportsHome.png" />
+    <Content Include="Content\Images\rss.png" />
+    <Content Include="Content\Images\services.png" />
+    <Content Include="Content\Images\sidebar.png" />
+    <Content Include="Content\Images\Slider_Home\arrows-BCK.png" />
+    <Content Include="Content\Images\Slider_Home\arrows.png" />
+    <Content Include="Content\Images\Slider_Home\bullets.png" />
+    <Content Include="Content\Images\Slider_Home\encuesta-satisfaccion.jpg" />
+    <Content Include="Content\Images\Slider_Home\evaluacion-empleados.jpg" />
+    <Content Include="Content\Images\Slider_Home\loading.gif" />
+    <Content Include="Content\Images\Slider_Home\main-img.jpg" />
+    <Content Include="Content\Images\Slider_Home\main-img10.jpg" />
+    <Content Include="Content\Images\Slider_Home\main-img2.jpg" />
+    <Content Include="Content\Images\Slider_Home\main-img3.jpg" />
+    <Content Include="Content\Images\Slider_Home\main-img4.jpg" />
+    <Content Include="Content\Images\Slider_Home\main-img5.JPG" />
+    <Content Include="Content\Images\Slider_Home\main-img6.jpg" />
+    <Content Include="Content\Images\Slider_Home\main-img7.jpg" />
+    <Content Include="Content\Images\Slider_Home\main-img8.jpg" />
+    <Content Include="Content\Images\Slider_Home\main-img9.jpg" />
+    <Content Include="Content\Images\Slider_Home\slider-footer.jpg" />
+    <Content Include="Content\Images\sort_asc.png" />
+    <Content Include="Content\Images\sort_desc.png" />
+    <Content Include="Content\Images\telefono-footer-contact.png" />
+    <Content Include="Content\Images\test.png" />
+    <Content Include="Content\Images\text-area.png" />
+    <Content Include="Content\Images\ticker_space.gif" />
+    <Content Include="Content\Images\tinyLoading.gif" />
+    <Content Include="Content\Images\twitter.png" />
+    <Content Include="Content\Images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\Images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\Images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\Images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\Images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\Images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\Images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\Images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\Images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\Images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\Images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\Images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\Images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\Images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\Images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\Images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\Images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\Images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\Images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\Images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\Images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\Images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Images\Users\2012111211534872.png" />
+    <Content Include="Content\Images\Users\userDefault.png" />
+    <Content Include="Content\Images\Warning.png" />
+    <Content Include="Content\mobile\Css\asc.gif" />
+    <Content Include="Content\mobile\Css\bg.gif" />
+    <Content Include="Content\mobile\Css\border-radius.htc" />
+    <Content Include="Content\mobile\Css\deprecated\jquery.mobile.theme-1.3.1-custom.css" />
+    <Content Include="Content\mobile\Css\deprecated\jquery.mobile.theme-1.3.1-custom.min.css" />
+    <Content Include="Content\mobile\Css\desc.gif" />
+    <Content Include="Content\mobile\Css\images\ajax-loader.gif" />
+    <Content Include="Content\mobile\Css\images\icons-18-black.png" />
+    <Content Include="Content\mobile\Css\images\icons-18-white.png" />
+    <Content Include="Content\mobile\Css\images\icons-36-black.png" />
+    <Content Include="Content\mobile\Css\images\icons-36-white.png" />
+    <Content Include="Content\mobile\Css\jquery.mobile-1.3.1.css" />
+    <Content Include="Content\mobile\Css\jquery.mobile-1.3.1.min.css" />
+    <Content Include="Content\mobile\Css\jquery.mobile.structure-1.3.1.css" />
+    <Content Include="Content\mobile\Css\jquery.mobile.structure-1.3.1.min.css" />
+    <Content Include="Content\mobile\Css\jquery.mobile.theme-1.3.1-custom.css" />
+    <Content Include="Content\mobile\Css\jquery.mobile.theme-1.3.1-custom.min.css" />
+    <Content Include="Content\mobile\Css\jquery.mobile.theme-1.3.1.css" />
+    <Content Include="Content\mobile\Css\jquery.mobile.theme-1.3.1.min.css" />
+    <Content Include="Content\mobile\Css\styles.css" />
+    <Content Include="Content\mobile\Images\asc.gif" />
+    <Content Include="Content\mobile\Images\bg-footer-mini.jpg" />
+    <Content Include="Content\mobile\Images\bg-footer.jpg" />
+    <Content Include="Content\mobile\Images\bg-grey-bar.jpg" />
+    <Content Include="Content\mobile\Images\bg-menu-over.jpg" />
+    <Content Include="Content\mobile\Images\bg-orange-bar.jpg" />
+    <Content Include="Content\mobile\Images\bg.gif" />
+    <Content Include="Content\mobile\Images\bg.jpg" />
+    <Content Include="Content\mobile\Images\bgMini.jpg" />
+    <Content Include="Content\mobile\Images\desc.gif" />
+    <Content Include="Content\mobile\Images\evento\acrip.png" />
+    <Content Include="Content\mobile\Images\evento\almuerzo.png" />
+    <Content Include="Content\mobile\Images\evento\cmc.png" />
+    <Content Include="Content\mobile\Images\evento\conferencia.png" />
+    <Content Include="Content\mobile\Images\evento\evento-logo.png" />
+    <Content Include="Content\mobile\Images\evento\evento.png" />
+    <Content Include="Content\mobile\Images\evento\logistica.png" />
+    <Content Include="Content\mobile\Images\evento\logistica2.png" />
+    <Content Include="Content\mobile\Images\evento\refrigerio.png" />
+    <Content Include="Content\mobile\Images\footertalento360.jpg" />
+    <Content Include="Content\mobile\Images\headertalento360.jpg" />
+    <Content Include="Content\mobile\Images\icon-folder.png" />
+    <Content Include="Content\mobile\Images\icon-home.png" />
+    <Content Include="Content\mobile\Images\icon-letter.png" />
+    <Content Include="Content\mobile\Images\icon-logout.png" />
+    <Content Include="Content\mobile\Images\icon-report\branches.png" />
+    <Content Include="Content\mobile\Images\icon-report\category.png" />
+    <Content Include="Content\mobile\Images\icon-report\climate.png" />
+    <Content Include="Content\mobile\Images\icon-report\companies.png" />
+    <Content Include="Content\mobile\Images\icon-report\comparative.png" />
+    <Content Include="Content\mobile\Images\icon-report\dual.png" />
+    <Content Include="Content\mobile\Images\icon-report\executive.png" />
+    <Content Include="Content\mobile\Images\icon-report\feedbacks.png" />
+    <Content Include="Content\mobile\Images\icon-report\frecuency.png" />
+    <Content Include="Content\mobile\Images\icon-report\help.png" />
+    <Content Include="Content\mobile\Images\icon-report\icon.png" />
+    <Content Include="Content\mobile\Images\icon-report\population.png" />
+    <Content Include="Content\mobile\Images\icon-report\ranking.png" />
+    <Content Include="Content\mobile\Images\icon-report\reports.png" />
+    <Content Include="Content\mobile\Images\icon-report\result.png" />
+    <Content Include="Content\mobile\Images\icon-report\satisfaction.png" />
+    <Content Include="Content\mobile\Images\icon-report\text.png" />
+    <Content Include="Content\mobile\Images\icon-report\univariate.png" />
+    <Content Include="Content\mobile\Images\icon-report\users.png" />
+    <Content Include="Content\mobile\Images\icon-spain.png" />
+    <Content Include="Content\mobile\Images\icon-tw.png" />
+    <Content Include="Content\mobile\Images\icon-usa.png" />
+    <Content Include="Content\mobile\Images\logo.jpg" />
+    <Content Include="Content\mobile\Images\logo360.png" />
+    <Content Include="Content\mobile\Images\logoMini.jpg" />
+    <Content Include="Dependencies\Dynamic.dll" />
+    <Content Include="Dependencies\evohtmltopdf.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dependencies\evohtmltopdf.xml" />
+    <Content Include="Dependencies\evointernal.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dependencies\Extreme.Generic.Net40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dependencies\Extreme.Numerics.Net40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dependencies\FiftyOne.Foundation.dll" />
+    <Content Include="Dependencies\itextsharp.dll" />
+    <Content Include="Dependencies\JqueryWizardDocs\demo.html" />
+    <Content Include="Dependencies\JqueryWizardDocs\example.html" />
+    <Content Include="Dependencies\JqueryWizardDocs\examplealtstate.html" />
+    <Content Include="Dependencies\JqueryWizardDocs\exampletabs.html" />
+    <Content Include="Dependencies\JqueryWizardDocs\README.txt" />
+    <Content Include="Dependencies\MobileViewEngines.MVC3.dll" />
+    <Content Include="Dependencies\WebActivator.dll" />
+    <Content Include="favicon.ico" />
+    <Content Include="Reports\EvaluationReport.aspx" />
+    <Content Include="Reports\HRCompanyQuestionnaireReport.ascx" />
+    <Content Include="Reports\HRAdministratorQuestionnaireReport.ascx" />
+    <Content Include="Reports\QuestionnaireReport.aspx" />
+    <Content Include="Reports\TestByCompanyReport.aspx" />
+    <Content Include="Scripts\AnalyticalReport.js" />
+    <Content Include="Scripts\ar-en.js">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\bbq.js" />
+    <Content Include="Scripts\Charts.js" />
+    <Content Include="Scripts\age-views.js" />
+    <Content Include="Scripts\co-en.js" />
+    <Content Include="Scripts\contactUs-views.js" />
+    <Content Include="Scripts\answerTest.js" />
+    <Content Include="Scripts\BivariateCharts.js" />
+    <Content Include="Scripts\climateRange-views.js" />
+    <Content Include="Scripts\climateScale-views.js" />
+    <Content Include="Scripts\editorText.js" />
+    <Content Include="Scripts\editor_plugin.js" />
+    <Content Include="Scripts\europe-en.js" />
+    <Content Include="Scripts\farbtastic.js" />
+    <Content Include="Scripts\html2canvas.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.6.2.js" />
+    <Content Include="Scripts\jquery-1.6.2.min.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery-1.7.js" />
+    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\jquery-jvectormap-ve-en.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Scripts\jquery.easing.1.2.js" />
+    <Content Include="Scripts\jquery.multiselect.min.js" />
+    <Content Include="Scripts\jquery.nivo.slider.js" />
+    <Content Include="Scripts\jquery.tinymce.js" />
+    <Content Include="Scripts\jscolor.js" />
+    <Content Include="Scripts\jsPdfWrapper.js" />
+    <Content Include="Scripts\langs\en.js" />
+    <Content Include="Scripts\loading.js" />
+    <Content Include="Scripts\demo-views.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.pagination.js" />
+    <Content Include="Scripts\mobile\ChartsMobile.js" />
+    <Content Include="Scripts\mobile\jquery-1.9.1.js" />
+    <Content Include="Scripts\mobile\jquery-validate.js" />
+    <Content Include="Scripts\mobile\jquery.cookie.js" />
+    <Content Include="Scripts\mobile\jquery.mobile-1.2.1.js" />
+    <Content Include="Scripts\mobile\jquery.mobile-1.3.1.js" />
+    <Content Include="Scripts\mobile\jquery.mobile-1.3.1.min.js" />
+    <Content Include="Scripts\mobile\jquery.mobile-1.3.2.js" />
+    <Content Include="Scripts\mobile\jquery.mobile-1.3.2.min.js" />
+    <Content Include="Scripts\mobile\jquery.mobile.subpage.js" />
+    <Content Include="Scripts\mobile\jquery.tablesorter.js" />
+    <Content Include="Scripts\mobile\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\mobile\jquery.validate.mobile.js" />
+    <Content Include="Scripts\mobile\sub pages.js work with jquery mobile 1.3.1   - Buscar con Google.htm" />
+    <Content Include="Scripts\mobile\sub pages.js work with jquery mobile 1.3.1   - Buscar con Google_files\frame.htm" />
+    <Content Include="Scripts\mobile\sub pages.js work with jquery mobile 1.3.1   - Buscar con Google_files\gci_91f30755d6a6b787dcc2a4062e6e9824.js" />
+    <Content Include="Scripts\mobile\sub pages.js work with jquery mobile 1.3.1   - Buscar con Google_files\google-logo-plus-0fbe8f0119f4a902429a5991af5db563.png" />
+    <Content Include="Scripts\mobile\sub pages.js work with jquery mobile 1.3.1   - Buscar con Google_files\photo.jpg" />
+    <Content Include="Scripts\mobile\sub pages.js work with jquery mobile 1.3.1   - Buscar con Google_files\smm_6a1b40f12839139374bd1c835fc6b436.js" />
+    <Content Include="Scripts\plugins\advhr\css\advhr.css" />
+    <Content Include="Scripts\plugins\advhr\editor_plugin.js" />
+    <Content Include="Scripts\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\advhr\js\rule.js" />
+    <Content Include="Scripts\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\advhr\rule.htm" />
+    <Content Include="Scripts\plugins\advimage\css\advimage.css" />
+    <Content Include="Scripts\plugins\advimage\editor_plugin.js" />
+    <Content Include="Scripts\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\advimage\image.htm" />
+    <Content Include="Scripts\plugins\advimage\img\sample.gif" />
+    <Content Include="Scripts\plugins\advimage\js\image.js" />
+    <Content Include="Scripts\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\advlink\css\advlink.css" />
+    <Content Include="Scripts\plugins\advlink\editor_plugin.js" />
+    <Content Include="Scripts\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\advlink\js\advlink.js" />
+    <Content Include="Scripts\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\advlink\link.htm" />
+    <Content Include="Scripts\plugins\advlist\editor_plugin.js" />
+    <Content Include="Scripts\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\autolink\editor_plugin.js" />
+    <Content Include="Scripts\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Scripts\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\autosave\editor_plugin.js" />
+    <Content Include="Scripts\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\autosave\langs\en.js" />
+    <Content Include="Scripts\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Scripts\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Scripts\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\directionality\editor_plugin.js" />
+    <Content Include="Scripts\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\emotions\editor_plugin.js" />
+    <Content Include="Scripts\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\emotions\emotions.htm" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Scripts\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Scripts\plugins\emotions\js\emotions.js" />
+    <Content Include="Scripts\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\example\dialog.htm" />
+    <Content Include="Scripts\plugins\example\editor_plugin.js" />
+    <Content Include="Scripts\plugins\example\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\example\img\example.gif" />
+    <Content Include="Scripts\plugins\example\js\dialog.js" />
+    <Content Include="Scripts\plugins\example\langs\en.js" />
+    <Content Include="Scripts\plugins\example\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Scripts\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Scripts\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Scripts\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\fullpage\fullpage.htm" />
+    <Content Include="Scripts\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Scripts\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Scripts\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Scripts\plugins\iespell\editor_plugin.js" />
+    <Content Include="Scripts\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Scripts\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Scripts\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Scripts\plugins\inlinepopups\template.htm" />
+    <Content Include="Scripts\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Scripts\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\layer\editor_plugin.js" />
+    <Content Include="Scripts\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Scripts\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\lists\editor_plugin.js" />
+    <Content Include="Scripts\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\media\css\media.css" />
+    <Content Include="Scripts\plugins\media\editor_plugin.js" />
+    <Content Include="Scripts\plugins\media\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\media\js\embed.js" />
+    <Content Include="Scripts\plugins\media\js\media.js" />
+    <Content Include="Scripts\plugins\media\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\media\media.htm" />
+    <Content Include="Scripts\plugins\media\moxieplayer.swf" />
+    <Content Include="Scripts\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Scripts\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Scripts\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Scripts\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\paste\editor_plugin.js" />
+    <Content Include="Scripts\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\paste\js\pastetext.js" />
+    <Content Include="Scripts\plugins\paste\js\pasteword.js" />
+    <Content Include="Scripts\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\paste\pastetext.htm" />
+    <Content Include="Scripts\plugins\paste\pasteword.htm" />
+    <Content Include="Scripts\plugins\preview\editor_plugin.js" />
+    <Content Include="Scripts\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\preview\example.html" />
+    <Content Include="Scripts\plugins\preview\jscripts\embed.js" />
+    <Content Include="Scripts\plugins\preview\preview.html" />
+    <Content Include="Scripts\plugins\print\editor_plugin.js" />
+    <Content Include="Scripts\plugins\print\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\save\editor_plugin.js" />
+    <Content Include="Scripts\plugins\save\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Scripts\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Scripts\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Scripts\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Scripts\plugins\spellchecker\css\content.css" />
+    <Content Include="Scripts\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Scripts\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Scripts\plugins\style\css\props.css" />
+    <Content Include="Scripts\plugins\style\editor_plugin.js" />
+    <Content Include="Scripts\plugins\style\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\style\js\props.js" />
+    <Content Include="Scripts\plugins\style\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\style\props.htm" />
+    <Content Include="Scripts\plugins\style\readme.txt" />
+    <Content Include="Scripts\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Scripts\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\table\cell.htm" />
+    <Content Include="Scripts\plugins\table\css\cell.css" />
+    <Content Include="Scripts\plugins\table\css\row.css" />
+    <Content Include="Scripts\plugins\table\css\table.css" />
+    <Content Include="Scripts\plugins\table\editor_plugin.js" />
+    <Content Include="Scripts\plugins\table\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\table\js\cell.js" />
+    <Content Include="Scripts\plugins\table\js\merge_cells.js" />
+    <Content Include="Scripts\plugins\table\js\row.js" />
+    <Content Include="Scripts\plugins\table\js\table.js" />
+    <Content Include="Scripts\plugins\table\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\table\merge_cells.htm" />
+    <Content Include="Scripts\plugins\table\row.htm" />
+    <Content Include="Scripts\plugins\table\table.htm" />
+    <Content Include="Scripts\plugins\template\blank.htm" />
+    <Content Include="Scripts\plugins\template\css\template.css" />
+    <Content Include="Scripts\plugins\template\editor_plugin.js" />
+    <Content Include="Scripts\plugins\template\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\template\js\template.js" />
+    <Content Include="Scripts\plugins\template\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\template\template.htm" />
+    <Content Include="Scripts\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Scripts\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="Scripts\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Scripts\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Scripts\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Scripts\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Scripts\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Scripts\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Scripts\positionLevel-views.js" />
+    <Content Include="Scripts\instructionLevel-views.js" />
+    <Content Include="Scripts\germany-en.js" />
+    <Content Include="Scripts\jquery.anythingslider.min.js" />
+    <Content Include="Scripts\jquery.validity.js" />
+    <Content Include="Scripts\labelInfield.js" />
+    <Content Include="Scripts\css3-mediaqueries.js" />
+    <Content Include="Scripts\faq.js" />
+    <Content Include="Scripts\feature-views.js" />
+    <Content Include="Scripts\Feedbacks.js" />
+    <Content Include="Scripts\home-view.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.custom.min.js" />
+    <Content Include="Scripts\jquery.infieldlabel.min.js" />
+    <Content Include="Scripts\jquery.ui.stars.js" />
+    <Content Include="Scripts\jquery.ui.stars.min.js" />
+    <Content Include="Scripts\jquery.vector-map.js" />
+    <Content Include="Scripts\map.js" />
+    <Content Include="Scripts\modernizr.js" />
+    <Content Include="Scripts\Ranking.js" />
+    <Content Include="Scripts\elemetler.js" />
+    <Content Include="Scripts\jquery.jticker.js" />
+    <Content Include="Scripts\jquery.tools.min.js" />
+    <Content Include="Scripts\redirect.js" />
+    <Content Include="Scripts\themes\advanced\about.htm" />
+    <Content Include="Scripts\themes\advanced\anchor.htm" />
+    <Content Include="Scripts\themes\advanced\charmap.htm" />
+    <Content Include="Scripts\themes\advanced\color_picker.htm" />
+    <Content Include="Scripts\themes\advanced\editor_template.js" />
+    <Content Include="Scripts\themes\advanced\editor_template_src.js" />
+    <Content Include="Scripts\themes\advanced\image.htm" />
+    <Content Include="Scripts\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Scripts\themes\advanced\img\flash.gif" />
+    <Content Include="Scripts\themes\advanced\img\icons.gif" />
+    <Content Include="Scripts\themes\advanced\img\iframe.gif" />
+    <Content Include="Scripts\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Scripts\themes\advanced\img\quicktime.gif" />
+    <Content Include="Scripts\themes\advanced\img\realmedia.gif" />
+    <Content Include="Scripts\themes\advanced\img\shockwave.gif" />
+    <Content Include="Scripts\themes\advanced\img\trans.gif" />
+    <Content Include="Scripts\themes\advanced\img\video.gif" />
+    <Content Include="Scripts\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Scripts\themes\advanced\js\about.js" />
+    <Content Include="Scripts\themes\advanced\js\anchor.js" />
+    <Content Include="Scripts\themes\advanced\js\charmap.js" />
+    <Content Include="Scripts\themes\advanced\js\color_picker.js" />
+    <Content Include="Scripts\themes\advanced\js\image.js" />
+    <Content Include="Scripts\themes\advanced\js\link.js" />
+    <Content Include="Scripts\themes\advanced\js\source_editor.js" />
+    <Content Include="Scripts\themes\advanced\langs\en.js" />
+    <Content Include="Scripts\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Scripts\themes\advanced\link.htm" />
+    <Content Include="Scripts\themes\advanced\shortcuts.htm" />
+    <Content Include="Scripts\themes\advanced\skins\default\content.css" />
+    <Content Include="Scripts\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\ui.css" />
+    <Content Include="Scripts\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Scripts\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Scripts\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Scripts\themes\advanced\source_editor.htm" />
+    <Content Include="Scripts\themes\simple\editor_template.js" />
+    <Content Include="Scripts\themes\simple\editor_template_src.js" />
+    <Content Include="Scripts\themes\simple\img\icons.gif" />
+    <Content Include="Scripts\themes\simple\langs\en.js" />
+    <Content Include="Scripts\themes\simple\skins\default\content.css" />
+    <Content Include="Scripts\themes\simple\skins\default\ui.css" />
+    <Content Include="Scripts\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Scripts\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Scripts\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Scripts\tiny_mce.js" />
+    <Content Include="Scripts\ui.core.js" />
+    <Content Include="Scripts\ui.progressbar.js" />
+    <Content Include="Scripts\Results.js" />
+    <Content Include="Scripts\reportsList.js" />
+    <Content Include="Scripts\functionalOrganization-views.js" />
+    <Content Include="Scripts\functionalOrganizationType-views.js" />
+    <Content Include="Scripts\cufon-yui.js" />
+    <Content Include="Scripts\grid.locale-es.js" />
+    <Content Include="Scripts\jquery.anythingslider.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\lavalamp.js" />
+    <Content Include="Scripts\Myriad_Pro_400-Myriad_Pro_700.font.js" />
+    <Content Include="Scripts\performanceevaluation-views.js" />
+    <Content Include="Scripts\radio.js" />
+    <Content Include="Scripts\seniority-views.js" />
+    <Content Include="Scripts\resultReports-views.js" />
+    <Content Include="Scripts\state-views.js" />
+    <Content Include="Scripts\stuHover.js" />
+    <Content Include="Scripts\Tabs.js" />
+    <Content Include="Scripts\test-views.js" />
+    <Content Include="Scripts\evaluation-validation.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.form.wizard-min.js" />
+    <Content Include="Scripts\jquery.form.wizard.js" />
+    <Content Include="Scripts\jquery.multipage.js" />
+    <Content Include="Scripts\us-en.js" />
+    <Content Include="Scripts\user-views.js" />
+    <Content Include="Scripts\ve-en.js" />
+    <Content Include="Scripts\webticker_lib.js" />
+    <Content Include="Scripts\world-en.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSucceeded.aspx" />
+    <Content Include="Views\Account\LogOn.Mobile.aspx" />
+    <Content Include="Views\Ages\Create.aspx" />
+    <Content Include="Views\Ages\Details.aspx" />
+    <Content Include="Views\Ages\Edit.aspx" />
+    <Content Include="Views\Ages\Form.ascx" />
+    <Content Include="Views\Ages\FormDetails.ascx" />
+    <Content Include="Views\Ages\Index.aspx" />
+    <Content Include="Views\Categories\Create.aspx" />
+    <Content Include="Views\Categories\Details.aspx" />
+    <Content Include="Views\Categories\Edit.aspx" />
+    <Content Include="Views\Categories\Form.ascx" />
+    <Content Include="Views\Categories\FormDetails.ascx" />
+    <Content Include="Views\Categories\Index.aspx" />
+    <Content Include="Views\ChartReports\AnalyticalReport.Mobile.aspx" />
+    <Content Include="Views\ChartReports\Button.Mobile.ascx" />
+    <Content Include="Views\ChartReports\ChartsForm.ascx" />
+    <Content Include="Views\ChartReports\BiVariateGraphics.aspx" />
+    <Content Include="Views\ChartReports\AnalyticalReport.aspx" />
+    <Content Include="Views\ChartReports\ChartsFormForAllTests.Mobile.ascx" />
+    <Content Include="Views\ChartReports\ChartsFormForCategories.ascx" />
+    <Content Include="Views\ChartReports\ChartsFormForAllTests.ascx" />
+    <Content Include="Views\ChartReports\CategoryGraphics.aspx" />
+    <Content Include="Views\ChartReports\CategoryChartsForm.ascx" />
+    <Content Include="Views\ChartReports\ComparativeGraphics.aspx" />
+    <Content Include="Views\ChartReports\Comparative.ascx" />
+    <Content Include="Views\ChartReports\CategoryTablesForm.ascx" />
+    <Content Include="Views\ChartReports\ChartsForm.Mobile.ascx" />
+    <Content Include="Views\ChartReports\BiVariateGraphics.Mobile.aspx" />
+    <Content Include="Views\ChartReports\CategoryChartsForm.Mobile.ascx" />
+    <Content Include="Views\ChartReports\CategoryGraphics.Mobile.aspx" />
+    <Content Include="Views\ChartReports\CategoryTablesForm.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Comparative.Mobile.ascx" />
+    <Content Include="Views\ChartReports\ComparativeGraphics.Mobile.aspx" />
+    <Content Include="Views\ChartReports\SatisfactionTable.Mobile.ascx" />
+    <Content Include="Views\ChartReports\SatisfactionTables.Mobile.aspx" />
+    <Content Include="Views\ChartReports\RankingTabs.Mobile.ascx" />
+    <Content Include="Views\ChartReports\RankingInternal.Mobile.ascx" />
+    <Content Include="Views\ChartReports\RankingByCountry.Mobile.ascx" />
+    <Content Include="Views\ChartReports\RankingByDemographic.Mobile.ascx" />
+    <Content Include="Views\ChartReports\RankingForAssociated.Mobile.ascx" />
+    <Content Include="Views\ChartReports\RankingGeneral.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Ranking.Mobile.aspx" />
+    <Content Include="Views\ChartReports\Report6Form.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Report3Form.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Report4Form.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Report2.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Report3.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Report4.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Report5.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Report6.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Report1.Mobile.ascx" />
+    <Content Include="Views\ChartReports\Results.Mobile.aspx" />
+    <Content Include="Views\ChartReports\TextAnswerReports.Mobile.aspx" />
+    <Content Include="Views\ChartReports\TextAnswersForm.Mobile.ascx" />
+    <Content Include="Views\ChartReports\TablesForm.Mobile.ascx" />
+    <Content Include="Views\ChartReports\ParametersDiv.Mobile.ascx" />
+    <Content Include="Views\ChartReports\DialogDiv.Mobile.ascx" />
+    <Content Include="Views\ChartReports\FrequencyChartsForm.Mobile.ascx" />
+    <Content Include="Views\ChartReports\FrequencyGraphics.Mobile.aspx" />
+    <Content Include="Views\ChartReports\FrequencyTablesForm.Mobile.ascx" />
+    <Content Include="Views\ChartReports\NoEvaluations.Mobile.aspx" />
+    <Content Include="Views\ChartReports\NoMinimum.Mobile.ascx" />
+    <Content Include="Views\ChartReports\TabDiv.Mobile.ascx" />
+    <Content Include="Views\ChartReports\UniVariateGraphics.Mobile.aspx" />
+    <Content Include="Views\ChartReports\FrequencyTablesForm.ascx" />
+    <Content Include="Views\ChartReports\Population.Mobile.ascx" />
+    <Content Include="Views\ChartReports\PopulationGraphics.Mobile.aspx" />
+    <Content Include="Views\ChartReports\ReportsList.Mobile.aspx" />
+    <Content Include="Views\ChartReports\SatisfactionTables.aspx" />
+    <Content Include="Views\ChartReports\SatisfactionTable.ascx" />
+    <Content Include="Views\ChartReports\Report6Form.ascx" />
+    <Content Include="Views\ChartReports\Report5Form.ascx" />
+    <Content Include="Views\ChartReports\Report4Form.ascx" />
+    <Content Include="Views\ChartReports\Report3Form.ascx" />
+    <Content Include="Views\ChartReports\Report2Form.ascx" />
+    <Content Include="Views\ChartReports\Report1Form.ascx" />
+    <Content Include="Views\ChartReports\FrequencyChartsForm.ascx" />
+    <Content Include="Views\ChartReports\FrequencyGraphics.aspx" />
+    <Content Include="Views\ChartReports\PopulationPrint.aspx" />
+    <Content Include="Views\ChartReports\TextAnswerReports.aspx" />
+    <Content Include="Views\ChartReports\TextAnswersForm.ascx" />
+    <Content Include="Views\ChartReports\PrintBiVariateGraphics.aspx" />
+    <Content Include="Views\ChartReports\RankingTabs.ascx" />
+    <Content Include="Views\ChartReports\RankingInternal.ascx" />
+    <Content Include="Views\ChartReports\RankingByDemographic.ascx" />
+    <Content Include="Views\ChartReports\RankingByCountry.ascx" />
+    <Content Include="Views\ChartReports\RankingForAssociated.ascx" />
+    <Content Include="Views\ChartReports\NoMinimum.ascx" />
+    <Content Include="Views\ChartReports\NoEvaluations.aspx" />
+    <Content Include="Views\ChartReports\PrintRanking.aspx" />
+    <Content Include="Views\ChartReports\Ranking.aspx" />
+    <Content Include="Views\ChartReports\PrintAnalytical.aspx" />
+    <Content Include="Views\ChartReports\PrintChartsForm.ascx" />
+    <Content Include="Views\ChartReports\PrintUnivariate.aspx" />
+    <Content Include="Views\ChartReports\PrintPopulation.aspx" />
+    <Content Include="Views\ChartReports\PrintResults.aspx" />
+    <Content Include="Views\ChartReports\Population.ascx" />
+    <Content Include="Views\ChartReports\EditResults.aspx" />
+    <Content Include="Views\ChartReports\ImagePage.ascx" />
+    <Content Include="Views\ChartReports\RankingGeneral.ascx" />
+    <Content Include="Views\ChartReports\ReportsList.aspx" />
+    <Content Include="Views\ChartReports\PopulationGraphics.aspx" />
+    <Content Include="Views\ChartReports\StatesForm.ascx" />
+    <Content Include="Views\ChartReports\TablesForm.ascx" />
+    <Content Include="Views\ChartReports\UniVariateGraphics.aspx" />
+    <Content Include="Views\ClimateRanges\Create.aspx" />
+    <Content Include="Views\ClimateRanges\Details.aspx" />
+    <Content Include="Views\ClimateRanges\Edit.aspx" />
+    <Content Include="Views\ClimateRanges\Form.ascx" />
+    <Content Include="Views\ClimateRanges\FormDetails.ascx" />
+    <Content Include="Views\ClimateRanges\Index.aspx" />
+    <Content Include="Views\ClimateScales\Create.aspx" />
+    <Content Include="Views\ClimateScales\Details.aspx" />
+    <Content Include="Views\ClimateScales\Edit.aspx" />
+    <Content Include="Views\ClimateScales\Form.ascx" />
+    <Content Include="Views\ClimateScales\FormDetails.ascx" />
+    <Content Include="Views\ClimateScales\Index.aspx" />
+    <Content Include="Views\Demos\Create.aspx" />
+    <Content Include="Views\Demos\Details.aspx" />
+    <Content Include="Views\Demos\Edit.aspx" />
+    <Content Include="Views\Demos\Form.ascx" />
+    <Content Include="Views\Demos\FormDetails.ascx" />
+    <Content Include="Views\Demos\Index.aspx" />
+    <Content Include="Views\Errors\GeneralError.Mobile.aspx" />
+    <Content Include="Views\Errors\PageNotFound.Mobile.aspx" />
+    <Content Include="Views\Evaluations\AllTickets.aspx" />
+    <Content Include="Views\Evaluations\Demographics.Mobile.aspx" />
+    <Content Include="Views\Evaluations\DemographicsForm.Mobile.ascx" />
+    <Content Include="Views\Evaluations\ErrorEvaluation.Mobile.aspx" />
+    <Content Include="Views\Evaluations\EvaluationSucceeded.Mobile.aspx" />
+    <Content Include="Views\Evaluations\GroupByCategories.Mobile.ascx" />
+    <Content Include="Views\Evaluations\GroupByCategoriesPartial.ascx" />
+    <Content Include="Views\Evaluations\ErrorEvaluation.aspx" />
+    <Content Include="Views\Evaluations\GroupBySortOrder.Mobile.ascx" />
+    <Content Include="Views\Evaluations\GroupBySortOrderPartial.ascx" />
+    <Content Include="Views\Evaluations\Hidden.Mobile.ascx" />
+    <Content Include="Views\Evaluations\Questionnaire.Mobile.aspx" />
+    <Content Include="Views\Evaluations\QuestionnaireForm.Mobile.ascx" />
+    <Content Include="Views\Evaluations\TestInstructions.Mobile.aspx" />
+    <Content Include="Views\Feedbacks\SendFeedbackSucceded.Mobile.aspx" />
+    <Content Include="Views\Feedbacks\SendFeedback.Mobile.aspx" />
+    <Content Include="Views\Home\AssessmentCentres.aspx" />
+    <Content Include="Views\Home\Button.Mobile.ascx" />
+    <Content Include="Views\Home\ContactSucceeded.Mobile.aspx" />
+    <Content Include="Views\Home\ContactUs.Mobile.aspx" />
+    <Content Include="Views\Home\ConferenceColombia.ascx" />
+    <Content Include="Views\Home\Event.aspx" />
+    <Content Include="Views\Home\Index.Mobile.aspx" />
+    <Content Include="Views\Home\OrganizationalClimate.aspx" />
+    <Content Include="Views\Home\PartialLogOn.Mobile.ascx" />
+    <Content Include="Views\Home\Conference.ascx" />
+    <Content Include="Views\Home\PerformanceEvaluations.aspx" />
+    <Content Include="Views\PositionLevels\Create.aspx" />
+    <Content Include="Views\PositionLevels\Details.aspx" />
+    <Content Include="Views\PositionLevels\Edit.aspx" />
+    <Content Include="Views\PositionLevels\Form.ascx" />
+    <Content Include="Views\PositionLevels\FormDetails.ascx" />
+    <Content Include="Views\PositionLevels\Index.aspx" />
+    <Content Include="Views\InstructionLevels\Create.aspx" />
+    <Content Include="Views\InstructionLevels\Details.aspx" />
+    <Content Include="Views\InstructionLevels\Edit.aspx" />
+    <Content Include="Views\InstructionLevels\Form.ascx" />
+    <Content Include="Views\InstructionLevels\FormDetails.ascx" />
+    <Content Include="Views\InstructionLevels\Index.aspx" />
+    <Content Include="Views\Errors\GeneralError.aspx" />
+    <Content Include="Views\Errors\PageNotFound.aspx" />
+    <Content Include="Views\Features\Create.aspx" />
+    <Content Include="Views\Features\Details.aspx" />
+    <Content Include="Views\Features\Edit.aspx" />
+    <Content Include="Views\Features\Form.ascx" />
+    <Content Include="Views\Features\FormDetails.ascx" />
+    <Content Include="Views\Features\Index.aspx" />
+    <Content Include="Views\Feedbacks\Details.aspx" />
+    <Content Include="Views\Feedbacks\SendFeedback.aspx" />
+    <Content Include="Views\Feedbacks\Index.aspx" />
+    <Content Include="Views\Feedbacks\ShowFeedbacks.aspx" />
+    <Content Include="Views\Home\ClimateMap.aspx" />
+    <Content Include="Views\Home\ClimateStateMap.aspx" />
+    <Content Include="Views\Home\ContactSucceeded.aspx" />
+    <Content Include="Views\ContactUs\Details.aspx" />
+    <Content Include="Views\ContactUs\ShowContacts.aspx" />
+    <Content Include="Views\FunctionalOrganizations\Create.aspx" />
+    <Content Include="Views\FunctionalOrganizations\Details.aspx" />
+    <Content Include="Views\FunctionalOrganizations\Edit.aspx" />
+    <Content Include="Views\FunctionalOrganizations\Form.ascx" />
+    <Content Include="Views\FunctionalOrganizations\FormDetails.ascx" />
+    <Content Include="Views\FunctionalOrganizations\Index.aspx" />
+    <Content Include="Views\FunctionalOrganizationTypes\Create.aspx" />
+    <Content Include="Views\FunctionalOrganizationTypes\Details.aspx" />
+    <Content Include="Views\FunctionalOrganizationTypes\Edit.aspx" />
+    <Content Include="Views\FunctionalOrganizationTypes\Form.ascx" />
+    <Content Include="Views\FunctionalOrganizationTypes\FormDetails.ascx" />
+    <Content Include="Views\FunctionalOrganizationTypes\Index.aspx" />
+    <Content Include="Views\Home\AboutUs.aspx" />
+    <Content Include="Views\Home\ContactUs.aspx" />
+    <Content Include="Views\Home\FAQ.aspx" />
+    <Content Include="Views\Home\HRMedinet.aspx" />
+    <Content Include="Views\Home\MapUS.aspx" />
+    <Content Include="Views\Home\Services.aspx" />
+    <Content Include="Views\Seniorities\Create.aspx" />
+    <Content Include="Views\Seniorities\Details.aspx" />
+    <Content Include="Views\Seniorities\Edit.aspx" />
+    <Content Include="Views\Seniorities\Form.ascx" />
+    <Content Include="Views\Seniorities\FormDetails.ascx" />
+    <Content Include="Views\Seniorities\Index.aspx" />
+    <Content Include="Views\Evaluations\CommonPrint.ascx" />
+    <Content Include="Views\Evaluations\PrintGroupByCategories.aspx" />
+    <Content Include="Views\Evaluations\PrintGroupBySortOrder.aspx" />
+    <Content Include="Views\Evaluations\Demographics.ascx" />
+    <Content Include="Views\Evaluations\ErrorClosedEvaluation.aspx" />
+    <Content Include="Views\Evaluations\EvaluationSucceeded.aspx" />
+    <Content Include="Views\Evaluations\GroupBySortOrder.aspx" />
+    <Content Include="Views\PerformanceEvaluations\Create.aspx" />
+    <Content Include="Views\PerformanceEvaluations\Details.aspx" />
+    <Content Include="Views\PerformanceEvaluations\Edit.aspx" />
+    <Content Include="Views\PerformanceEvaluations\FormDetails.ascx" />
+    <Content Include="Views\PerformanceEvaluations\Form.ascx" />
+    <Content Include="Views\PerformanceEvaluations\Index.aspx" />
+    <Content Include="Views\Questionnaires\QuestionnaireError.aspx" />
+    <Content Include="Views\Shared\Flags.ascx" />
+    <Content Include="Views\Shared\CompanyAppManagerMenu.ascx" />
+    <Content Include="Views\Shared\CompanyManagerMenu.ascx" />
+    <Content Include="Views\Shared\GeneralFooter.ascx" />
+    <Content Include="Views\Shared\HrAdminMenu.ascx" />
+    <Content Include="Views\Shared\HrCompanyMenu.ascx" />
+    <Content Include="Views\Shared\AdminMenu.ascx" />
+    <Content Include="Views\Shared\MenuCode.ascx" />
+    <Content Include="Views\Shared\MenuHome.ascx" />
+    <Content Include="Views\Shared\mobile\SocialShare.ascx" />
+    <Content Include="Views\Shared\mobile\MobileFooter.ascx" />
+    <Content Include="Views\Shared\mobile\MobileHeader.ascx" />
+    <Content Include="Views\Shared\mobile\MobileHeaderMini.ascx" />
+    <Content Include="Views\Shared\mobile\MobileMenu.ascx" />
+    <Content Include="Views\Shared\mobile\MobileSubMenu.ascx" />
+    <Content Include="Views\Shared\mobile\Model.Mobile.aspx" />
+    <Content Include="Views\Shared\mobile\ScriptsAndContent.ascx" />
+    <Content Include="Views\Shared\PartialLogOn.ascx" />
+    <Content Include="Views\Shared\Slider.ascx" />
+    <Content Include="Views\Shared\Top.ascx" />
+    <Content Include="Views\Shared\TwitterWidget.ascx" />
+    <Content Include="Views\States\Create.aspx" />
+    <Content Include="Views\States\Details.aspx" />
+    <Content Include="Views\States\Edit.aspx" />
+    <Content Include="Views\States\Form.ascx" />
+    <Content Include="Views\States\FormDetails.ascx" />
+    <Content Include="Views\States\Index.aspx" />
+    <Content Include="Views\Tests\CheckCode.aspx" />
+    <Content Include="Views\ChartReports\Report3.ascx" />
+    <Content Include="Views\ChartReports\Report4.ascx" />
+    <Content Include="Views\ChartReports\Report5.ascx" />
+    <Content Include="Views\ChartReports\Report6.ascx" />
+    <Content Include="Views\ChartReports\Report2.ascx" />
+    <Content Include="Views\Tests\TestsJob.aspx" />
+    <Content Include="Views\Tests\Finish.aspx" />
+    <Content Include="Views\Tests\Dialog.ascx" />
+    <Content Include="Views\Tests\FormDetails.ascx" />
+    <Content Include="Scripts\category-views.js" />
+    <Content Include="Scripts\region-views.js" />
+    <Content Include="Scripts\question-views.js" />
+    <Content Include="Scripts\questionnaire-views.js" />
+    <Content Include="Scripts\location-views.js" />
+    <Content Include="Scripts\country-views.js" />
+    <Content Include="Scripts\option-views.js" />
+    <Compile Include="Reports\EvaluationReport.aspx.cs">
+      <DependentUpon>EvaluationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\EvaluationReport.aspx.designer.cs">
+      <DependentUpon>EvaluationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HRCompanyQuestionnaireReport.ascx.cs">
+      <DependentUpon>HRCompanyQuestionnaireReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HRCompanyQuestionnaireReport.ascx.designer.cs">
+      <DependentUpon>HRCompanyQuestionnaireReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HRAdministratorQuestionnaireReport.ascx.cs">
+      <DependentUpon>HRAdministratorQuestionnaireReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\HRAdministratorQuestionnaireReport.ascx.designer.cs">
+      <DependentUpon>HRAdministratorQuestionnaireReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\QuestionnaireReport.aspx.cs">
+      <DependentUpon>QuestionnaireReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\QuestionnaireReport.aspx.designer.cs">
+      <DependentUpon>QuestionnaireReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TestByCompanyReport.aspx.cs">
+      <DependentUpon>TestByCompanyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TestByCompanyReport.aspx.designer.cs">
+      <DependentUpon>TestByCompanyReport.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Scripts\slider.js" />
+    <Compile Include="Views\Shared\mobile\Mobile.Master.cs">
+      <DependentUpon>Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\mobile\Mobile.Master.designer.cs">
+      <DependentUpon>Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\mobile\MobileMini.Master.cs">
+      <DependentUpon>MobileMini.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\mobile\MobileMini.Master.designer.cs">
+      <DependentUpon>MobileMini.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\mobile\MobileMini2.Master.cs">
+      <DependentUpon>MobileMini2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\mobile\MobileMini2.Master.designer.cs">
+      <DependentUpon>MobileMini2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Print.Master.cs">
+      <DependentUpon>Print.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Print.Master.designer.cs">
+      <DependentUpon>Print.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Reports.Master.cs">
+      <DependentUpon>Reports.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Reports.Master.designer.cs">
+      <DependentUpon>Reports.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\company-views.js" />
+    <Content Include="Scripts\grid.locale-en.js" />
+    <Content Include="Scripts\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.src.js" />
+    <Content Include="Scripts\jquery.searchFilter.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jqueryGridLiquid.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\PasswordRecovery.aspx" />
+    <Content Include="Views\Account\PasswordRecoverySucceeded.aspx" />
+    <Content Include="Views\Companies\Create.aspx" />
+    <Content Include="Views\Companies\Details.aspx" />
+    <Content Include="Views\Companies\Edit.aspx" />
+    <Content Include="Views\Companies\Form.ascx" />
+    <Content Include="Views\Companies\FormDetails.ascx" />
+    <Content Include="Views\Companies\Index.aspx" />
+    <Content Include="Views\Countries\Create.aspx" />
+    <Content Include="Views\Countries\Details.aspx" />
+    <Content Include="Views\Countries\Edit.aspx" />
+    <Content Include="Views\Countries\Form.ascx" />
+    <Content Include="Views\Countries\FormDetails.ascx" />
+    <Content Include="Views\Countries\Index.aspx" />
+    <Content Include="Views\Evaluations\GroupByCategories.aspx" />
+    <Content Include="Views\Evaluations\TestInstructions.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Locations\Create.aspx" />
+    <Content Include="Views\Locations\Details.aspx" />
+    <Content Include="Views\Locations\Edit.aspx" />
+    <Content Include="Views\Locations\Form.ascx" />
+    <Content Include="Views\Locations\FormDetails.ascx" />
+    <Content Include="Views\Locations\Index.aspx" />
+    <Content Include="Views\Options\Create.aspx" />
+    <Content Include="Views\Options\Details.aspx" />
+    <Content Include="Views\Options\Edit.aspx" />
+    <Content Include="Views\Options\Form.ascx" />
+    <Content Include="Views\Options\FormDetails.ascx" />
+    <Content Include="Views\Options\Index.aspx" />
+    <Content Include="Views\Questionnaires\Create.aspx" />
+    <Content Include="Views\Questionnaires\Details.aspx" />
+    <Content Include="Views\Questionnaires\Edit.aspx" />
+    <Content Include="Views\Questionnaires\Form.ascx" />
+    <Content Include="Views\Questionnaires\FormDetails.ascx" />
+    <Content Include="Views\Questionnaires\Index.aspx" />
+    <Content Include="Views\Questions\Create.aspx" />
+    <Content Include="Views\Questions\Details.aspx" />
+    <Content Include="Views\Questions\Edit.aspx" />
+    <Content Include="Views\Questions\Form.ascx" />
+    <Content Include="Views\Questions\FormDetails.ascx" />
+    <Content Include="Views\Questions\Index.aspx" />
+    <Content Include="Views\Regions\Create.aspx" />
+    <Content Include="Views\Regions\Details.aspx" />
+    <Content Include="Views\Regions\Edit.aspx" />
+    <Content Include="Views\Regions\Form.ascx" />
+    <Content Include="Views\Regions\FormDetails.ascx" />
+    <Content Include="Views\Regions\Index.aspx" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\String.ascx" />
+    <Content Include="Views\Shared\Footer.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Tests\Create.aspx" />
+    <Content Include="Views\Tests\Details.aspx" />
+    <Content Include="Views\Tests\Edit.aspx" />
+    <Content Include="Views\Tests\Form.ascx" />
+    <Content Include="Views\Tests\Index.aspx" />
+    <Content Include="Views\ChartReports\Report1.ascx" />
+    <Content Include="Views\ChartReports\Results.aspx" />
+    <Content Include="Views\Tests\SuccessfullyCreated.aspx" />
+    <Content Include="Views\Tests\TestCode.aspx" />
+    <Content Include="Views\Test\Test.aspx" />
+    <Content Include="Views\Users\Create.aspx" />
+    <Content Include="Views\Users\Details.aspx" />
+    <Content Include="Views\Users\Edit.aspx" />
+    <Content Include="Views\Users\FormDetails.ascx" />
+    <Content Include="Views\Users\Index.aspx" />
+    <Content Include="Views\Users\Form.ascx" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Start\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Reports.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\HRAdministratorQuestionnaireReport-es.rdlc" />
+    <EmbeddedResource Include="Reports\EvaluationReport-es.rdlc" />
+    <EmbeddedResource Include="Reports\HRCompanyQuestionnaireReport-es.rdlc" />
+    <EmbeddedResource Include="Reports\TestByCompanyReport-es.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EvaluationReport.rdlc" />
+    <EmbeddedResource Include="Reports\HRAdministratorQuestionnaireReport.rdlc" />
+    <EmbeddedResource Include="Reports\HRCompanyQuestionnaireReport.rdlc" />
+    <EmbeddedResource Include="Reports\TestByCompanyReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\ReportsServices.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Print.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\51Degrees.mobi-Lite-2013.01.03.xml.gz" />
+    <None Include="Content\Images\Background\medinet-bg.psd" />
+    <None Include="Content\Images\img-galeria\estadisticasdetalladas.psd" />
+    <None Include="Content\Images\img-galeria\flexibility.psd" />
+    <None Include="Content\Images\img-galeria\Sin título-1.psd" />
+    <None Include="Properties\PublishProfiles\hrmedinet.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\hrmedinet.com - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\quality.hrmedinet.com - Web Deploy.pubxml" />
+    <None Include="Scripts\mobile\sub pages.js work with jquery mobile 1.3.1   - Buscar con Google_files\cb=gapi.loaded_0" />
+    <None Include="Scripts\mobile\sub pages.js work with jquery mobile 1.3.1   - Buscar con Google_files\rs=AItRSTMkiisOVRW5P7l3Ig59NtxV0JdMMA" />
+    <None Include="Scripts\mobile\sub pages.js work with jquery mobile 1.3.1   - Buscar con Google_files\rs=AItRSTPykpoFa5KBzk1U6LafAMpzPobqCw" />
+    <Content Include="Views\Shared\mobile\Mobile.Master" />
+    <Content Include="Views\Shared\mobile\MobileMini.Master" />
+    <Content Include="Views\Shared\mobile\MobileMini2.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MedinetClassLibrary\MedinetClassLibrary.csproj">
+      <Project>{595E9A88-528B-4856-9AD5-EF35B149B562}</Project>
+      <Name>MedinetClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MembershipProvider\CustomMembershipProvider.csproj">
+      <Project>{34ED50A0-0E5B-479E-978F-1DBD7E49301A}</Project>
+      <Name>CustomMembershipProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>32900</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

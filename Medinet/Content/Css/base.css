@@ -1,0 +1,656 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #464644 url(../img/bg.gif) repeat-y center;
+	font: normal 12px Trebuchet MS, Arial, sans-serif;
+}
+img {
+	border: 0;
+	line-height:0;
+}
+
+a {
+	color: #FD1C24;
+	text-decoration: none;
+}
+
+a:hover {
+	background: #A82020;
+	color: #FFF;
+}
+
+h1, h2 {
+	clear: both;
+	font-size: 1.4em;
+	margin: 0 0 18px;
+	padding: 0;
+}
+
+h2 {
+	margin-top: 2em;
+}
+
+p {
+	clear: both;
+}
+
+blockquote {
+	background: url(../img/quote.gif) no-repeat;
+	color: #555;
+	display: block;
+	font: bold 1.2em "Trebuchet MS",serif;
+	margin: 6px 0;
+	padding-left: 28px;
+}
+
+ul.text {
+	margin-left: 16px;
+}
+ul#main-menu{
+	margin: 0;
+}
+
+ul.text li {
+	margin-bottom: .5em;
+}
+
+table {
+
+}
+
+/* structure */
+.main {
+	width: 990px;
+	margin: 0 auto;
+}
+#main_left {
+	margin-right: 6px;
+	padding-top: 6px;
+	width: 729px;
+	float: left;
+}
+#main_right {
+	border-top: 6px solid #FFF;
+	float: left;
+	width: 254px;
+}
+
+/* misc */
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+#header, #link_projects, .lbl, .left, .right {
+	border-bottom: 6px solid #FFF;
+}
+
+#link_projects a:hover {
+	background: #A82020;
+	color: #FFF;
+}
+/* logo */
+#header {
+	background: #333 url(../img/logo.png) no-repeat;
+	height: 180px;
+	position: relative;
+}
+#header > * {
+	position:absolute; 
+	color: #fff;
+}
+#header a, #header a:hover {
+	top: 122px; 
+	left: 25px; 
+	font-size: 2.5em; 
+	font-variant: small-caps;
+	background:transparent;
+}
+
+/* projects */
+.lbl {
+	background: #222 url(../img/bglbl.gif) repeat-x;
+	clear: both;
+	color: #FFF;
+	font: normal 2em "Lucida Sans Unicode",sans-serif;
+	height: 50px;
+	line-height: 50px;
+	overflow: hidden;
+	text-align: center;
+}
+#link_projects a {
+	display: block;
+	height: 100px;
+	text-align: center;
+	color: #FFF;
+	padding-top: 24px;
+	width: 124px;
+	font-size: 0.9em;
+	font-family: sans-serif;
+}
+#link_projects a span {
+	font: normal 3em sans-serif;
+}
+a.g1 {
+	background: #888;
+}
+a.g2 {
+	background: #666;
+	border-left: 6px solid #FFF;
+}
+
+/* updates */
+#link_updates {
+	clear:both;
+}
+
+a.gray {
+	color: #555;
+}
+a.gray:hover {
+	color: #999;
+	background: transparent;
+}
+
+/* content */ 
+.ui-tabs .ui-tabs-panel {
+	/*resets*/margin: 0; border: 0; outline: 0; line-height: 1.1em; text-decoration: none; font-size: 1.2em; list-style: none;
+	padding: 20px 12px;
+	clear:both;
+	border-top: 1px solid #777777;
+	background: #ffffff url(../img/top-panel.png) repeat-x top;
+	color: #444;
+	/*padding: 0 10px 10px; */
+}
+.ui-tabs .ui-tabs-panel p {
+	margin: 0 0 18px;
+}
+.ui-tabs .ui-tabs-panel table {
+	margin: 0 0 10px;
+}
+.ui-tabs .ui-tabs-panel table td {
+	padding: 0 .5em .5em 0;
+	vertical-align: top;
+}
+.ui-tabs .ui-tabs-panel .descr {
+	color: #666;
+	margin-bottom: 6px;
+}
+.ui-tabs .ui-tabs-panel ul.text li {
+	list-style-type: disc;
+}
+
+#wrapper-examples p {
+	margin: 1em 0;
+}
+
+#demo-tabs iframe {
+	margin: 1em 0;
+	width: 100%;
+	height: 250px;
+	border-style: inset;
+	border-width: 2px;
+}
+
+.monospace {
+	font-family: "Courier New", Courier, monospace;
+}
+
+.ajax-loading-big {
+	background: url(../img/ajax-circle3.gif) no-repeat top right;
+}
+
+/* #footer */
+#footer {
+	color: #666;
+	clear: both;
+}
+#footer .right a {
+	background: #2A2A2A;
+	color: #555;
+	padding: 1px 3px;
+}
+#footer .right a:hover {
+	background: #383838;
+	color: #999;
+}
+#footer .left {
+	margin-left: 12px;
+	border-top: 1px solid #D7D7D7;
+	padding: 9px 9px 0 0;
+}
+#footer .right {
+	margin-right: 8px;
+	border-bottom:none;
+	padding: 9px 0;
+	text-align: right;
+	width: 220px;
+}
+
+/* Fake stars */
+.stars-off, .stars-on {
+	position: relative;
+	height: 16px;
+	background: url(../release/jquery.ui.stars.gif) repeat-x 0 -32px;
+}
+
+.stars-on {
+	position: absolute;
+	background-position: 0 -48px;
+}
+
+/* Crystal stars */
+.ui-crystal-star,
+.ui-crystal-cancel {
+	float: left;
+	display: block;
+	overflow: hidden;
+	text-indent: -999em;
+	cursor: pointer;
+}
+.ui-crystal-star a,
+.ui-crystal-cancel a {
+	width: 28px;
+	height: 26px;
+	display: block;
+	background: url(../demos/css/crystal-stars.png) no-repeat 0 0;
+}
+.ui-crystal-star a {
+	background-position: 0 -56px;
+}
+.ui-crystal-star-on a {
+	background-position: 0 -84px;
+}
+.ui-crystal-star-hover a {
+	background-position: 0 -112px;
+}
+.ui-crystal-cancel-hover a {
+	background-position: 0 -28px;
+}
+
+
+
+/*UI accordion*/
+.ui-accordion .ui-accordion-header {
+	/*resets*/margin: 0; padding: 0; border: 0; outline: 0; text-decoration: none; font-size: 100%; list-style: none;
+	padding: .5em;
+	zoom: 1;
+	cursor: pointer;
+	display: block;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+	background: #444444 url(../img/444444_40x100_textures_02_glass_25.png) 0 50% repeat-x;
+	border-top: 1px solid #777777;
+}
+.ui-accordion .ui-state-disabled {
+	cursor: default !important;
+}
+.ui-accordion .ui-state-hover {
+	background: #444444 url(../img/333333_40x100_textures_02_glass_25.png) 0 50% repeat-x;
+}
+.ui-accordion .ui-state-active {
+	cursor: pointer;
+	background: #444444 url(../img/a21111_40x100_textures_02_glass_35.png) 0 50% repeat-x;
+}
+.ui-accordion .ui-accordion-header a {
+	padding-left: 20px; 
+	color: #ffffff;
+	text-decoration: none;
+	background: url(../img/eeeeee_7x7_arrow_right.gif) .5em 50% no-repeat;
+}
+.ui-accordion .ui-state-active a {
+	background: url(../img/ffffff_7x7_arrow_down.gif) .5em 50% no-repeat;
+}
+.ui-accordion .ui-accordion-content {
+	padding: 1.5em 1.7em;	
+	position: relative; 
+	top: 1px; 
+	overflow: auto;
+	line-height: 1.3em;
+	font-size: 1.1em;
+	color: #fff;
+	background: #222;
+	border-top: 0; 
+}
+
+
+/*UI tabs*/
+.ui-tabs .ui-tabs-nav {
+	/*resets*/margin: 0; padding: 0; border: 0; outline: 0; text-decoration: none; font-size: 100%; list-style: none;
+	font-family: Trebuchet MS, Arial, sans-serif;
+	float: left;
+	position: relative;
+	z-index: 1;
+	border-right: 1px solid #777777;
+	bottom: -1px;
+}
+.ui-tabs .ui-tabs-nav li {
+	/*resets*/margin: 0; padding: 0; border: 0; outline: 0; text-decoration: none; font-size: 100%; list-style: none ;
+	float: left;
+	border: 1px solid #777777;
+	border-right: none;
+	background: #444444 url(../img/444444_40x100_textures_02_glass_25.png) 0 50% repeat-x;
+}
+.ui-tabs .ui-tabs-nav li a {
+	/*resets*/margin: 0; padding: 0; border: 0; outline: 0; text-decoration: none; font-size: 100%; list-style: none; background: transparent;
+	float: left;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-decoration: none;
+	padding: .5em 1.7em;
+	color: #eeeeee;
+}
+.ui-tabs .ui-tabs-nav li.ui-state-hover {
+	background: #333333 url(../img/333333_40x100_textures_02_glass_25.png) 0 50% repeat-x;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+	background: #a21111 url(../img/a21111_40x100_textures_02_glass_35.png) 0 50% repeat-x;
+}
+.ui-tabs .ui-tabs-nav li.ui-state-processing a {
+	background: url(../img/ajax-circle1.gif) 3px 8px no-repeat;
+}
+.ui-tabs .ui-tabs-panel {
+	/*resets*/margin: 0; border: 0; outline: 0;
+}
+.ui-tabs .ui-tabs-hide {
+	display: none;/* for accessible hiding: position: absolute; left: -99999999px*/;
+}
+
+
+/*
+* jQuery UI CSS Framework
+* Copyright (c) 2009 AUTHORS.txt (http://jqueryui.com/about)
+* Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+* Theme: Smoothness
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana,Arial,sans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=cccccc&bgTextureHeader=03_highlight_soft.png&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=01_flat.png&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=e6e6e6&bgTextureDefault=02_glass.png&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=555555&iconColorDefault=888888&bgColorHover=dadada&bgTextureHover=02_glass.png&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=02_glass.png&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=fbf9ee&bgTextureHighlight=02_glass.png&bgImgOpacityHighlight=55&borderColorHighlight=fcefa1&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=02_glass.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+*/
+/* Component containers
+----------------------------------*/
+.smoothness .ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff url(../img/smoothness/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #222222; }
+.smoothness .ui-widget-header { border: 1px solid #aaaaaa; background: #cccccc url(../img/smoothness/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x; color: #222222; font-weight: bold; }
+/* Corner radius 
+----------------------------------*/
+.smoothness .ui-corner-tl { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; }
+.smoothness .ui-corner-tr { -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; }
+.smoothness .ui-corner-bl { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; }
+.smoothness .ui-corner-br { -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; }
+.smoothness .ui-corner-top { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; }
+.smoothness .ui-corner-bottom { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; }
+.smoothness .ui-corner-right {  -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; }
+.smoothness .ui-corner-left { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; }
+.smoothness .ui-corner-all { -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+/* Tabs
+----------------------------------*/
+.smoothness .ui-tabs { padding: .2em; zoom: 1;  font-size: 10px;}
+.smoothness .ui-tabs .ui-tabs-nav { width: 690px; list-style: none; position: relative; padding: .2em .2em 0; }
+.smoothness .ui-tabs .ui-tabs-nav li { position: relative; float: left; border-bottom-width: 0 !important; margin: 0 .2em -1px 0; padding: 0; }
+.smoothness .ui-tabs .ui-tabs-nav li a { float: left; text-decoration: none; padding: .5em 1em; color: #555555; }
+.smoothness .ui-tabs .ui-tabs-nav li.ui-state-default { border: 1px solid #d3d3d3; background: #e6e6e6 url(../img/smoothness/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #555555; outline: none; }
+.smoothness .ui-tabs .ui-tabs-nav li.ui-state-active { border: 1px solid #aaaaaa; background: #ffffff url(../img/smoothness/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x !important; font-weight: normal; color: #212121; outline: none; }
+.smoothness .ui-tabs .ui-tabs-nav li.ui-state-disabled a { color: #aaaaaa; }
+.smoothness .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }
+.smoothness .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, 
+.smoothness .ui-tabs .ui-tabs-nav li.ui-state-disabled a, 
+.smoothness .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+.smoothness .ui-tabs .ui-tabs-nav li a, 
+.smoothness .ui-tabs .ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.smoothness .ui-tabs .ui-tabs-panel { padding: 8px; display: block; border-width: 0; background: none;  font-size: 1.3em;  }
+.smoothness .ui-tabs .ui-tabs-hide { display: none !important; } 
+.smoothness .ui-tabs .ui-tabs-nav li.ui-state-hover {border: 1px solid #999999; background: #dadada url(../img/smoothness/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; outline: none;}
+
+
+/*
+ * jQuery UI CSS Framework @VERSION
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ *
+ * Theme: Black Red White (bredw)
+ *
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Trebuchet%20MS,%20Arial,%20sans-serif&fwDefault=bold&fsDefault=1.3em&cornerRadius=7px&bgColorHeader=333333&bgTextureHeader=12_gloss_wave.png&bgImgOpacityHeader=25&borderColorHeader=333333&fcHeader=ffffff&iconColorHeader=ffffff&bgColorContent=222222&bgTextureContent=01_flat.png&bgImgOpacityContent=25&borderColorContent=666666&fcContent=ffffff&iconColorContent=cccccc&bgColorDefault=444444&bgTextureDefault=02_glass.png&bgImgOpacityDefault=20&borderColorDefault=666666&fcDefault=eeeeee&iconColorDefault=cccccc&bgColorHover=333333&bgTextureHover=02_glass.png&bgImgOpacityHover=20&borderColorHover=666666&fcHover=ffffff&iconColorHover=cccccc&bgColorActive=a21111&bgTextureActive=02_glass.png&bgImgOpacityActive=30&borderColorActive=ae3232&fcActive=ffffff&iconColorActive=cccccc&bgColorHighlight=a21111&bgTextureHighlight=02_glass.png&bgImgOpacityHighlight=20&borderColorHighlight=ae3232&fcHighlight=ffffff&iconColorHighlight=cccccc&bgColorError=ffc73d&bgTextureError=02_glass.png&bgImgOpacityError=40&borderColorError=ffb73d&fcError=111111&iconColorError=a21111&bgColorOverlay=5c5c5c&bgTextureOverlay=08_diagonals_thick.png&bgImgOpacityOverlay=50&opacityOverlay=80&bgColorShadow=222222&bgTextureShadow=01_flat.png&bgImgOpacityShadow=30&opacityShadow=40&thicknessShadow=7px&offsetTopShadow=-7px&offsetLeftShadow=-7px&cornerRadiusShadow=8px
+ */
+ 
+ 
+ /* Layout helpers
+----------------------------------*/
+.modals .ui-helper-hidden { display: none; }
+.modals .ui-helper-hidden-accessible { position: absolute; left: -99999999px; }
+.modals .ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+.modals .ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.modals .ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height:1%; }
+.modals .ui-helper-clearfix { display:block; }
+/* end clearfix */
+.modals .ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter:Alpha(Opacity=0); }
+
+
+/* Interaction Cues
+----------------------------------*/
+.modals .ui-state-disabled { cursor: default !important; }
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.modals .ui-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.modals .ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+ /* Component containers
+----------------------------------*/
+.modals .ui-widget { font-family: Trebuchet MS, Arial, sans-serif; font-size: 12px; }
+.modals .ui-widget .ui-widget { font-size: 1em; }
+.modals .ui-widget input, .modals .ui-widget select, .modals .ui-widget textarea, .modals .ui-widget button { font-family: Trebuchet MS, Arial, sans-serif; font-size: 1em; }
+.modals .ui-widget-content { border: 1px solid #666666; background: #222222 url(../img/bredw/ui-bg_flat_25_222222_40x100.png) 50% 50% repeat-x; color: #ffffff; }
+.modals .ui-widget-content a { color: #ffffff; }
+.modals .ui-widget-header { border: 1px solid #333333; background: #333333 url(../img/bredw/ui-bg_gloss-wave_25_333333_500x100.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold; }
+.modals .ui-widget-header a { color: #ffffff; }
+
+/* Interaction states
+----------------------------------*/
+.modals .ui-state-default, .modals .ui-widget-content .ui-state-default, .modals .ui-widget-header .ui-state-default { border: 1px solid #666666; background: #444444 url(../img/bredw/ui-bg_glass_20_444444_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #eeeeee; }
+.modals .ui-state-default a, .modals .ui-state-default a:link, .modals .ui-state-default a:visited { color: #eeeeee; text-decoration: none; }
+.modals .ui-state-hover, .modals .ui-widget-content .ui-state-hover, .modals .ui-widget-header .ui-state-hover, .modals .ui-state-focus, .modals .ui-widget-content .ui-state-focus, .modals .ui-widget-header .ui-state-focus { border: 1px solid #666666; background: #333333 url(../img/bredw/ui-bg_glass_20_333333_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #ffffff; }
+.modals .ui-state-hover a, .modals .ui-state-hover a:hover { color: #ffffff; text-decoration: none; }
+.modals .ui-state-active a, .modals .ui-state-active a:link, .modals .ui-state-active a:visited { color: #ffffff; text-decoration: none; }
+.modals .ui-widget :active { outline: none; }
+
+/* Interaction Cues
+----------------------------------*/
+.modals .ui-state-highlight, .modals .ui-widget-content .ui-state-highlight, .modals .ui-widget-header .ui-state-highlight  {border: 1px solid #2a2a2a; background: #2a2a2a url(../img/bredw/ui-bg_flat_25_222222_40x100.png) 50% 50% repeat-x; color: #ffffff; text-align: left; }
+.modals .ui-state-highlight a, .modals .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #ffffff; }
+.modals .ui-state-error, .modals .ui-widget-content .ui-state-error, .modals .ui-widget-header .ui-state-error {border: 1px solid #ffb73d; background: #ffc73d url(../img/bredw/ui-bg_glass_40_ffc73d_1x400.png) 50% 50% repeat-x; color: #111111; text-align: left; }
+.modals .ui-state-error a, .modals .ui-widget-content .ui-state-error a, .modals .ui-widget-header .ui-state-error a { color: #111111; }
+.modals .ui-state-error-text, .modals .ui-widget-content .ui-state-error-text, .modals .ui-widget-header .ui-state-error-text { color: #111111; }
+.modals .ui-priority-primary, .modals .ui-widget-content .ui-priority-primary, .modals .ui-widget-header .ui-priority-primary { font-weight: bold; }
+.modals .ui-priority-secondary, .modals .ui-widget-content .ui-priority-secondary,  .ui-widget-header .ui-priority-secondary { opacity: .7; filter:Alpha(Opacity=70); font-weight: normal; }
+.modals .ui-state-disabled, .modals .ui-widget-content .ui-state-disabled, .modals .ui-widget-header .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.modals .ui-icon { width: 16px; height: 16px; background-image: url(../img/bredw/ui-icons_cccccc_256x240.png); }
+.modals .ui-widget-content .ui-icon {background-image: url(../img/bredw/ui-icons_cccccc_256x240.png); }
+.modals .ui-widget-header .ui-icon {background-image: url(../img/bredw/ui-icons_ffffff_256x240.png); }
+.modals .ui-state-default .ui-icon { background-image: url(../img/bredw/ui-icons_cccccc_256x240.png); }
+.modals .ui-state-hover .ui-icon, .modals .ui-state-focus .ui-icon {background-image: url(../img/bredw/ui-icons_cccccc_256x240.png); }
+.modals .ui-state-active .ui-icon {background-image: url(../img/bredw/ui-icons_cccccc_256x240.png); }
+.modals .ui-state-highlight .ui-icon {background-image: url(../img/bredw/ui-icons_ffffff_256x240.png); }
+.modals .ui-state-error .ui-icon, .modals .ui-state-error-text .ui-icon {background-image: url(../img/bredw/ui-icons_a21111_256x240.png); }
+
+.modals .ui-icon-closethick { background-position: -96px -128px; }
+.modals .ui-icon-newwin { background-position: -48px -80px; }
+.modals .ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }
+.modals .ui-icon-grip-diagonal-se { background-position: -80px -224px; }
+.modals .ui-icon-transferthick-e-w { background-position: -112px -80px; }
+.modals .ui-icon-alert { background-position: 0 -144px; }
+.modals .ui-icon-info { background-position: -16px -144px; }
+
+ /* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.modals .ui-corner-tl { -moz-border-radius-topleft: 7px; -webkit-border-top-left-radius: 7px; border-top-left-radius: 7px; }
+.modals .ui-corner-tr { -moz-border-radius-topright: 7px; -webkit-border-top-right-radius: 7px; border-top-right-radius: 7px; }
+.modals .ui-corner-bl { -moz-border-radius-bottomleft: 7px; -webkit-border-bottom-left-radius: 7px; border-bottom-left-radius: 7px; }
+.modals .ui-corner-br { -moz-border-radius-bottomright: 7px; -webkit-border-bottom-right-radius: 7px; border-bottom-right-radius: 7px; }
+.modals .ui-corner-top { -moz-border-radius-topleft: 7px; -webkit-border-top-left-radius: 7px; border-top-left-radius: 7px; -moz-border-radius-topright: 7px; -webkit-border-top-right-radius: 7px; border-top-right-radius: 7px; }
+.modals .ui-corner-bottom { -moz-border-radius-bottomleft: 7px; -webkit-border-bottom-left-radius: 7px; border-bottom-left-radius: 7px; -moz-border-radius-bottomright: 7px; -webkit-border-bottom-right-radius: 7px; border-bottom-right-radius: 7px; }
+.modals .ui-corner-right {  -moz-border-radius-topright: 7px; -webkit-border-top-right-radius: 7px; border-top-right-radius: 7px; -moz-border-radius-bottomright: 7px; -webkit-border-bottom-right-radius: 7px; border-bottom-right-radius: 7px; }
+.modals .ui-corner-left { -moz-border-radius-topleft: 7px; -webkit-border-top-left-radius: 7px; border-top-left-radius: 7px; -moz-border-radius-bottomleft: 7px; -webkit-border-bottom-left-radius: 7px; border-bottom-left-radius: 7px; }
+.modals .ui-corner-all { -moz-border-radius: 7px; -webkit-border-radius: 7px; border-radius: 7px; }
+
+/* Overlays */
+.modals .ui-widget-overlay { background: #5c5c5c url(../img/bredw/ui-bg_diagonals-thick_50_5c5c5c_40x40.png) 50% 50% repeat; opacity: .80;filter:Alpha(Opacity=80); }
+.modals .ui-widget-shadow { margin: -7px 0 0 -7px; padding: 7px; background: #222222 url(../img/bredw/ui-bg_flat_30_222222_40x100.png) 50% 50% repeat-x; opacity: .40;filter:Alpha(Opacity=40); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
+
+/*
+ * jQuery UI Resizable @VERSION
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Resizable#theming
+ */
+.ui-resizable { position: relative;}
+.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block;}
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+
+.modals .ui-button { display: inline-block; position: relative; padding: 0; margin-right: .1em; text-decoration: none !important; cursor: pointer; text-align: center; zoom: 1; overflow: visible; } /* the overflow property removes extra width in IE */
+.modals .ui-button-icon-only { width: 2.2em; } /* to make room for the icon, a width needs to be set here */
+button.ui-button-icon-only { width: 2.4em; } /* button elements seem to need a little more width */
+.modals .ui-button-icons-only { width: 3.4em; } 
+button.ui-button-icons-only { width: 3.7em; } 
+
+/*button text element */
+.modals .ui-button .ui-button-text { display: block; line-height: 1.4;  }
+.modals .ui-button-text-only .ui-button-text { padding: .4em 1em; }
+.modals .ui-button-icon-only .ui-button-text, .modals .ui-button-icons-only .ui-button-text { padding: .4em; text-indent: -9999999px; }
+.modals .ui-button-text-icon-primary .ui-button-text, .modals .ui-button-text-icons .ui-button-text { padding: .4em 1em .4em 2.1em; }
+.modals .ui-button-text-icon-secondary .ui-button-text, .modals .ui-button-text-icons .ui-button-text { padding: .4em 2.1em .4em 1em; }
+.modals .ui-button-text-icons .ui-button-text { padding-left: 2.1em; padding-right: 2.1em; }
+/* no icon support for input elements, provide padding by default */
+input.ui-button { padding: .4em 1em; }
+
+/*button icon element(s) */
+.modals .ui-button-icon-only .ui-icon, .modals .ui-button-text-icon-primary .ui-icon, .modals .ui-button-text-icon-secondary .ui-icon, .modals .ui-button-text-icons .ui-icon, .modals .ui-button-icons-only .ui-icon { position: absolute; top: 50%; margin-top: -8px; }
+.modals .ui-button-icon-only .ui-icon { left: 50%; margin-left: -8px; }
+.modals .ui-button-text-icon-primary .ui-button-icon-primary, .modals .ui-button-text-icons .ui-button-icon-primary, .modals .ui-button-icons-only .ui-button-icon-primary { left: .5em; }
+.modals .ui-button-text-icon-secondary .ui-button-icon-secondary, .modals .ui-button-text-icons .ui-button-icon-secondary, .modals .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+.modals .ui-button-text-icons .ui-button-icon-secondary, .modals .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+
+/*button sets*/
+.modals .ui-buttonset { margin-right: 7px; }
+.modals .ui-buttonset .ui-button { margin-left: 0; margin-right: -.3em; }
+
+/* workarounds */
+button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra padding in Firefox */
+/*
+ * jQuery UI Dialog @VERSION
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Dialog#theming
+ */
+.modals .ui-dialog { position: absolute; padding: .2em; width: 240px; overflow: hidden; }
+.modals .ui-dialog .ui-dialog-titlebar { padding: .5em 1em .3em; position: relative;  }
+.modals .ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .2em 0; } 
+.modals .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px !important; height: 18px; }
+.modals .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
+.modals .ui-dialog .ui-dialog-titlebar-close:hover, .modals .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
+.modals .ui-dialog .ui-dialog-content { position: relative; border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
+.modals .ui-dialog .ui-dialog-buttonpane { text-align: left; border-width: 1px 0 0 0; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; }
+.modals .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { float: right; }
+.modals .ui-dialog .ui-dialog-buttonpane button { margin: .5em .4em .5em 0; cursor: pointer; }
+.modals .ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.modals .ui-draggable .ui-dialog-titlebar { cursor: move; }
+ 
+ 
+ 
+/* ============== One click vote ============== */
+.ratings {
+	margin: 1em 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 2em;
+}
+.rating { 
+	margin-right: 1em;
+	float: left;
+	width: 300px;
+}
+.rating-cap {  }
+.rating-msg { display:none; color:#C55252; }
+
+
+#wrapper-examples .ratings { 
+	margin: -0.5em 0 2em; 
+}
+#wrapper-examples .ratings .colored { 
+	margin-right: 1em; 
+	float: left; 
+	width: 350px;
+}
+
+/*
+DIV.block_ocv {margin:1em 0;line-height:2em;clear: both;}
+SPAN.hover_ocv {padding:0 .5em}
+DIV.votes_ocv, DIV.ajax_ocv {clear:left}
+DIV.ajax_ocv {display:none;color:#C55252}
+DIV.ratings_ocv {margin-right:1em;float:left;white-space:nowrap}
+DIV.rated_ocv {float:left;width:300px}
+HR.stars_ocv {clear:both;visibility:hidden}
+*/
+
+#link_updates input,
+#link_updates textarea {
+	padding: 4px 2px;
+	font: normal normal 12px Verdana, Arial, sans-serif;
+	line-height: 1,5em;
+	color: #eee;
+	background: #393939;
+	border: 1px solid #565656;
+	width: 100%;
+}
+/*
+#link_updates button {
+	margin: 1em 20% 0;
+	padding: 4px;
+	font-weight: bold;
+	color: #eee;
+	background: #393939;
+	border: 1px solid #565656;
+}
+*/
+#link_updates .inactive {
+	font-style: italic;
+	border-color: #444;
+}

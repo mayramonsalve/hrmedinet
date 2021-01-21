@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HRMEDINET_SITE" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost,1433;Initial Catalog=HRMEDINET_SITE;Persist Security Info=True;User ID=sa" SettingsObjectName="MedinetClassLibrary.Properties.Settings" SettingsPropertyName="HRMEDINET_SITEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Regions" Member="Region">
+    <Type Name="Region">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Region_Location" Member="Locations" ThisKey="Id" OtherKey="Region_Id" Type="Location" />
+      <Association Name="Region_ExecutiveReport" Member="ExecutiveReports" ThisKey="Id" OtherKey="Region_Id" Type="ExecutiveReport" />
+      <Association Name="Company_Region" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QuestionsTypes" Member="QuestionsTypes">
+    <Type Name="QuestionsType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="QuestionsType_QuestionTypeByQuestion" Member="QuestionTypeByQuestions" ThisKey="Id" OtherKey="QuestionType_Id" Type="QuestionTypeByQuestion" />
+      <Association Name="QuestionsType_Question" Member="Questions" ThisKey="Id" OtherKey="QuestionType_Id" Type="Question" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Role">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_User" Member="Users" ThisKey="Id" OtherKey="Role_Id" Type="User" />
+      <Association Name="Role_ExecutiveReport" Member="ExecutiveReports" ThisKey="Id" OtherKey="Role_Id" Type="ExecutiveReport" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TextAnswers" Member="TextAnswers">
+    <Type Name="TextAnswer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Question_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Evaluation_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Evaluation_TextAnswer" Member="Evaluation" ThisKey="Evaluation_Id" OtherKey="Id" Type="Evaluation" IsForeignKey="true" />
+      <Association Name="Question_TextAnswer" Member="Question" ThisKey="Question_Id" OtherKey="Id" Type="Question" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPhone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="IdNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Role_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLogoutDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastPasswordChangedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLockOutDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsOnline" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FailedLoginAttemptsCounter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_GraphicDetail" Member="GraphicDetails" ThisKey="Id" OtherKey="User_Id" Type="GraphicDetail" />
+      <Association Name="User_Questionnaire" Member="Questionnaires" ThisKey="Id" OtherKey="User_Id" Type="Questionnaire" />
+      <Association Name="User_Feedback" Member="Feedbacks" ThisKey="Id" OtherKey="User_Id" Type="Feedback" />
+      <Association Name="User_Test" Member="Tests" ThisKey="Id" OtherKey="User_Id" Type="Test" />
+      <Association Name="Role_User" Member="Role" ThisKey="Role_Id" OtherKey="Id" Type="Role" IsForeignKey="true" />
+      <Association Name="Location_User" Member="Location" ThisKey="Location_Id" OtherKey="Id" Type="Location" IsForeignKey="true" />
+      <Association Name="Company_User" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Locations" Member="Locations">
+    <Type Name="Location">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="State_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Region_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Location_User" Member="Users" ThisKey="Id" OtherKey="Location_Id" Type="User" />
+      <Association Name="Location_Evaluation" Member="Evaluations" ThisKey="Id" OtherKey="Location_Id" Type="Evaluation" />
+      <Association Name="Region_Location" Member="Region" ThisKey="Region_Id" OtherKey="Id" Type="Region" IsForeignKey="true" />
+      <Association Name="State_Location" Member="State" ThisKey="State_Id" OtherKey="Id" Type="State" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Company_Location" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SelectionAnswers" Member="SelectionAnswers">
+    <Type Name="SelectionAnswer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Option_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Evaluation_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Question_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SelectionAnswer_OptionBySelectionAnswer" Member="OptionBySelectionAnswers" ThisKey="Id" OtherKey="SelectionAnswer_Id" Type="OptionBySelectionAnswer" />
+      <Association Name="Evaluation_SelectionAnswer" Member="Evaluation" ThisKey="Evaluation_Id" OtherKey="Id" Type="Evaluation" IsForeignKey="true" />
+      <Association Name="Option_SelectionAnswer" Member="Option" ThisKey="Option_Id" OtherKey="Id" Type="Option" IsForeignKey="true" />
+      <Association Name="Question_SelectionAnswer" Member="Question" ThisKey="Question_Id" OtherKey="Id" Type="Question" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Graphics" Member="Graphics">
+    <Type Name="Graphic">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Source" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Demographic" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Graphic_GraphicDetail" Member="GraphicDetails" ThisKey="Id" OtherKey="Graphic_Id" Type="GraphicDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GraphicsDetails" Member="GraphicDetails">
+    <Type Name="GraphicDetail">
+      <Column Name="Text" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Graphic_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Test_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AxisXName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AxisYName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Graphic_GraphicDetail" Member="Graphic" ThisKey="Graphic_Id" OtherKey="Id" Type="Graphic" IsForeignKey="true" />
+      <Association Name="User_GraphicDetail" Member="User" ThisKey="User_Id" OtherKey="Id" Type="User" IsForeignKey="true" />
+      <Association Name="Test_GraphicDetail" Member="Test" ThisKey="Test_Id" OtherKey="Id" Type="Test" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiSquareDistribution" Member="ChiSquareDistributions">
+    <Type Name="ChiSquareDistribution">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DegreesOfFreedom_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SignificanceLevel_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Association Name="DegreesOfFreedom_ChiSquareDistribution" Member="DegreesOfFreedom" ThisKey="DegreesOfFreedom_Id" OtherKey="Id" Type="DegreesOfFreedom" IsForeignKey="true" />
+      <Association Name="SignificanceLevel_ChiSquareDistribution" Member="SignificanceLevel" ThisKey="SignificanceLevel_Id" OtherKey="Id" Type="SignificanceLevel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DegreesOfFreedom" Member="DegreesOfFreedoms">
+    <Type Name="DegreesOfFreedom">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DegreesOfFreedom_ChiSquareDistribution" Member="ChiSquareDistributions" ThisKey="Id" OtherKey="DegreesOfFreedom_Id" Type="ChiSquareDistribution" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SignificanceLevels" Member="SignificanceLevels">
+    <Type Name="SignificanceLevel">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Association Name="SignificanceLevel_ChiSquareDistribution" Member="ChiSquareDistributions" ThisKey="Id" OtherKey="SignificanceLevel_Id" Type="ChiSquareDistribution" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompaniesTypes" Member="CompaniesTypes">
+    <Type Name="CompaniesType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CompaniesType_Company" Member="Companies" ThisKey="Id" OtherKey="CompanyType_Id" Type="Company" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EvaluationFO" Member="EvaluationFOs">
+    <Type Name="EvaluationFO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Evaluation_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FunctionalOrganization_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Evaluation_EvaluationFO" Member="Evaluation" ThisKey="Evaluation_Id" OtherKey="Id" Type="Evaluation" IsForeignKey="true" />
+      <Association Name="FunctionalOrganization_EvaluationFO" Member="FunctionalOrganization" ThisKey="FunctionalOrganization_Id" OtherKey="Id" Type="FunctionalOrganization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Questionnaires" Member="Questionnaires">
+    <Type Name="Questionnaire">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Instructions" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Template" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Questionnaire_DemographicSelectorDetail" Member="DemographicSelectorDetails" ThisKey="Id" OtherKey="Questionnaire_Id" Type="DemographicSelectorDetail" />
+      <Association Name="Questionnaire_Category" Member="Categories" ThisKey="Id" OtherKey="Questionnaire_Id" Type="Category" />
+      <Association Name="Questionnaire_Option" Member="Options" ThisKey="Id" OtherKey="Questionnaire_Id" Type="Option" />
+      <Association Name="Questionnaire_Test" Member="Tests" ThisKey="Id" OtherKey="Questionnaire_Id" Type="Test" />
+      <Association Name="User_Questionnaire" Member="User" ThisKey="User_Id" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanySectors" Member="CompanySectors">
+    <Type Name="CompanySector">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CompanySector_Company" Member="Companies" ThisKey="Id" OtherKey="CompanySector_Id" Type="Company" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StandardErrors" Member="StandardErrors">
+    <Type Name="StandardError">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="StandardError_Test" Member="Tests" ThisKey="Id" OtherKey="StandardError_Id" Type="Test" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConfidenceLevels" Member="ConfidenceLevels">
+    <Type Name="ConfidenceLevel">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Association Name="ConfidenceLevel_Test" Member="Tests" ThisKey="Id" OtherKey="ConfidenceLevel_Id" Type="Test" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Features" Member="Features">
+    <Type Name="Feature">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FeedbackType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Feature_Score" Member="Scores" ThisKey="Id" OtherKey="Feature_Id" Type="Score" />
+      <Association Name="FeedbackType_Feature" Member="FeedbackType" ThisKey="FeedbackType_Id" OtherKey="Id" Type="FeedbackType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Scores" Member="Scores">
+    <Type Name="Score">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Feature_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Feedback_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Feature_Score" Member="Feature" ThisKey="Feature_Id" OtherKey="Id" Type="Feature" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Feedback_Score" Member="Feedback" ThisKey="Feedback_Id" OtherKey="Id" Type="Feedback" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FeedbackTypes" Member="FeedbackTypes">
+    <Type Name="FeedbackType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="FeedbackType_Feature" Member="Features" ThisKey="Id" OtherKey="FeedbackType_Id" Type="Feature" />
+      <Association Name="FeedbackType_Feedback" Member="Feedbacks" ThisKey="Id" OtherKey="FeedbackType_Id" Type="Feedback" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Feedbacks" Member="Feedbacks">
+    <Type Name="Feedback">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddComments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FeedbackType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Show" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Feedback_Score" Member="Scores" ThisKey="Id" OtherKey="Feedback_Id" Type="Score" />
+      <Association Name="FeedbackType_Feedback" Member="FeedbackType" ThisKey="FeedbackType_Id" OtherKey="Id" Type="FeedbackType" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_Feedback" Member="User" ThisKey="User_Id" OtherKey="Id" Type="User" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FunctionalOrganizationTypes" Member="FunctionalOrganizationTypes">
+    <Type Name="FunctionalOrganizationType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FOTParent_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="FunctionalOrganizationType_FunctionalOrganizationType" Member="FunctionalOrganizationTypes" ThisKey="Id" OtherKey="FOTParent_Id" Type="FunctionalOrganizationType" />
+      <Association Name="FunctionalOrganizationType_FunctionalOrganization" Member="FunctionalOrganizations" ThisKey="Id" OtherKey="Type_Id" Type="FunctionalOrganization" />
+      <Association Name="FunctionalOrganizationType_DemographicsInTest" Member="DemographicsInTests" ThisKey="Id" OtherKey="FOT_Id" Type="DemographicsInTest" />
+      <Association Name="FunctionalOrganizationType_FunctionalOrganizationType" Member="Parent" ThisKey="FOTParent_Id" OtherKey="Id" Type="FunctionalOrganizationType" IsForeignKey="true" />
+      <Association Name="Company_FunctionalOrganizationType" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PositionLevels" Member="PositionLevels">
+    <Type Name="PositionLevel">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PositionLevel_Evaluation" Member="Evaluations" ThisKey="Id" OtherKey="PositionLevel_Id" Type="Evaluation" />
+      <Association Name="Company_PositionLevel" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.States" Member="States">
+    <Type Name="State">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="State_Location" Member="Locations" ThisKey="Id" OtherKey="State_Id" Type="Location" />
+      <Association Name="State_ExecutiveReport" Member="ExecutiveReports" ThisKey="Id" OtherKey="State_Id" Type="ExecutiveReport" />
+      <Association Name="Country_State" Member="Country" ThisKey="Country_Id" OtherKey="Id" Type="Country" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Countries" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Map" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Country_State" Member="States" ThisKey="Id" OtherKey="Country_Id" Type="State" />
+      <Association Name="Country_ContactUs" Member="ContactUs" ThisKey="Id" OtherKey="Country_Id" Type="ContactUs" />
+      <Association Name="Country_ExecutiveReport" Member="ExecutiveReports" ThisKey="Id" OtherKey="Country_Id" Type="ExecutiveReport" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Companies" Member="Companies">
+    <Type Name="Company">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Contact" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompanyType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyAssociated_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanySector_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShowClimate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Company_Region" Member="Regions" ThisKey="Id" OtherKey="Company_Id" Type="Region" />
+      <Association Name="Company_User" Member="Users" ThisKey="Id" OtherKey="Company_Id" Type="User" />
+      <Association Name="Company_Location" Member="Locations" ThisKey="Id" OtherKey="Company_Id" Type="Location" />
+      <Association Name="Company_FunctionalOrganizationType" Member="FunctionalOrganizationTypes" ThisKey="Id" OtherKey="Company_Id" Type="FunctionalOrganizationType" />
+      <Association Name="Company_PositionLevel" Member="PositionLevels" ThisKey="Id" OtherKey="Company_Id" Type="PositionLevel" />
+      <Association Name="Company_Company" Member="Companies" ThisKey="Id" OtherKey="CompanyAssociated_Id" Type="Company" />
+      <Association Name="Company_Demo" Member="Demos" ThisKey="Id" OtherKey="Company_Id" Type="Demo" />
+      <Association Name="Company_Seniority" Member="Seniorities" ThisKey="Id" OtherKey="Company_Id" Type="Seniority" />
+      <Association Name="Company_PerformanceEvaluation" Member="PerformanceEvaluations" ThisKey="Id" OtherKey="Company_Id" Type="PerformanceEvaluation" />
+      <Association Name="Company_InstructionLevel" Member="InstructionLevels" ThisKey="Id" OtherKey="Company_Id" Type="InstructionLevel" />
+      <Association Name="Company_Age" Member="Ages" ThisKey="Id" OtherKey="Company_Id" Type="Age" />
+      <Association Name="Company_ClimateScale" Member="ClimateScales" ThisKey="Id" OtherKey="Company_Id" Type="ClimateScale" />
+      <Association Name="Company_Category" Member="Categories" ThisKey="Id" OtherKey="Company_Id" Type="Category" />
+      <Association Name="Company_Test" Member="Tests" ThisKey="Id" OtherKey="Company_Id" Type="Test" />
+      <Association Name="Company_Company" Member="CompanyAssociated" ThisKey="CompanyAssociated_Id" OtherKey="Id" Type="Company" IsForeignKey="true" />
+      <Association Name="CompaniesType_Company" Member="CompaniesType" ThisKey="CompanyType_Id" OtherKey="Id" Type="CompaniesType" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="CompanySector_Company" Member="CompanySector" ThisKey="CompanySector_Id" OtherKey="Id" Type="CompanySector" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Demos" Member="Demos">
+    <Type Name="Demo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Weeks" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Company_Demo" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seniorities" Member="Seniorities">
+    <Type Name="Seniority">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Seniority_Evaluation" Member="Evaluations" ThisKey="Id" OtherKey="Seniority_Id" Type="Evaluation" />
+      <Association Name="Company_Seniority" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PerformanceEvaluations" Member="PerformanceEvaluations">
+    <Type Name="PerformanceEvaluation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PerformanceEvaluation_Evaluation" Member="Evaluations" ThisKey="Id" OtherKey="Performance_Id" Type="Evaluation" />
+      <Association Name="Company_PerformanceEvaluation" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InstructionLevels" Member="InstructionLevels">
+    <Type Name="InstructionLevel">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="InstructionLevel_Evaluation" Member="Evaluations" ThisKey="Id" OtherKey="InstructionLevel_Id" Type="Evaluation" />
+      <Association Name="Company_InstructionLevel" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ages" Member="Ages">
+    <Type Name="Age">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Age_Evaluation" Member="Evaluations" ThisKey="Id" OtherKey="Age_Id" Type="Evaluation" />
+      <Association Name="Company_Age" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContactUs" Member="ContactUs">
+    <Type Name="ContactUs">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Country_ContactUs" Member="Country" ThisKey="Country_Id" OtherKey="Id" Type="Country" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClimateRanges" Member="ClimateRanges">
+    <Type Name="ClimateRange">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MinValue" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="MaxValue" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Action" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="ClimateScale_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ClimateScale_ClimateRange" Member="ClimateScale" ThisKey="ClimateScale_Id" OtherKey="Id" Type="ClimateScale" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClimateScales" Member="ClimateScales">
+    <Type Name="ClimateScale">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ClimateScale_ClimateRange" Member="ClimateRanges" ThisKey="Id" OtherKey="ClimateScale_Id" Type="ClimateRange" />
+      <Association Name="ClimateScale_Test" Member="Tests" ThisKey="Id" OtherKey="ClimateScale_Id" Type="Test" />
+      <Association Name="Company_ClimateScale" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DichotomousAnswers" Member="DichotomousAnswers">
+    <Type Name="DichotomousAnswer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Affirmative" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Question_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Evaluation_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Evaluation_DichotomousAnswer" Member="Evaluation" ThisKey="Evaluation_Id" OtherKey="Id" Type="Evaluation" IsForeignKey="true" />
+      <Association Name="Question_DichotomousAnswer" Member="Question" ThisKey="Question_Id" OtherKey="Id" Type="Question" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DemographicSelectorDetails" Member="DemographicSelectorDetails">
+    <Type Name="DemographicSelectorDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Demographic_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SelectorValue_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Questionnaire_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Test_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Questionnaire_DemographicSelectorDetail" Member="Questionnaire" ThisKey="Questionnaire_Id" OtherKey="Id" Type="Questionnaire" IsForeignKey="true" />
+      <Association Name="Demographic_DemographicSelectorDetail" Member="Demographic" ThisKey="Demographic_Id" OtherKey="Id" Type="Demographic" IsForeignKey="true" />
+      <Association Name="Test_DemographicSelectorDetail" Member="Test" ThisKey="Test_Id" OtherKey="Id" Type="Test" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Weighings" Member="Weighings">
+    <Type Name="Weighing">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Category_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Test_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Weighing" Member="Category" ThisKey="Category_Id" OtherKey="Id" Type="Category" IsForeignKey="true" />
+      <Association Name="Test_Weighing" Member="Test" ThisKey="Test_Id" OtherKey="Id" Type="Test" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Evaluations" Member="Evaluations">
+    <Type Name="Evaluation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IpAddress" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="RemoteHostName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RemoteUserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Age_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InstructionLevel_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PositionLevel_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Seniority_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Test_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Performance_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Evaluation_TextAnswer" Member="TextAnswers" ThisKey="Id" OtherKey="Evaluation_Id" Type="TextAnswer" />
+      <Association Name="Evaluation_SelectionAnswer" Member="SelectionAnswers" ThisKey="Id" OtherKey="Evaluation_Id" Type="SelectionAnswer" />
+      <Association Name="Evaluation_EvaluationFO" Member="EvaluationFOs" ThisKey="Id" OtherKey="Evaluation_Id" Type="EvaluationFO" />
+      <Association Name="Evaluation_DichotomousAnswer" Member="DichotomousAnswers" ThisKey="Id" OtherKey="Evaluation_Id" Type="DichotomousAnswer" />
+      <Association Name="Evaluation_Ticket" Member="Tickets" ThisKey="Id" OtherKey="Evaluation_Id" Type="Ticket" />
+      <Association Name="Age_Evaluation" Member="Age" ThisKey="Age_Id" OtherKey="Id" Type="Age" IsForeignKey="true" />
+      <Association Name="InstructionLevel_Evaluation" Member="InstructionLevel" ThisKey="InstructionLevel_Id" OtherKey="Id" Type="InstructionLevel" IsForeignKey="true" />
+      <Association Name="Location_Evaluation" Member="Location" ThisKey="Location_Id" OtherKey="Id" Type="Location" IsForeignKey="true" />
+      <Association Name="PerformanceEvaluation_Evaluation" Member="PerformanceEvaluation" ThisKey="Performance_Id" OtherKey="Id" Type="PerformanceEvaluation" IsForeignKey="true" />
+      <Association Name="PositionLevel_Evaluation" Member="PositionLevel" ThisKey="PositionLevel_Id" OtherKey="Id" Type="PositionLevel" IsForeignKey="true" />
+      <Association Name="Seniority_Evaluation" Member="Seniority" ThisKey="Seniority_Id" OtherKey="Id" Type="Seniority" IsForeignKey="true" />
+      <Association Name="Test_Evaluation" Member="Test" ThisKey="Test_Id" OtherKey="Id" Type="Test" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FunctionalOrganization" Member="FunctionalOrganizations">
+    <Type Name="FunctionalOrganization">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FOParent_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="FunctionalOrganization_EvaluationFO" Member="EvaluationFOs" ThisKey="Id" OtherKey="FunctionalOrganization_Id" Type="EvaluationFO" />
+      <Association Name="FunctionalOrganization_FunctionalOrganization" Member="FunctionalOrganizations" ThisKey="Id" OtherKey="FOParent_Id" Type="FunctionalOrganization" />
+      <Association Name="FunctionalOrganizationType_FunctionalOrganization" Member="FunctionalOrganizationType" ThisKey="Type_Id" OtherKey="Id" Type="FunctionalOrganizationType" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="FunctionalOrganization_FunctionalOrganization" Member="Parent" ThisKey="FOParent_Id" OtherKey="Id" Type="FunctionalOrganization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Category">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Questionnaire_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryGroup_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Category_Weighing" Member="Weighings" ThisKey="Id" OtherKey="Category_Id" Type="Weighing" />
+      <Association Name="Category_Category" Member="Categories" ThisKey="Id" OtherKey="CategoryGroup_Id" Type="Category" />
+      <Association Name="Category_Question" Member="Questions" ThisKey="Id" OtherKey="Category_Id" Type="Question" />
+      <Association Name="Category_Category" Member="GroupingCategory" ThisKey="CategoryGroup_Id" OtherKey="Id" Type="Category" IsForeignKey="true" />
+      <Association Name="Questionnaire_Category" Member="Questionnaire" ThisKey="Questionnaire_Id" OtherKey="Id" Type="Questionnaire" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Company_Category" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tickets" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Evaluation_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Evaluation_Ticket" Member="Evaluation" ThisKey="Evaluation_Id" OtherKey="Id" Type="Evaluation" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OptionBySelectionAnswer" Member="OptionBySelectionAnswers">
+    <Type Name="OptionBySelectionAnswer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SelectionAnswer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Option_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SelectionAnswer_OptionBySelectionAnswer" Member="SelectionAnswer" ThisKey="SelectionAnswer_Id" OtherKey="Id" Type="SelectionAnswer" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Option_OptionBySelectionAnswer" Member="Option" ThisKey="Option_Id" OtherKey="Id" Type="Option" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QuestionTypeByQuestion" Member="QuestionTypeByQuestions">
+    <Type Name="QuestionTypeByQuestion">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuestionType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Question_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AuxiliarText" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="QuestionsType_QuestionTypeByQuestion" Member="QuestionsType" ThisKey="QuestionType_Id" OtherKey="Id" Type="QuestionsType" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Question_QuestionTypeByQuestion" Member="Question" ThisKey="Question_Id" OtherKey="Id" Type="Question" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Options" Member="Options">
+    <Type Name="Option">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Questionnaire_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Question_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Option_SelectionAnswer" Member="SelectionAnswers" ThisKey="Id" OtherKey="Option_Id" Type="SelectionAnswer" />
+      <Association Name="Option_OptionBySelectionAnswer" Member="OptionBySelectionAnswers" ThisKey="Id" OtherKey="Option_Id" Type="OptionBySelectionAnswer" />
+      <Association Name="Questionnaire_Option" Member="Questionnaire" ThisKey="Questionnaire_Id" OtherKey="Id" Type="Questionnaire" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Question_Option" Member="Question" ThisKey="Question_Id" OtherKey="Id" Type="Question" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Questions" Member="Questions">
+    <Type Name="Question">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuestionType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Category_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Positive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NumMaxMult" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AuxiliarText" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShortText" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Question_TextAnswer" Member="TextAnswers" ThisKey="Id" OtherKey="Question_Id" Type="TextAnswer" />
+      <Association Name="Question_SelectionAnswer" Member="SelectionAnswers" ThisKey="Id" OtherKey="Question_Id" Type="SelectionAnswer" />
+      <Association Name="Question_DichotomousAnswer" Member="DichotomousAnswers" ThisKey="Id" OtherKey="Question_Id" Type="DichotomousAnswer" />
+      <Association Name="Question_QuestionTypeByQuestion" Member="QuestionTypeByQuestions" ThisKey="Id" OtherKey="Question_Id" Type="QuestionTypeByQuestion" />
+      <Association Name="Question_Option" Member="Options" ThisKey="Id" OtherKey="Question_Id" Type="Option" />
+      <Association Name="Category_Question" Member="Category" ThisKey="Category_Id" OtherKey="Id" Type="Category" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="QuestionsType_Question" Member="QuestionsType" ThisKey="QuestionType_Id" OtherKey="Id" Type="QuestionsType" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DemographicsInTest" Member="DemographicsInTests">
+    <Type Name="DemographicsInTest">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Test_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Demographic_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Selector" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FOT_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="FunctionalOrganizationType_DemographicsInTest" Member="FunctionalOrganizationType" ThisKey="FOT_Id" OtherKey="Id" Type="FunctionalOrganizationType" IsForeignKey="true" />
+      <Association Name="Demographic_DemographicsInTest" Member="Demographic" ThisKey="Demographic_Id" OtherKey="Id" Type="Demographic" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Test_DemographicsInTest" Member="Test" ThisKey="Test_Id" OtherKey="Id" Type="Test" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Demographics" Member="Demographics">
+    <Type Name="Demographic">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Demographic_DemographicSelectorDetail" Member="DemographicSelectorDetails" ThisKey="Id" OtherKey="Demographic_Id" Type="DemographicSelectorDetail" />
+      <Association Name="Demographic_DemographicsInTest" Member="DemographicsInTests" ThisKey="Id" OtherKey="Demographic_Id" Type="DemographicsInTest" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ER_AnswersByFOTypes" Member="ER_AnswersByFOTypes">
+    <Type Name="ER_AnswersByFOType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ExecutiveReport_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExecutiveReport_ER_AnswersByFOType" Member="ExecutiveReport" ThisKey="ExecutiveReport_Id" OtherKey="Id" Type="ExecutiveReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ER_StepwiseValues" Member="ER_StepwiseValues">
+    <Type Name="ER_StepwiseValue">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ExecutiveReport_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExecutiveReport_ER_StepwiseValue" Member="ExecutiveReport" ThisKey="ExecutiveReport_Id" OtherKey="Id" Type="ExecutiveReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ER_AnswersByPositionLevels" Member="ER_AnswersByPositionLevels">
+    <Type Name="ER_AnswersByPositionLevel">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ExecutiveReport_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExecutiveReport_ER_AnswersByPositionLevel" Member="ExecutiveReport" ThisKey="ExecutiveReport_Id" OtherKey="Id" Type="ExecutiveReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ER_CategoriesSatEmployees" Member="ER_CategoriesSatEmployees">
+    <Type Name="ER_CategoriesSatEmployee">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Satisfied" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PctgSatisfied" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="NotSatisfied" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PctgNotSatisfied" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Average" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Median" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="ExecutiveReport_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExecutiveReport_ER_CategoriesSatEmployee" Member="ExecutiveReport" ThisKey="ExecutiveReport_Id" OtherKey="Id" Type="ExecutiveReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ER_ClimateByBranches" Member="ER_ClimateByBranches">
+    <Type Name="ER_ClimateByBranch">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ExecutiveReport_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExecutiveReport_ER_ClimateByBranch" Member="ExecutiveReport" ThisKey="ExecutiveReport_Id" OtherKey="Id" Type="ExecutiveReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ER_ClimateByCategories" Member="ER_ClimateByCategories">
+    <Type Name="ER_ClimateByCategory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ExecutiveReport_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExecutiveReport_ER_ClimateByCategory" Member="ExecutiveReport" ThisKey="ExecutiveReport_Id" OtherKey="Id" Type="ExecutiveReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ER_GeneralSatEmployees" Member="ER_GeneralSatEmployees">
+    <Type Name="ER_GeneralSatEmployee">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Satisfied" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PctgSatisfied" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="NotSatisfied" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PctgNotSatisfied" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ExecutiveReport_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExecutiveReport_ER_GeneralSatEmployee" Member="ExecutiveReport" ThisKey="ExecutiveReport_Id" OtherKey="Id" Type="ExecutiveReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ER_LocationsSatEmployees" Member="ER_LocationsSatEmployees">
+    <Type Name="ER_LocationsSatEmployee">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Satisfied" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PctgSatisfied" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="NotSatisfied" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PctgNotSatisfied" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Average" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Median" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="ExecutiveReport_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExecutiveReport_ER_LocationsSatEmployee" Member="ExecutiveReport" ThisKey="ExecutiveReport_Id" OtherKey="Id" Type="ExecutiveReport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tests" Member="Tests">
+    <Type Name="Test">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="EvaluationNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Questionnaire_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EvaluationsLefts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentEvaluations" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupByCategories" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RecordsPerPage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinimumPeople" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Disordered" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Weighted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ConfidenceLevel_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StandardError_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumberOfEmployees" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PreviousTest_Text" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PreviousTest_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OneQuestionnaire" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ClimateScale_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResultBasedOn100" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Finished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Test_GraphicDetail" Member="GraphicDetails" ThisKey="Id" OtherKey="Test_Id" Type="GraphicDetail" />
+      <Association Name="Test_DemographicSelectorDetail" Member="DemographicSelectorDetails" ThisKey="Id" OtherKey="Test_Id" Type="DemographicSelectorDetail" />
+      <Association Name="Test_Weighing" Member="Weighings" ThisKey="Id" OtherKey="Test_Id" Type="Weighing" />
+      <Association Name="Test_Evaluation" Member="Evaluations" ThisKey="Id" OtherKey="Test_Id" Type="Evaluation" />
+      <Association Name="Test_DemographicsInTest" Member="DemographicsInTests" ThisKey="Id" OtherKey="Test_Id" Type="DemographicsInTest" />
+      <Association Name="Test_Test" Member="Tests" ThisKey="Id" OtherKey="PreviousTest_Id" Type="Test" />
+      <Association Name="Test_ExecutiveReport" Member="ExecutiveReports" ThisKey="Id" OtherKey="Test_Id" Type="ExecutiveReport" />
+      <Association Name="ClimateScale_Test" Member="ClimateScale" ThisKey="ClimateScale_Id" OtherKey="Id" Type="ClimateScale" IsForeignKey="true" />
+      <Association Name="Company_Test" Member="Company" ThisKey="Company_Id" OtherKey="Id" Type="Company" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ConfidenceLevel_Test" Member="ConfidenceLevel" ThisKey="ConfidenceLevel_Id" OtherKey="Id" Type="ConfidenceLevel" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Questionnaire_Test" Member="Questionnaire" ThisKey="Questionnaire_Id" OtherKey="Id" Type="Questionnaire" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="StandardError_Test" Member="StandardError" ThisKey="StandardError_Id" OtherKey="Id" Type="StandardError" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Test_Test" Member="PreviousTest" ThisKey="PreviousTest_Id" OtherKey="Id" Type="Test" IsForeignKey="true" />
+      <Association Name="User_Test" Member="User" ThisKey="User_Id" OtherKey="Id" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExecutiveReports" Member="ExecutiveReports">
+    <Type Name="ExecutiveReport">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Test_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Role_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="State_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Region_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SatisfiedCountPercentage" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneralClimate" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ColourByClimate" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DemographicsWhereThereIsAssociation" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Ubication" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ExecutiveReport_ER_AnswersByFOType" Member="ER_AnswersByFOTypes" ThisKey="Id" OtherKey="ExecutiveReport_Id" Type="ER_AnswersByFOType" />
+      <Association Name="ExecutiveReport_ER_StepwiseValue" Member="ER_StepwiseValues" ThisKey="Id" OtherKey="ExecutiveReport_Id" Type="ER_StepwiseValue" />
+      <Association Name="ExecutiveReport_ER_AnswersByPositionLevel" Member="ER_AnswersByPositionLevels" ThisKey="Id" OtherKey="ExecutiveReport_Id" Type="ER_AnswersByPositionLevel" />
+      <Association Name="ExecutiveReport_ER_CategoriesSatEmployee" Member="ER_CategoriesSatEmployees" ThisKey="Id" OtherKey="ExecutiveReport_Id" Type="ER_CategoriesSatEmployee" />
+      <Association Name="ExecutiveReport_ER_ClimateByBranch" Member="ER_ClimateByBranches" ThisKey="Id" OtherKey="ExecutiveReport_Id" Type="ER_ClimateByBranch" />
+      <Association Name="ExecutiveReport_ER_ClimateByCategory" Member="ER_ClimateByCategories" ThisKey="Id" OtherKey="ExecutiveReport_Id" Type="ER_ClimateByCategory" />
+      <Association Name="ExecutiveReport_ER_GeneralSatEmployee" Member="ER_GeneralSatEmployees" ThisKey="Id" OtherKey="ExecutiveReport_Id" Type="ER_GeneralSatEmployee" />
+      <Association Name="ExecutiveReport_ER_LocationsSatEmployee" Member="ER_LocationsSatEmployees" ThisKey="Id" OtherKey="ExecutiveReport_Id" Type="ER_LocationsSatEmployee" />
+      <Association Name="Country_ExecutiveReport" Member="Country" ThisKey="Country_Id" OtherKey="Id" Type="Country" IsForeignKey="true" />
+      <Association Name="Region_ExecutiveReport" Member="Region" ThisKey="Region_Id" OtherKey="Id" Type="Region" IsForeignKey="true" />
+      <Association Name="Role_ExecutiveReport" Member="Role" ThisKey="Role_Id" OtherKey="Id" Type="Role" IsForeignKey="true" />
+      <Association Name="State_ExecutiveReport" Member="State" ThisKey="State_Id" OtherKey="Id" Type="State" IsForeignKey="true" />
+      <Association Name="Test_ExecutiveReport" Member="Test" ThisKey="Test_Id" OtherKey="Id" Type="Test" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

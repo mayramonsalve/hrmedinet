@@ -1,0 +1,3470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{595E9A88-528B-4856-9AD5-EF35B149B562}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedinetClassLibrary</RootNamespace>
+    <AssemblyName>MedinetClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectConfigFileName>App.Config</ProjectConfigFileName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Dynamic">
+      <HintPath>..\Medinet\Dependencies\Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="evohtmltopdf">
+      <HintPath>..\Medinet\Dependencies\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Extreme.Generic.Net40, Version=4.0.10170.0, Culture=neutral, PublicKeyToken=9e513770f58567b2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Extreme.Generic.Net40.dll</HintPath>
+    </Reference>
+    <Reference Include="Extreme.Numerics.Net40, Version=4.2.11333.0, Culture=neutral, PublicKeyToken=9e513770f58567b2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Extreme.Numerics.Net40.dll</HintPath>
+    </Reference>
+    <Reference Include="Extreme.Numerics.SinglePrecision.Net40, Version=4.0.10170.0, Culture=neutral, PublicKeyToken=9e513770f58567b2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System-Web-Helpers.dll.1.0.0\lib\Net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizationModels\CompaniesAuthorization.cs" />
+    <Compile Include="AuthorizationModels\CountriesAndStatesAutorization.cs" />
+    <Compile Include="AuthorizationModels\ReportsAuthorization.cs" />
+    <Compile Include="AuthorizationModels\SharedAdminAuthorization.cs" />
+    <Compile Include="AuthorizationModels\SharedHrAuthorization.cs" />
+    <Compile Include="AuthorizationModels\UsersAuthorization.cs" />
+    <Compile Include="CustomAttributes\EmailAttribute.cs" />
+    <Compile Include="CustomAttributes\InternationalPhoneAttribute.cs" />
+    <Compile Include="CustomAttributes\LoginAttribute.cs" />
+    <Compile Include="CustomAttributes\UrlAttribute.cs" />
+    <Compile Include="CustomAttributes\UserOwnerAttribute.cs" />
+    <Compile Include="CustomClasses\ChartDetails.cs" />
+    <Compile Include="CustomClasses\ChartValues.cs" />
+    <Compile Include="CustomClasses\Commands.cs" />
+    <Compile Include="CustomClasses\FunctionSPConnection.cs" />
+    <Compile Include="CustomClasses\EmailBroadcaster.cs" />
+    <Compile Include="CustomClasses\ImageUploader.cs" />
+    <Compile Include="CustomClasses\InternationalPhoneFormatter.cs" />
+    <Compile Include="CustomClasses\Jqgrid.cs" />
+    <Compile Include="CustomClasses\Json.cs" />
+    <Compile Include="CustomClasses\MD5Encrypter.cs" />
+    <Compile Include="CustomClasses\ShortGuid.cs" />
+    <Compile Include="CustomClasses\SummaryTable.cs" />
+    <Compile Include="Models\DataClasses.cs">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReportsModels\CompanyReport.cs" />
+    <Compile Include="Models\ReportsModels\HRCompanyQuestionnaireReport.cs" />
+    <Compile Include="Models\ReportsModels\EvaluationReport.cs" />
+    <Compile Include="Models\ReportsModels\HRAdministratorQuestionnaireReport.cs" />
+    <Compile Include="Models\DataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReportsModels\TestByCompanyReport.cs" />
+    <Compile Include="PartialModels\AnalyticalReport.cs" />
+    <Compile Include="PartialModels\BivariateCharts.cs" />
+    <Compile Include="PartialModels\ChiSquare.cs" />
+    <Compile Include="PartialModels\Rankings.cs" />
+    <Compile Include="PartialModels\DemographicTemplate.cs" />
+    <Compile Include="PartialModels\DemographicsTables.cs" />
+    <Compile Include="PartialModels\Results.cs" />
+    <Compile Include="PartialModels\Test.cs" />
+    <Compile Include="Resources\Classes\ChiSquare.Designer.cs">
+      <DependentUpon>ChiSquare.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Classes\BivariateCharts.es.Designer.cs">
+      <DependentUpon>BivariateCharts.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Classes\ChiSquare.es.Designer.cs">
+      <DependentUpon>ChiSquare.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Classes\Services.es.Designer.cs">
+      <DependentUpon>Services.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Classes\Services.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Services.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\Account.Designer.cs">
+      <DependentUpon>Account.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Categories.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Categories.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\Categories.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Categories.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\ChartReports.Designer.cs">
+      <DependentUpon>ChartReports.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Companies.Designer.cs">
+      <DependentUpon>Companies.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Account.es.Designer.cs">
+      <DependentUpon>Account.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\ChartReports.es.Designer.cs">
+      <DependentUpon>ChartReports.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Companies.es.Designer.cs">
+      <DependentUpon>Companies.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\ClimateRanges.Designer.cs">
+      <DependentUpon>ClimateRanges.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\ClimateRanges.es.Designer.cs">
+      <DependentUpon>ClimateRanges.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Evaluations.es.Designer.cs">
+      <DependentUpon>Evaluations.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Feedbacks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Feedbacks.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\Feedbacks.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Feedbacks.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\Options.es.Designer.cs">
+      <DependentUpon>Options.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Questions.es.Designer.cs">
+      <DependentUpon>Questions.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Shared.es.Designer.cs">
+      <DependentUpon>Shared.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Tests.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tests.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controllers\Tests.es.Designer.cs">
+      <DependentUpon>Tests.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Users.es.Designer.cs">
+      <DependentUpon>Users.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Evaluations.Designer.cs">
+      <DependentUpon>Evaluations.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Options.Designer.cs">
+      <DependentUpon>Options.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Questions.Designer.cs">
+      <DependentUpon>Questions.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Shared.Designer.cs">
+      <DependentUpon>Shared.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Controllers\Users.Designer.cs">
+      <DependentUpon>Users.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Category.Designer.cs">
+      <DependentUpon>Category.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Company.Designer.cs">
+      <DependentUpon>Company.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Category.es.Designer.cs">
+      <DependentUpon>Category.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Company.es.Designer.cs">
+      <DependentUpon>Company.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Account.Designer.cs">
+      <DependentUpon>Account.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Account.es.Designer.cs">
+      <DependentUpon>Account.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\ClimateRange.Designer.cs">
+      <DependentUpon>ClimateRange.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\ClimateRange.es.Designer.cs">
+      <DependentUpon>ClimateRange.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\PositionLevel.Designer.cs">
+      <DependentUpon>PositionLevel.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\PositionLevel.es.Designer.cs">
+      <DependentUpon>PositionLevel.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Feature.Designer.cs">
+      <DependentUpon>Feature.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Feature.es.Designer.cs">
+      <DependentUpon>Feature.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Evaluation.es.Designer.cs">
+      <DependentUpon>Evaluation.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\FOrganization.es.Designer.cs">
+      <DependentUpon>FOrganization.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Location.es.Designer.cs">
+      <DependentUpon>Location.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Option.es.Designer.cs">
+      <DependentUpon>Option.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Question.es.Designer.cs">
+      <DependentUpon>Question.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Questionnaire.es.Designer.cs">
+      <DependentUpon>Questionnaire.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Shared.es.Designer.cs">
+      <DependentUpon>Shared.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\State.es.Designer.cs">
+      <DependentUpon>State.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Test.es.Designer.cs">
+      <DependentUpon>Test.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\User.es.Designer.cs">
+      <DependentUpon>User.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Location.Designer.cs">
+      <DependentUpon>Location.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Evaluation.Designer.cs">
+      <DependentUpon>Evaluation.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\User.Designer.cs">
+      <DependentUpon>User.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Option.Designer.cs">
+      <DependentUpon>Option.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Test.Designer.cs">
+      <DependentUpon>Test.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Questionnaire.Designer.cs">
+      <DependentUpon>Questionnaire.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Question.Designer.cs">
+      <DependentUpon>Question.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\State.Designer.cs">
+      <DependentUpon>State.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\FOrganization.Designer.cs">
+      <DependentUpon>FOrganization.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\Shared.Designer.cs">
+      <DependentUpon>Shared.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Reports\Files.es.Designer.cs">
+      <DependentUpon>Files.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Reports\Files.Designer.cs">
+      <DependentUpon>Files.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Scripts\Shared.es.Designer.cs">
+      <DependentUpon>Shared.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Scripts\Shared.Designer.cs">
+      <DependentUpon>Shared.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Account\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Account\ChangePassword.es.Designer.cs">
+      <DependentUpon>ChangePassword.es.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Account\ChangePasswordSucceeded.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePasswordSucceeded.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Account\ChangePasswordSucceeded.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePasswordSucceeded.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Account\LogOn.Designer.cs">
+      <DependentUpon>LogOn.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Account\LogOn.es.Designer.cs">
+      <DependentUpon>LogOn.es.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Account\PasswordRecovery.Designer.cs">
+      <DependentUpon>PasswordRecovery.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Account\PasswordRecovery.es.Designer.cs">
+      <DependentUpon>PasswordRecovery.es.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Account\PasswordRecoverySucceeded.Designer.cs">
+      <DependentUpon>PasswordRecoverySucceeded.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Account\PasswordRecoverySucceeded.es.Designer.cs">
+      <DependentUpon>PasswordRecoverySucceeded.es.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Age\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Age\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Age\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Age\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Age\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Age\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Age\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Age\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Category\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Category\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Category\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Category\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Category\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Category\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Category\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Category\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\Ranking.Designer.cs">
+      <DependentUpon>Ranking.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\Ranking.es.Designer.cs">
+      <DependentUpon>Ranking.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\Demographics.Designer.cs">
+      <DependentUpon>Demographics.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\Demographics.es.Designer.cs">
+      <DependentUpon>Demographics.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\ReportsList.es.Designer.cs">
+      <DependentUpon>ReportsList.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\ReportsList.Designer.cs">
+      <DependentUpon>ReportsList.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\Graphics.es.Designer.cs">
+      <DependentUpon>Graphics.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\PrintResultsReport.es.Designer.cs">
+      <DependentUpon>PrintResultsReport.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\Graphics.Designer.cs">
+      <DependentUpon>Graphics.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ChartReport\PrintResultsReport.Designer.cs">
+      <DependentUpon>PrintResultsReport.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Company\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Company\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Company\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Company\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Company\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Company\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Company\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Company\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ContactUs\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ContactUs\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ContactUs\ContactSucceeded.Designer.cs">
+      <DependentUpon>ContactSucceeded.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ContactUs\ContactSucceeded.es.Designer.cs">
+      <DependentUpon>ContactSucceeded.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ContactUs\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ContactUs\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateRange\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateRange\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateRange\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateRange\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateRange\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateRange\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateRange\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateRange\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateScale\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateScale\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateScale\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateScale\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateScale\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateScale\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateScale\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\ClimateScale\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\ErrorEvaluation.Designer.cs">
+      <DependentUpon>ErrorEvaluation.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\ErrorEvaluation.es.Designer.cs">
+      <DependentUpon>ErrorEvaluation.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PositionLevel\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PositionLevel\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PositionLevel\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PositionLevel\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PositionLevel\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PositionLevel\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PositionLevel\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PositionLevel\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\InstructionLevel\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\InstructionLevel\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\InstructionLevel\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\InstructionLevel\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\InstructionLevel\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\InstructionLevel\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\InstructionLevel\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\InstructionLevel\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feedback\Show.Designer.cs">
+      <DependentUpon>Show.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feedback\Show.es.Designer.cs">
+      <DependentUpon>Show.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feedback\Send.Designer.cs">
+      <DependentUpon>Send.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feedback\Send.es.Designer.cs">
+      <DependentUpon>Send.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feedback\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feedback\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feedback\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feedback\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feature\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feature\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feature\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feature\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feature\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feature\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feature\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Feature\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Country\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Country\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Country\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Country\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Country\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Country\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Country\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Country\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\AnswerTest.Designer.cs">
+      <DependentUpon>AnswerTest.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\AnswerTest.es.Designer.cs">
+      <DependentUpon>AnswerTest.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\ErrorClosedEvaluation.es.Designer.cs">
+      <DependentUpon>ErrorClosedEvaluation.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\EvaluationSucceeded.es.Designer.cs">
+      <DependentUpon>EvaluationSucceeded.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\TestInstructions.es.Designer.cs">
+      <DependentUpon>TestInstructions.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\ErrorClosedEvaluation.Designer.cs">
+      <DependentUpon>ErrorClosedEvaluation.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\EvaluationSucceeded.Designer.cs">
+      <DependentUpon>EvaluationSucceeded.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Evaluation\TestInstructions.Designer.cs">
+      <DependentUpon>TestInstructions.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganizationType\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganizationType\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganizationType\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganizationType\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganizationType\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganizationType\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganizationType\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganizationType\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganization\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganization\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganization\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganization\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganization\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganization\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganization\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\FunctionalOrganization\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Home\AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\ContactUs.Designer.cs">
+      <DependentUpon>ContactUs.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Home\AboutUs.es.Designer.cs">
+      <DependentUpon>AboutUs.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Models\ContactUs.es.Designer.cs">
+      <DependentUpon>ContactUs.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Brochure.Designer.cs">
+      <DependentUpon>Brochure.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Brochure.es.Designer.cs">
+      <DependentUpon>Brochure.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Map.es.Designer.cs">
+      <DependentUpon>Map.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Map.Designer.cs">
+      <DependentUpon>Map.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Home\FAQ.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FAQ.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Home\FAQ1.Designer.cs">
+      <DependentUpon>FAQ.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Partners.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Partners.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Partners.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Partners.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Services.es.Designer.cs">
+      <DependentUpon>Services.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Home\Services.Designer.cs">
+      <DependentUpon>Services.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Location\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Location\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Location\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Location\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Location\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Location\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Location\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Location\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Option\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Option\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Option\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Option\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Option\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Option\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Option\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Option\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PerformanceEvaluation\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PerformanceEvaluation\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PerformanceEvaluation\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PerformanceEvaluation\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PerformanceEvaluation\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PerformanceEvaluation\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PerformanceEvaluation\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\PerformanceEvaluation\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Questionnaire\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Questionnaire\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Questionnaire\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Questionnaire\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Questionnaire\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Questionnaire\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Questionnaire\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Questionnaire\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Question\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Question\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Question\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Question\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Question\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Question\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Question\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Question\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Region\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Region\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Region\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Region\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Region\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Region\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Region\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Region\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Reports\Demographic.es.Designer.cs">
+      <DependentUpon>Demographic.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Reports\ReportsList.es.Designer.cs">
+      <DependentUpon>ReportsList.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Reports\Demographic.Designer.cs">
+      <DependentUpon>Demographic.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Reports\ReportsList.Designer.cs">
+      <DependentUpon>ReportsList.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Seniority\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Seniority\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Seniority\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Seniority\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Seniority\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Seniority\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Seniority\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Seniority\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Shared\Errors.es.Designer.cs">
+      <DependentUpon>Errors.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Shared\Errors.Designer.cs">
+      <DependentUpon>Errors.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Shared\Shared.es.Designer.cs">
+      <DependentUpon>Shared.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Shared\Shared.Designer.cs">
+      <DependentUpon>Shared.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\State\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\State\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\State\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\State\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\State\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\State\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\State\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\State\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Code.Designer.cs">
+      <DependentUpon>Code.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Code.es.Designer.cs">
+      <DependentUpon>Code.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Finish.Designer.cs">
+      <DependentUpon>Finish.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Finish.es.Designer.cs">
+      <DependentUpon>Finish.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Print.es.Designer.cs">
+      <DependentUpon>Print.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\SuccessfullyCreated.es.Designer.cs">
+      <DependentUpon>SuccessfullyCreated.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\Print.Designer.cs">
+      <DependentUpon>Print.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Test\SuccessfullyCreated.Designer.cs">
+      <DependentUpon>SuccessfullyCreated.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\User\Create.es.Designer.cs">
+      <DependentUpon>Create.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\User\Details.es.Designer.cs">
+      <DependentUpon>Details.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\User\Edit.es.Designer.cs">
+      <DependentUpon>Edit.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\User\Index.es.Designer.cs">
+      <DependentUpon>Index.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\User\Create.Designer.cs">
+      <DependentUpon>Create.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\User\Details.Designer.cs">
+      <DependentUpon>Details.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\User\Edit.Designer.cs">
+      <DependentUpon>Edit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\User\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Classes\BivariateCharts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BivariateCharts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AgesServices.cs" />
+    <Compile Include="Services\ChartsServices.cs" />
+    <Compile Include="Services\CompaniesTypesServices.cs" />
+    <Compile Include="Services\ContactUsServices.cs" />
+    <Compile Include="Services\CompanySectorsServices.cs" />
+    <Compile Include="Services\ConfidenceLevelsServices.cs" />
+    <Compile Include="Services\ClimateRangesServices.cs" />
+    <Compile Include="Services\ClimateScalesServices.cs" />
+    <Compile Include="Services\ER_AnswersByPositionLevelsServices.cs" />
+    <Compile Include="Services\ER_CategoriesSatEmployeesServices.cs" />
+    <Compile Include="Services\ER_ClimateByBranchesServices.cs" />
+    <Compile Include="Services\ER_ClimateByCategoriesServices.cs" />
+    <Compile Include="Services\ER_GeneralSatEmployeesServices.cs" />
+    <Compile Include="Services\ER_LocationsSatEmployeesServices.cs" />
+    <Compile Include="Services\ER_StepwiseValuesServices.cs" />
+    <Compile Include="Services\ER_AnswersByFOTypesServices.cs" />
+    <Compile Include="Services\ExecutiveReportsServices.cs" />
+    <Compile Include="Services\OptionBySelectionAnswersServices.cs" />
+    <Compile Include="Services\DemographicsServices.cs" />
+    <Compile Include="Services\DemographicsInTestsServices.cs" />
+    <Compile Include="Services\DemographicSelectorDetailsServices.cs" />
+    <Compile Include="Services\DichotomousAnswersServices.cs" />
+    <Compile Include="Services\DemosServices.cs" />
+    <Compile Include="Services\PositionLevelsServices.cs" />
+    <Compile Include="Services\InstructionLevelsServices.cs" />
+    <Compile Include="Services\FeedbackTypesServices.cs" />
+    <Compile Include="Services\ScoresServices.cs" />
+    <Compile Include="Services\FeaturesServices.cs" />
+    <Compile Include="Services\FeedbacksServices.cs" />
+    <Compile Include="Services\StandardErrorsServices.cs" />
+    <Compile Include="Services\TicketsServices.cs" />
+    <Compile Include="Services\WeighingsServices.cs" />
+    <Compile Include="Services\EvaluationsFOServices.cs" />
+    <Compile Include="Services\FunctionalOrganizationsServices.cs" />
+    <Compile Include="Services\FunctionalOrganizationTypesServices.cs" />
+    <Compile Include="Services\Reports\CompanyReportsServices.cs" />
+    <Compile Include="Services\SenioritiesServices.cs" />
+    <Compile Include="Services\EvaluationsServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\GraphicsDetailsServices.cs" />
+    <Compile Include="Services\GraphicsServices.cs" />
+    <Compile Include="Services\PerformanceEvaluationsServices.cs" />
+    <Compile Include="Services\QuestionsTypesServices.cs" />
+    <Compile Include="Services\ChiSquareDistributionServices.cs" />
+    <Compile Include="Services\Reports\HRCompanyQuestionnairesReportsServices.cs" />
+    <Compile Include="Services\Reports\EvaluationsReportsServices.cs" />
+    <Compile Include="Services\Reports\HRAdministratorQuestionnairesReportsServices.cs" />
+    <Compile Include="Services\Reports\TestsByCompaniesReportsServices.cs" />
+    <Compile Include="Services\RolesServices.cs" />
+    <Compile Include="Services\SelectionAnswersServices.cs" />
+    <Compile Include="Services\StatesServices.cs" />
+    <Compile Include="Services\TestsServices.cs" />
+    <Compile Include="Services\TextAnswersServices.cs" />
+    <Compile Include="Services\UsersServices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Services\CategoriesServices.cs" />
+    <Compile Include="Services\CompaniesServices.cs" />
+    <Compile Include="Services\CountriesServices.cs" />
+    <Compile Include="Services\IRepositoryServices.cs" />
+    <Compile Include="Services\LocationsServices.cs" />
+    <Compile Include="Services\OptionsServices.cs" />
+    <Compile Include="Services\QuestionnairesServices.cs" />
+    <Compile Include="Services\QuestionsServices.cs" />
+    <Compile Include="Services\RegionsServices.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="ValidationsModels\Age.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Category.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\ClimateRange.Metadata.cs" />
+    <Compile Include="ValidationsModels\ClimateScale.Metadata.cs" />
+    <Compile Include="ValidationsModels\Company.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\ContactUs.Metadata.cs" />
+    <Compile Include="ValidationsModels\PositionLevel.Metadata.cs" />
+    <Compile Include="ValidationsModels\InstructionLevel.Metadata.cs" />
+    <Compile Include="ValidationsModels\Feature.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\ListQuestionnaire.MetaData.cs" />
+    <Compile Include="ValidationsModels\Country.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Evaluation.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\FunctionalOrganization.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\FunctionalOrganizationType.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Location.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Option.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\PerformanceEvaluations.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Question.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Questionnaire.MetaData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Region.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Roles.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Seniority.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\State.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\Test.MetaData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationsModels\User.Metadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="app.Debug.config">
+      <DependentUpon>App.Config</DependentUpon>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="app.Release.config">
+      <DependentUpon>App.Config</DependentUpon>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Models\DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Models\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Models\obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\DataClasses.dbml.layout">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dependencies\Extreme.Generic.Net40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dependencies\Extreme.Numerics.Net40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\obj\Debug\MedinetClassLibrary.csproj.FileListAbsolute.txt" />
+    <Content Include="Models\obj\Debug\MedinetClassLibrary.dll" />
+    <Content Include="Models\obj\Debug\MedinetClassLibrary.pdb" />
+    <Content Include="Models\obj\Debug\TempPE\Models.DataClasses.designer.cs.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Resources\Classes\ChiSquare.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChiSquare.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Classes</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Classes\BivariateCharts.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BivariateCharts.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Classes</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Classes\ChiSquare.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChiSquare.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Classes</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Classes\Services.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Services.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Classes</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Classes\Services.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Services.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Classes</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Account.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Account.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Categories.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Categories.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Categories.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Categories.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\ChartReports.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChartReports.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Companies.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Companies.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Account.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Account.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\ChartReports.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChartReports.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Companies.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Companies.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\ClimateRanges.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClimateRanges.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\ClimateRanges.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClimateRanges.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Evaluations.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Evaluations.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Feedbacks.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Feedbacks.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Feedbacks.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Feedbacks.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Options.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Options.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Questions.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Questions.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Shared.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Tests.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Tests.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Users.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Users.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Evaluations.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Evaluations.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Options.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Options.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Questions.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Questions.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Shared.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Tests.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Tests.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controllers\Users.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Users.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Controllers</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Category.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Company.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Company.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Category.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Category.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Company.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Company.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Account.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Account.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Account.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Account.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\ClimateRange.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClimateRange.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\ClimateRange.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClimateRange.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\PositionLevel.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PositionLevel.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\PositionLevel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PositionLevel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Feature.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Feature.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Feature.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Feature.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Evaluation.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Evaluation.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\FOrganization.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FOrganization.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Location.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Location.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Option.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Option.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Question.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Question.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Questionnaire.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Questionnaire.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Shared.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\State.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>State.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Test.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Test.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\User.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Location.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Location.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Evaluation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Evaluation.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\User.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Option.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Option.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Test.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Test.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Questionnaire.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Questionnaire.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Question.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Question.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\State.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>State.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\FOrganization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FOrganization.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\Shared.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Reports\Files.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Files.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Reports</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Reports\Files.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Files.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Reports</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Scripts\Shared.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Scripts</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Scripts\Shared.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Scripts</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\ChangePassword.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePassword.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\ChangePassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePassword.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\ChangePasswordSucceeded.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePasswordSucceeded.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\ChangePasswordSucceeded.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePasswordSucceeded.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\LogOn.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogOn.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\LogOn.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogOn.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\PasswordRecovery.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PasswordRecovery.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\PasswordRecovery.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PasswordRecovery.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\PasswordRecoverySucceeded.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PasswordRecoverySucceeded.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Account\PasswordRecoverySucceeded.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PasswordRecoverySucceeded.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Account</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Age\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Age</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Age\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Age</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Age\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Age</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Age\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Age</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Age\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Age</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Age\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Age</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Age\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Age</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Age\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Age</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Category\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Category</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Category\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Category</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Category\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Category</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Category\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Category</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Category\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Category</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Category\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Category</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Category\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Category</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Category\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Category</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\Ranking.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Ranking.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\Ranking.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Ranking.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\Demographics.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Demographics.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\Demographics.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Demographics.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\ReportsList.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportsList.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\ReportsList.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportsList.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\Graphics.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Graphics.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\PrintResultsReport.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintResultsReport.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\Graphics.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Graphics.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ChartReport\PrintResultsReport.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintResultsReport.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ChartReport</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Company\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Company</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Company\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Company</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Company\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Company</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Company\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Company</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Company\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Company</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Company\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Company</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Company\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Company</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Company\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Company</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ContactUs\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ContactUs</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ContactUs\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ContactUs</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ContactUs\ContactSucceeded.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactSucceeded.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ContactUs</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ContactUs\ContactSucceeded.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactSucceeded.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ContactUs</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ContactUs\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ContactUs</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ContactUs\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ContactUs</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateRange\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateRange</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateRange\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateRange</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateRange\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateRange</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateRange\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateRange</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateRange\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateRange</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateRange\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateRange</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateRange\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateRange</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateRange\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateRange</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateScale\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateScale</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateScale\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateScale</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateScale\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateScale</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateScale\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateScale</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateScale\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateScale</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateScale\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateScale</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateScale\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateScale</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\ClimateScale\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.ClimateScale</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\ErrorEvaluation.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorEvaluation.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\ErrorEvaluation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorEvaluation.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PositionLevel\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PositionLevel</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PositionLevel\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PositionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PositionLevel\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PositionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PositionLevel\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PositionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PositionLevel\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PositionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PositionLevel\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PositionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PositionLevel\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PositionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PositionLevel\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PositionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InstructionLevel\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.InstructionLevel</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InstructionLevel\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.InstructionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InstructionLevel\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.InstructionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InstructionLevel\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.InstructionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InstructionLevel\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.InstructionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InstructionLevel\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.InstructionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InstructionLevel\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.InstructionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InstructionLevel\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.InstructionLevel</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feedback\Show.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Show.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feedback\Show.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Show.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feedback\Send.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Send.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feedback\Send.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Send.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feedback\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feedback\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feedback\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feedback\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feedback</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feature\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feature</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feature\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feature</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feature\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feature</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feature\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feature</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feature\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feature</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feature\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feature</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feature\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feature</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Feature\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Feature</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Country\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Country</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Country\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Country</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Country\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Country</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Country\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Country</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Country\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Country</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Country\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Country</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Country\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Country</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Country\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Country</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\AnswerTest.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AnswerTest.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\AnswerTest.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AnswerTest.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\ErrorClosedEvaluation.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorClosedEvaluation.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\EvaluationSucceeded.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EvaluationSucceeded.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\TestInstructions.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestInstructions.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\ErrorClosedEvaluation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorClosedEvaluation.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\EvaluationSucceeded.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EvaluationSucceeded.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Evaluation\TestInstructions.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestInstructions.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Evaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganizationType\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganizationType</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganizationType\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganizationType</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganizationType\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganizationType</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganizationType\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganizationType</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganizationType\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganizationType</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganizationType\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganizationType</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganizationType\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganizationType</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganizationType\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganizationType</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganization\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganization</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganization\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganization</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganization\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganization</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganization\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganization</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganization\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganization</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganization\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganization</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganization\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganization</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\FunctionalOrganization\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.FunctionalOrganization</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\AboutUs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AboutUs.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\ContactUs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactUs.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\AboutUs.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AboutUs.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Models\ContactUs.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactUs.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Models</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Brochure.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Brochure.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Brochure.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Brochure.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Map.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Map.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Map.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Map.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\FAQ.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FAQ.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\FAQ.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FAQ1.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Index.es.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Index.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Partners.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Partners.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Partners.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Partners.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Services.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Services.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Home\Services.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Services.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Home</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Location\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Location</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Location\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Location</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Location\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Location</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Location\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Location</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Location\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Location</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Location\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Location</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Location\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Location</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Location\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Location</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Option\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Option</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Option\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Option</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Option\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Option</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Option\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Option</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Option\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Option</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Option\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Option</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Option\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Option</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Option\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Option</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PerformanceEvaluation\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PerformanceEvaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PerformanceEvaluation\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PerformanceEvaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PerformanceEvaluation\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PerformanceEvaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PerformanceEvaluation\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PerformanceEvaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PerformanceEvaluation\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PerformanceEvaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PerformanceEvaluation\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PerformanceEvaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PerformanceEvaluation\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PerformanceEvaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\PerformanceEvaluation\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.PerformanceEvaluation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Questionnaire\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Questionnaire</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Questionnaire\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Questionnaire</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Questionnaire\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Questionnaire</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Questionnaire\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Questionnaire</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Questionnaire\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Questionnaire</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Questionnaire\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Questionnaire</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Questionnaire\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Questionnaire</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Questionnaire\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Questionnaire</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Question\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Question</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Question\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Question</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Question\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Question</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Question\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Question</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Question\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Question</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Question\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Question</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Question\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Question</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Question\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Question</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Region\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Region</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Region\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Region</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Region\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Region</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Region\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Region</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Region\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Region</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Region\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Region</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Region\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Region</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Region\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Region</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Reports\Demographic.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Demographic.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Demographic</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Reports\ReportsList.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportsList.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Report</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Reports\Demographic.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Demographic.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Demographic</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Reports\ReportsList.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportsList.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Report</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Seniority\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Seniority</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Seniority\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Seniority</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Seniority\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Seniority</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Seniority\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Seniority</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Seniority\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Seniority</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Seniority\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Seniority</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Seniority\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Seniority</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Seniority\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Seniority</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Shared\Errors.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Shared</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Shared\Errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Shared</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Shared\Shared.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Shared</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Shared\Shared.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Shared</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\State\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.State</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\State\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.State</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\State\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.State</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\State\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.State</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\State\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.State</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\State\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.State</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\State\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.State</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\State\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.State</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Code.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Code.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Code.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Code.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Finish.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Finish.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Finish.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Finish.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Print.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Print.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\SuccessfullyCreated.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SuccessfullyCreated.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\Print.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Print.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Test\SuccessfullyCreated.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SuccessfullyCreated.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.Test</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\User\Create.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.User</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\User\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.User</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\User\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.User</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\User\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.User</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\User\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.User</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\User\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.User</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\User\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.User</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\User\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Views.User</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Classes\BivariateCharts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BivariateCharts.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes.Classes</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\Web\Microsoft.Web.Publishing.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.targets" Condition="false" />
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="AfterCompile" Condition="exists('app.$(Configuration).config')">
+    <TransformXml Source="app.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="app.$(Configuration).config" />
+    <ItemGroup>
+      <AppConfigWithTargetPath Remove="app.config" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetName).vshost$(TargetExt).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

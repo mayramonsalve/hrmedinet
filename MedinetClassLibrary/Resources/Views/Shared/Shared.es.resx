@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ages" xml:space="preserve">
+    <value>Edades</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Regresar a lista</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categorías</value>
+  </data>
+  <data name="CodeHere" xml:space="preserve">
+    <value>¡Completa tu encuesta!</value>
+  </data>
+  <data name="Companies" xml:space="preserve">
+    <value>Compañías</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright © 2013 Medinet. Todos los derechos reservados.</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>Países</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="CreateButton" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="DeleteButton" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="EditButton" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="Evaluations" xml:space="preserve">
+    <value>Evaluaciones</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Síguenos</value>
+  </data>
+  <data name="FooterReport" xml:space="preserve">
+    <value>MEDINET. Derechos reservados. 2011.</value>
+  </data>
+  <data name="FOrganizations" xml:space="preserve">
+    <value>Estructuras funcionales</value>
+  </data>
+  <data name="FOTypes" xml:space="preserve">
+    <value>Tipos</value>
+  </data>
+  <data name="GoHome" xml:space="preserve">
+    <value>Ir a Inicio</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>Listar</value>
+  </data>
+  <data name="ListReports" xml:space="preserve">
+    <value>Lista de reportes</value>
+  </data>
+  <data name="Locations" xml:space="preserve">
+    <value>Sucursales</value>
+  </data>
+  <data name="NewsText" xml:space="preserve">
+    <value>Nueva página web de Medinet!!!</value>
+  </data>
+  <data name="NewsTitle" xml:space="preserve">
+    <value>Novedades: </value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
+  <data name="Partners" xml:space="preserve">
+    <value>Aliados</value>
+  </data>
+  <data name="Performances" xml:space="preserve">
+    <value>Desempeño</value>
+  </data>
+  <data name="PrintQuestionnaire" xml:space="preserve">
+    <value>Imprimir cuestionario</value>
+  </data>
+  <data name="QuestionDelete" xml:space="preserve">
+    <value>¿Está seguro que desea eliminar esto?</value>
+  </data>
+  <data name="Questionnaires" xml:space="preserve">
+    <value>Cuestionarios</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>Preguntas</value>
+  </data>
+  <data name="Regions" xml:space="preserve">
+    <value>Regiones</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reportes</value>
+  </data>
+  <data name="SendButton" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="Seniorities" xml:space="preserve">
+    <value>Antigüedades</value>
+  </data>
+  <data name="StartNow" xml:space="preserve">
+    <value>¿Tienes una cuenta?</value>
+  </data>
+  <data name="States" xml:space="preserve">
+    <value>Estados</value>
+  </data>
+  <data name="TestReport" xml:space="preserve">
+    <value>Reportes de medición</value>
+  </data>
+  <data name="Tests" xml:space="preserve">
+    <value>Mediciones</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="Apr" xml:space="preserve">
+    <value>Abr</value>
+  </data>
+  <data name="Aug" xml:space="preserve">
+    <value>Ago</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
+  <data name="DateScript" xml:space="preserve">
+    <value>dd/mm/yy</value>
+  </data>
+  <data name="Dec" xml:space="preserve">
+    <value>Dic</value>
+  </data>
+  <data name="Feb" xml:space="preserve">
+    <value>Feb</value>
+  </data>
+  <data name="Fri" xml:space="preserve">
+    <value>Vie</value>
+  </data>
+  <data name="Jan" xml:space="preserve">
+    <value>Ene</value>
+  </data>
+  <data name="Jul" xml:space="preserve">
+    <value>Jul</value>
+  </data>
+  <data name="Jun" xml:space="preserve">
+    <value>Jun</value>
+  </data>
+  <data name="Mar" xml:space="preserve">
+    <value>Mar</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="Mon" xml:space="preserve">
+    <value>Lun</value>
+  </data>
+  <data name="Nov" xml:space="preserve">
+    <value>Nov</value>
+  </data>
+  <data name="Oct" xml:space="preserve">
+    <value>Oct</value>
+  </data>
+  <data name="Sat" xml:space="preserve">
+    <value>Sáb</value>
+  </data>
+  <data name="Sep" xml:space="preserve">
+    <value>Sep</value>
+  </data>
+  <data name="Sun" xml:space="preserve">
+    <value>Dom</value>
+  </data>
+  <data name="Thu" xml:space="preserve">
+    <value>Jue</value>
+  </data>
+  <data name="Tue" xml:space="preserve">
+    <value>Mar</value>
+  </data>
+  <data name="Wed" xml:space="preserve">
+    <value>Mié</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="QuestionnaireReport" xml:space="preserve">
+    <value>Reportes de cuestionarios</value>
+  </data>
+  <data name="GenericTitle" xml:space="preserve">
+    <value>Medinet - </value>
+  </data>
+  <data name="See" xml:space="preserve">
+    <value>Más</value>
+  </data>
+  <data name="GridLanguage" xml:space="preserve">
+    <value>~/Scripts/grid.locale-es.js</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>Sin Imagen</value>
+  </data>
+  <data name="NoUrl" xml:space="preserve">
+    <value>Sin Url</value>
+  </data>
+  <data name="Entities" xml:space="preserve">
+    <value>Entidades</value>
+  </data>
+  <data name="Ubications" xml:space="preserve">
+    <value>Ubicaciones</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>Falso</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>Verdadero</value>
+  </data>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="SelectOptionRequired" xml:space="preserve">
+    <value>Debe seleccionar una opción.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Cargar evaluación</value>
+  </data>
+  <data name="InstructionLevels" xml:space="preserve">
+    <value>Niveles de instrucción</value>
+  </data>
+  <data name="PositionLevels" xml:space="preserve">
+    <value>Niveles de cargo</value>
+  </data>
+  <data name="Levels" xml:space="preserve">
+    <value>Niveles</value>
+  </data>
+  <data name="PrintExcel" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="PrintPdf" xml:space="preserve">
+    <value>Pdf</value>
+  </data>
+  <data name="PrintPpt" xml:space="preserve">
+    <value>Powerpoint</value>
+  </data>
+  <data name="PrintWord" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimir</value>
+  </data>
+  <data name="PrintAll" xml:space="preserve">
+    <value>Imprimir todo</value>
+  </data>
+  <data name="EvaluationReport" xml:space="preserve">
+    <value>Reportes de evaluaciones</value>
+  </data>
+  <data name="ClimateRanges" xml:space="preserve">
+    <value>Rangos de clima</value>
+  </data>
+  <data name="ClimateScales" xml:space="preserve">
+    <value>Escalas de clima</value>
+  </data>
+  <data name="Ranges" xml:space="preserve">
+    <value>Rangos</value>
+  </data>
+  <data name="Scales" xml:space="preserve">
+    <value>Escalas</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Ingrese su cuenta</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Femenino</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Masculino</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Yo tambien ahorre tiempo con soluciones automatizadas en medicion @hrmedinet</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Compartir en</value>
+  </data>
+  <data name="Desktop" xml:space="preserve">
+    <value>Versión de Escritorio</value>
+  </data>
+  <data name="FinishButton" xml:space="preserve">
+    <value>Finalizar</value>
+  </data>
+  <data name="CodeHereSub" xml:space="preserve">
+    <value>Ingresa tu código de evaluación aquí:</value>
+  </data>
+  <data name="StartNowSub" xml:space="preserve">
+    <value>Ingresa tus credenciales aquí:</value>
+  </data>
+</root>

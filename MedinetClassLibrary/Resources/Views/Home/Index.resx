@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Code" xml:space="preserve">
+    <value>Enter your code here:</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>../../Content/Images/icon-system/help.png</value>
+  </data>
+  <data name="HRMedinetText1" xml:space="preserve">
+    <value>It is an automated tool which allows to easy and quickly perform organizational climate assessments, supported by web technology and the best practices of the technological world.</value>
+  </data>
+  <data name="HRMedinetText2" xml:space="preserve">
+    <value>It has no restrictions when it comes to the number of users and the geographical location, and it can also be used on computer equipments and mobile devices for maximum flexibility.</value>
+  </data>
+  <data name="Measurements" xml:space="preserve">
+    <value>Measurements</value>
+  </data>
+  <data name="MedinetText" xml:space="preserve">
+    <value>We offer assessment solutions of Organizational Climate which allow to proactively detect problems using reliable instruments and a specialized statistic analysis that will help to promote the development of human capital in favor of your company’s professionals and organizational growth.</value>
+  </data>
+  <data name="PathIndex" xml:space="preserve">
+    <value>Home page</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="SendButton" xml:space="preserve">
+    <value>Evaluate</value>
+  </data>
+  <data name="TitleIndex" xml:space="preserve">
+    <value>Home page</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome to HRMedinet</value>
+  </data>
+  <data name="WelcomeText1" xml:space="preserve">
+    <value>It is an automated tool that allows you to carry out massive evaluations easily and quickly, supported by web technology and the best practices of the technological world.</value>
+  </data>
+  <data name="WelcomeText2" xml:space="preserve">
+    <value>It has no geographical or number of user limitations, and can be used on both computer equipment and mobile devices for greater flexibility.</value>
+  </data>
+  <data name="WelcomeText3" xml:space="preserve">
+    <value>HRMedinet has a robust statistical analysis module that will allow you to obtain as much information as possible from your evaluation, avoiding additional consulting costs for interpretation of results and with the necessary recommendations to carry out the actions that your company really requires.</value>
+  </data>
+  <data name="WelcomeText4" xml:space="preserve">
+    <value>We support the conservation of our environment since all our reports are electronic, not a single sheet of paper is required during the entire measurement process.</value>
+  </data>
+  <data name="WhatsNew" xml:space="preserve">
+    <value>What's new?</value>
+  </data>
+  <data name="AnalysisImage" xml:space="preserve">
+    <value>/Content/Images/img-galeria/analisis.png</value>
+  </data>
+  <data name="FlexibilityImage" xml:space="preserve">
+    <value>/Content/Images/img-galeria/flexibilidad.png</value>
+  </data>
+  <data name="EstImage" xml:space="preserve">
+    <value>/Content/Images/img-galeria/estadisticas.png</value>
+  </data>
+  <data name="ResultImage" xml:space="preserve">
+    <value>../../Content/Images/img-galeria/result.jpg</value>
+  </data>
+  <data name="HRMedinetPath" xml:space="preserve">
+    <value>About HRMedinet</value>
+  </data>
+  <data name="GlobalClimate" xml:space="preserve">
+    <value>Global result</value>
+  </data>
+  <data name="Feedbacks" xml:space="preserve">
+    <value>Feedbacks</value>
+  </data>
+  <data name="ChooseCompany" xml:space="preserve">
+    <value>Choose company</value>
+  </data>
+  <data name="SelectCompany" xml:space="preserve">
+    <value>Select a company</value>
+  </data>
+  <data name="DisplayProblems" xml:space="preserve">
+    <value>For best performance of the application we recommend using Internet Explorer 9, Firefox or Google Chrome. Very old versions (Internet Explorer less than version 8), may present some problems.</value>
+  </data>
+  <data name="MetaDescription" xml:space="preserve">
+    <value>HRMedinet is a tool which proactively allows you to determine your company’s climate immediately and with global scope; speeding up decision-making due to its solid statistical analysis capacity.</value>
+  </data>
+  <data name="HelpMsg" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="ImageMsj1" xml:space="preserve">
+    <value>Human Resources Solutions</value>
+  </data>
+  <data name="ImageMsj2" xml:space="preserve">
+    <value>Individuals measurements</value>
+  </data>
+  <data name="ImageMsj3" xml:space="preserve">
+    <value>Automatic measurements and results</value>
+  </data>
+  <data name="ImageMsj4" xml:space="preserve">
+    <value>Select your teamwork</value>
+  </data>
+  <data name="Ourclients" xml:space="preserve">
+    <value>Companies that have used HrMedinet</value>
+  </data>
+  <data name="ImageMsj5" xml:space="preserve">
+    <value>Satisfaction surveys</value>
+  </data>
+  <data name="ImageMsj6" xml:space="preserve">
+    <value>Performance evaluations</value>
+  </data>
+</root>

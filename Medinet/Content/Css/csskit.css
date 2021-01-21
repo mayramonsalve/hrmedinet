@@ -1,0 +1,34 @@
+.syvtooltip {
+	position: relative;
+}
+
+.syvtooltip .tooltip-body {
+	color: #ffffff;
+	display: none;
+	font: normal 12px/14px Arial, Helvetica, sans-serif;
+	padding: 7px;
+	position: absolute;
+	left: -10px;
+	bottom: -55px;
+	width: 200px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+	
+.syvtooltip .tooltip-body .tooltip-ok {
+	border: none;
+	bottom: -10px;
+	height: 7px;
+	left: 20px;
+	position: absolute;
+	width: 13px;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+		
+.tooltip-rosa { color: #c42173; }
+.tooltip-rosa .tooltip-body { border: 1px solid #98195e; background: #c42173 top right; text-shadow: 0 1px 1px #6e0d3f; }
+.tooltip-rosa .tooltip-body .tooltip-ok { background: url("../Images/icon-system/ok-pembe.png") no-repeat top right; }
+	

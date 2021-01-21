@@ -1,0 +1,69 @@
+﻿
+.clear
+{
+clear: both;
+}
+
+.error
+{
+color:Red;
+}
+
+#menucontainer
+{
+margin-top:40px;
+}
+
+div#title
+{
+display:block;
+float:left;
+text-align:left;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+color: #cc0000;
+display: block;
+font-size:12px;
+}
+
+.field-validation-valid
+{
+display: none;
+}
+
+.input-validation-error
+{
+border: 1px solid #e26958!important;
+/*background-color: #ffffcc;
+font-size:20px;*/
+}
+
+.validation-summary-errors
+{
+background-color: #FCFFCD;
+padding: 10px 0px 0px 20px;
+border: solid 1px #FFB03D;
+font-weight: bold;
+font-size:14px;
+margin: 20px 0px 20px 0px;
+width:80%;
+min-width:50%;
+
+}
+
+.validation-summary-errors li 
+{
+display: block;
+background: url('/Content/Images/exclamation.png') no-repeat 0px 50%;
+padding: 0px 0px 5px 25px; 
+}
+
+.validation-summary-valid
+{
+display: none;
+}
