@@ -2,15 +2,17 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MedinetClassLibrary.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <!--<Setting Name="HRMEDINET_SITEConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=127.0.0.1,1433;Initial Catalog=HRMEDINET_SITE;Persist Security Info=True;User ID=sa;Password=Aleja3190++; MultipleActiveResultSets=True&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=127.0.0.1,1433;Initial Catalog=HRMEDINET_SITE;Persist Security Info=True;User ID=sa;Password=Aleja3190++; MultipleActiveResultSets=True</Value>
-    </Setting>-->
     <Setting Name="HRMEDINET_SITEConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;ConnectionString&gt;Data Source=SERVER\GLOBAL;Initial Catalog=HRMEDINET_SITE;Persist Security Info=True;User ID=sa;Password=S4intGAC; MultipleActiveResultSets=True&lt;/ConnectionString&gt;
+        &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+        &lt;/SerializableConnectionString&gt;
+      </DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SERVER\GLOBAL;Initial Catalog=HRMEDINET_SITE;Persist Security Info=True;User ID=sa;Password=S4intGAC; MultipleActiveResultSets=True</Value>
+    </Setting>
+    <!--<Setting Name="HRMEDINET_SITEConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">
         &lt;?xml version="1.0" encoding="utf-16"?&gt;
         &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
@@ -19,7 +21,7 @@
         &lt;/SerializableConnectionString&gt;
       </DesignTimeValue>
       <Value Profile="(Default)">Data Source=107.180.102.110,1433;Initial Catalog=HRMEDINET_SITE;Persist Security Info=True;User ID=hrmedinet_app;Password=7E6n1ab%;MultipleActiveResultSets=True</Value>
-    </Setting>
+    </Setting>-->
     <!--<Setting Name="HRMEDINET_SITEConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">
         &lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -29,6 +31,6 @@
         &lt;/SerializableConnectionString&gt;
       </DesignTimeValue>
       <Value Profile="(Default)">Data Source=localhost,1433;Initial Catalog=HRMEDINET_SITE;Persist Security Info=True;User ID=hrmedinet_app;Password=7E6n1ab%;MultipleActiveResultSets=True</Value>
-    </Setting>-->  
+    </Setting>-->
   </Settings>
 </SettingsFile>
