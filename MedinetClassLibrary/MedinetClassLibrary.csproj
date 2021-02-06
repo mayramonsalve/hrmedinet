@@ -55,7 +55,7 @@
       <HintPath>Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <HintPath>..\..\Dll Medinet\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -66,11 +66,14 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.DataVisualization" />
-    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\System-Web-Helpers.dll.1.0.0\lib\Net40\System.Web.Helpers.dll</HintPath>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\Dll Medinet\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\Dll Medinet\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\..\Dll Medinet\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -1847,15 +1850,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dependencies\Extreme.Generic.Net40.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Dependencies\Extreme.Numerics.Net40.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Dependencies\Extreme.Generic.Net40.dll" />
+    <Content Include="Dependencies\Extreme.Numerics.Net40.dll" />
+    <Content Include="Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll" />
     <Content Include="Models\obj\Debug\MedinetClassLibrary.csproj.FileListAbsolute.txt" />
     <Content Include="Models\obj\Debug\MedinetClassLibrary.dll" />
     <Content Include="Models\obj\Debug\MedinetClassLibrary.pdb" />
