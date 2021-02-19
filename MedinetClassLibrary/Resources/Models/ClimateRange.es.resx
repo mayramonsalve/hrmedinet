@@ -127,10 +127,10 @@
     <value>El campo Acción es requerido.</value>
   </data>
   <data name="ClimateScale" xml:space="preserve">
-    <value>Escala de clima</value>
+    <value>Escala de resultado</value>
   </data>
   <data name="ClimateScaleRequired" xml:space="preserve">
-    <value>El campo Escala de clima es requerido.</value>
+    <value>El campo Escala de resultado es requerido.</value>
   </data>
   <data name="Color" xml:space="preserve">
     <value>Color</value>

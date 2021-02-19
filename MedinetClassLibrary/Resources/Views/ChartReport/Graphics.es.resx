@@ -352,10 +352,10 @@
     <value>Resultado General para la medición </value>
   </data>
   <data name="HRMedinetPerformed" xml:space="preserve">
-    <value>Hrmedinet realizó un análisis para determinar las variables donde se presentan diferencias significativas entre el clima y las mencionadas variables. A continuación se presentan los resultados:</value>
+    <value>Hrmedinet realizó un análisis para determinar las variables donde se presentan diferencias significativas entre el resultado y las mencionadas variables. A continuación se presentan los resultados:</value>
   </data>
   <data name="HRPerformedMultivariable" xml:space="preserve">
-    <value>Hrmedinet realizó un análisis multivariable para determinar las variables que están afectando la variación del nivel de clima. Los resultados, que involucran el 95% de las variaciones se muestran a continuación:</value>
+    <value>Hrmedinet realizó un análisis multivariable para determinar las variables que están afectando la variación del nivel de resultado. Los resultados, que involucran el 95% de las variaciones se muestran a continuación:</value>
   </data>
   <data name="IsPlaced" xml:space="preserve">
     <value> se encuentra en el lugar </value>
@@ -406,7 +406,7 @@
     <value>Imprimir esta sección</value>
   </data>
   <data name="Purpose" xml:space="preserve">
-    <value>El propósito de este informe es resumir los aspectos generales de clima organizacional para el país/región/departamento entre otras.</value>
+    <value>El propósito de este informe es resumir los aspectos generales de resultado organizacional para el país/región/departamento entre otras.</value>
   </data>
   <data name="Questionnaire" xml:space="preserve">
     <value>Cuestionario</value>
@@ -442,7 +442,7 @@
     <value>Los resultados comparativos indican que de una muestra seleccionada de empresas para comparar por cliente, </value>
   </data>
   <data name="TheGeneralResultsIndicate" xml:space="preserve">
-    <value>Los resultados generales indican que el nivel de clima de su compañía es de </value>
+    <value>Los resultados generales indican que el nivel de resultado de su compañía es de </value>
   </data>
   <data name="TheHighestCategoryResults" xml:space="preserve">
     <value> Los resultados más altos se muestran en las dimensiones </value>
@@ -454,7 +454,7 @@
     <value>Variables con asociación significativa: </value>
   </data>
   <data name="VariablesAffecting" xml:space="preserve">
-    <value>Variables afectando el nivel del clima.</value>
+    <value>Variables afectando el nivel del resultado.</value>
   </data>
   <data name="NoEnough" xml:space="preserve">
     <value>Los datos por demográfico no alcanzan el mínimo requerido para mostrar sus resultados.</value>
@@ -502,7 +502,7 @@
     <value>Resultados por Dimensiones</value>
   </data>
   <data name="Climate" xml:space="preserve">
-    <value>Clima</value>
+    <value>Resultado</value>
   </data>
   <data name="Company" xml:space="preserve">
     <value>Compañía</value>
@@ -538,10 +538,10 @@
     <value>Categorías general</value>
   </data>
   <data name="ClimateRangeTab" xml:space="preserve">
-    <value>Rangos de Clima</value>
+    <value>Rangos de Resultado</value>
   </data>
   <data name="ClimateScaleTab" xml:space="preserve">
-    <value>Escalas de Clima</value>
+    <value>Escalas de Resultado</value>
   </data>
   <data name="ComparativeTitle" xml:space="preserve">
     <value>Gráficos Comparativos</value>

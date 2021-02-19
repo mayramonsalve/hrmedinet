@@ -175,10 +175,10 @@
     <value>El campo Teléfono es requerido.</value>
   </data>
   <data name="ShowClimate" xml:space="preserve">
-    <value>Mostrar clima?</value>
+    <value>Mostrar resultado?</value>
   </data>
   <data name="ShowClimateRequired" xml:space="preserve">
-    <value>El campo Mostrar clima?  es requerido.</value>
+    <value>El campo Mostrar resultado?  es requerido.</value>
   </data>
   <data name="UrlInvalid" xml:space="preserve">
     <value>El campo Url es inválido.</value>

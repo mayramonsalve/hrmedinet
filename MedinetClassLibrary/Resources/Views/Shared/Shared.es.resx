@@ -376,10 +376,10 @@
     <value>Reportes de evaluaciones</value>
   </data>
   <data name="ClimateRanges" xml:space="preserve">
-    <value>Rangos de clima</value>
+    <value>Rangos de resultados</value>
   </data>
   <data name="ClimateScales" xml:space="preserve">
-    <value>Escalas de clima</value>
+    <value>Escalas de resultado</value>
   </data>
   <data name="Ranges" xml:space="preserve">
     <value>Rangos</value>

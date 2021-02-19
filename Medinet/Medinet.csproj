@@ -69,9 +69,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Dependencies\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.0.5\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -82,6 +81,9 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.4.0\lib\net40\Rotativa.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
@@ -622,6 +624,12 @@
     <Content Include="Reports\HRAdministratorQuestionnaireReport.ascx" />
     <Content Include="Reports\QuestionnaireReport.aspx" />
     <Content Include="Reports\TestByCompanyReport.aspx" />
+    <Content Include="Rotativa\libeay32.dll" />
+    <Content Include="Rotativa\libgcc_s_dw2-1.dll" />
+    <Content Include="Rotativa\mingwm10.dll" />
+    <Content Include="Rotativa\README.txt" />
+    <Content Include="Rotativa\ssleay32.dll" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\AnalyticalReport.js" />
     <Content Include="Scripts\ar-en.js">
       <SubType>Designer</SubType>
@@ -1472,6 +1480,7 @@
     <Content Include="Views\Shared\Print.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="App_Data\51Degrees.mobi-Lite-2013.01.03.xml.gz" />
     <None Include="Content\Images\Background\medinet-bg.psd" />
     <None Include="Content\Images\img-galeria\estadisticasdetalladas.psd" />

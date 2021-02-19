@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ActionLink" xml:space="preserve">
-    <value>Crear nueva escala de clima</value>
+    <value>Crear nueva escala de resultado</value>
   </data>
   <data name="PathIndex" xml:space="preserve">
-    <value>Escalas de clima &gt; Listar</value>
+    <value>Escalas de resultado &gt; Listar</value>
   </data>
   <data name="TitleIndex" xml:space="preserve">
-    <value>Listar escalas de clima</value>
+    <value>Listar escalas de resultado</value>
   </data>
 </root>

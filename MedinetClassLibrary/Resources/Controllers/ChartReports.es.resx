@@ -142,7 +142,7 @@
     <value>Resultados por </value>
   </data>
   <data name="ClimateComparative" xml:space="preserve">
-    <value>Comparativo: Clima por </value>
+    <value>Comparativo: Resultado por </value>
   </data>
   <data name="CountryCategory" xml:space="preserve">
     <value>Categorías: Resultados por país</value>

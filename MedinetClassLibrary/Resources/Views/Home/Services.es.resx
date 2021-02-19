@@ -124,10 +124,10 @@
     <value>Descripción</value>
   </data>
   <data name="Dmsj1" xml:space="preserve">
-    <value>La medición del Clima Organizacional permite establecer estrategias que optimizan el comportamiento organizacional y promueven en las personas el trabajar con entusiasmo y de manera efectiva en sus entornos laborales. Los resultados que se obtienen de su estudio, permiten entender acciones y reacciones de la gente dentro del contexto de trabajo, como su responsabilidad, compromiso, productividad y el respeto a las normas y políticas de la empresa.</value>
+    <value>La medición del Resultado Organizacional permite establecer estrategias que optimizan el comportamiento organizacional y promueven en las personas el trabajar con entusiasmo y de manera efectiva en sus entornos laborales. Los resultados que se obtienen de su estudio, permiten entender acciones y reacciones de la gente dentro del contexto de trabajo, como su responsabilidad, compromiso, productividad y el respeto a las normas y políticas de la empresa.</value>
   </data>
   <data name="Dmsj2" xml:space="preserve">
-    <value>Recientemente, Pérez de Maldonado (2004) plantea que el ambiente de trabajo o clima organizacional puede ser entendido como un “fenómeno socialmente construido, que surge de las interacciones individuo-grupo-condiciones de trabajo, que da como resultado un significado a las experiencias individual y grupal, debido a que lo que pertenece y ocurre en la organización afecta e interactúa con todo. Los resultados organizacionales son precisamente consecuencia de estas interacciones, que se dan de manera dinámica, cambiante y cargada de afectividad”.</value>
+    <value>Recientemente, Pérez de Maldonado (2004) plantea que el ambiente de trabajo o resultado organizacional puede ser entendido como un “fenómeno socialmente construido, que surge de las interacciones individuo-grupo-condiciones de trabajo, que da como resultado un significado a las experiencias individual y grupal, debido a que lo que pertenece y ocurre en la organización afecta e interactúa con todo. Los resultados organizacionales son precisamente consecuencia de estas interacciones, que se dan de manera dinámica, cambiante y cargada de afectividad”.</value>
   </data>
   <data name="E360msj1" xml:space="preserve">
     <value>La evaluación 360º es una técnica que cada día es más empleada en las organizaciones modernas, conocida también como evaluación integral,  pretende ofrecer a los empleados una perspectiva de su desempeño lo más confiable posible, obteniendo información desde todos los ángulos posibles incluyendo a  jefes o supervisores, compañeros, clientes (internos o externos) y subordinados.</value>
@@ -170,13 +170,13 @@
     <value>Evaluación de Competencias de Candidatos (Assessment Centres)</value>
   </data>
   <data name="Items" xml:space="preserve">
-    <value>Específicamente, el aplicar una medición de clima organizacional, permite a las empresas:</value>
+    <value>Específicamente, el aplicar una medición de resultado organizacional, permite a las empresas:</value>
   </data>
   <data name="Path" xml:space="preserve">
     <value> Servicios</value>
   </data>
   <data name="Subitem1" xml:space="preserve">
-    <value>Identificar fortalezas y debilidades en el clima de trabajo.</value>
+    <value>Identificar fortalezas y debilidades en el resultado de trabajo.</value>
   </data>
   <data name="Subitem2" xml:space="preserve">
     <value>Contar con indicadores cualitativos y cuantitativos de los principales procesos y  variables de Gestión Humana.</value>
@@ -197,7 +197,7 @@
     <value>En la actualidad, ofrecemos los siguientes servicios:</value>
   </data>
   <data name="Text3" xml:space="preserve">
-    <value>Medición de Clima Organizacional.</value>
+    <value>Medición de Resultado Organizacional.</value>
   </data>
   <data name="Text4" xml:space="preserve">
     <value>Medición de Competencias Generales de Candidatos.</value>
@@ -221,7 +221,7 @@
     <value>Servicios</value>
   </data>
   <data name="OrganizationalClimateTitle" xml:space="preserve">
-    <value>Clima Organizacional</value>
+    <value>Resultado Organizacional</value>
   </data>
   <data name="BackToServices" xml:space="preserve">
     <value>Volver a nuestros servicios</value>
@@ -230,7 +230,7 @@
     <value>Diagnósticos organizacionales</value>
   </data>
   <data name="Service2" xml:space="preserve">
-    <value>Clima y cultura organizacional</value>
+    <value>Resultado y cultura organizacional</value>
   </data>
   <data name="Service3" xml:space="preserve">
     <value>Cliente misterioso</value>

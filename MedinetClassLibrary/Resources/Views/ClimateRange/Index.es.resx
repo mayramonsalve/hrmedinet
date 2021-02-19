@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ActionLink" xml:space="preserve">
-    <value>Crear nuevo rango de clima</value>
+    <value>Crear nuevo rango de resultado</value>
   </data>
   <data name="DropDownClimateScales" xml:space="preserve">
-    <value>Escala de clima</value>
+    <value>Escala de resultado</value>
   </data>
   <data name="PathIndex" xml:space="preserve">
-    <value>Rangos de clima &gt; Listar</value>
+    <value>Rangos de resultado &gt; Listar</value>
   </data>
   <data name="TitleIndex" xml:space="preserve">
-    <value>Listar rangos de clima</value>
+    <value>Listar rangos de resultado</value>
   </data>
 </root>
