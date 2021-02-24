@@ -7,6 +7,11 @@ using MedinetClassLibrary.Services;
 using MedinetClassLibrary.Models;
 using Medinet.Models.ViewModels;
 using MedinetClassLibrary.AuthorizationModels;
+using System.IO;
+using System.Configuration;
+using System.Data;
+using Medinet.Class.CustomExcelClass;
+using Medinet.Models.CustomExcelModels;
 
 namespace Medinet.Controllers
 {
@@ -14,18 +19,34 @@ namespace Medinet.Controllers
     //[Authorize(Roles = "HRCompany, HRAdministrator")]
     public class QuestionnairesController : Controller
     {
-        
+
         private QuestionnairesServices _questionnaireService;
+        private CategoriesServices _categoryService;
+        private QuestionsServices _questionsServices;
+        private QuestionsTypeServices _questionsType;
+        private OptionsServices _optionsServices;
         private QuestionnaireViewModel _questionnaireViewModel;
 
         public QuestionnairesController()
         {
             _questionnaireService = new QuestionnairesServices();
+            _categoryService = new CategoriesServices();
+            _questionsServices = new QuestionsServices();
+            _questionsType = new QuestionsTypeServices();
+            _optionsServices = new OptionsServices();
         }
 
-        public QuestionnairesController(QuestionnairesServices _questionnaireService)
+        public QuestionnairesController(QuestionnairesServices _questionnaireService,
+                                            CategoriesServices _categoryService,
+                                            QuestionsServices _questionsServices,
+                                            QuestionsTypeServices _questionsType,
+                                            OptionsServices _optionsServices)
         {
             this._questionnaireService = _questionnaireService;
+            this._categoryService = _categoryService;
+            this._questionsServices = _questionsServices;
+            this._questionsType = _questionsType;
+            this._optionsServices = _optionsServices;
         }
 
         private bool GetAuthorization(Questionnaire questionnaire)
@@ -33,7 +54,7 @@ namespace Medinet.Controllers
             User userLogged = new UsersServices().GetByUserName(User.Identity.Name);
             return new SharedHrAuthorization(userLogged,
                 new CompaniesServices().GetById(new UsersServices().GetById(questionnaire.User_Id).Company_Id),
-                userLogged.Company.CompaniesType.Name=="Owner").isAuthorizated();
+                userLogged.Company.CompaniesType.Name == "Owner").isAuthorizated();
         }
 
         [Authorize(Roles = "HRCompany, HRAdministrator")]
@@ -49,21 +70,21 @@ namespace Medinet.Controllers
         [Authorize(Roles = "HRCompany, HRAdministrator")]
         public ActionResult Create(Questionnaire questionnaire)
         {
-                questionnaire.CreationDate = DateTime.Now;
-                questionnaire.User_Id = new UsersServices().GetByUserName(User.Identity.Name).Id;
-                User user = new UsersServices().GetByUserName(User.Identity.Name.ToString());
-                if (user.Role.Name == "HRAdministrator")
-                    questionnaire.Template = true;
-                else
-                    questionnaire.Template = false;
-                ValidateQuestionnaireModel(questionnaire);
-                if (ModelState.IsValid)
-                {
-                    if (_questionnaireService.Add(questionnaire))
-                        return RedirectToAction("Index");
-                }
-                InitializeViews(null);
-                return View(_questionnaireViewModel);
+            questionnaire.CreationDate = DateTime.Now;
+            questionnaire.User_Id = new UsersServices().GetByUserName(User.Identity.Name).Id;
+            User user = new UsersServices().GetByUserName(User.Identity.Name.ToString());
+            if (user.Role.Name == "HRAdministrator")
+                questionnaire.Template = true;
+            else
+                questionnaire.Template = false;
+            ValidateQuestionnaireModel(questionnaire);
+            if (ModelState.IsValid)
+            {
+                if (_questionnaireService.Add(questionnaire))
+                    return RedirectToAction("Index");
+            }
+            InitializeViews(null);
+            return View(_questionnaireViewModel);
         }
 
         [Authorize(Roles = "HRCompany")]
@@ -154,7 +175,7 @@ namespace Medinet.Controllers
         [Authorize(Roles = "HRCompany, HRAdministrator")]
         public ActionResult Index()
         {
-            InitializeViews(null);         
+            InitializeViews(null);
             return View(_questionnaireViewModel);
         }
 
@@ -170,6 +191,218 @@ namespace Medinet.Controllers
                 return RedirectToLogOn();
         }
 
+        [Authorize(Roles = "HRCompany, HRAdministrator")]
+        public ActionResult LoadExcel()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "HRCompany, HRAdministrator")]
+        public ActionResult LoadExcel(HttpPostedFileBase postedFile)
+        {
+
+            if (postedFile != null && postedFile.ContentLength > (1024 * 1024 * 50))  // 50MB limit  
+            {
+                ModelState.AddModelError("postedFile", "Your file is to large. Maximum size allowed is 50MB !");
+            }
+
+            if (postedFile != null)
+            {
+                string[] validFileTypes = { ".xls", ".xlsx", ".csv" };
+                string filePath = string.Empty;
+                string path = Server.MapPath("~/Uploads/");
+                ExcelRead dt = new ExcelRead();
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                filePath = path + Path.GetFileName(postedFile.FileName);
+                string extension = Path.GetExtension(postedFile.FileName);
+                postedFile.SaveAs(filePath);
+
+                string conString = string.Empty;
+                if (validFileTypes.Contains(extension))
+                {
+                    if (extension == ".csv")
+                    {
+                        dt = Utility.ConvertCSVtoDataTable(filePath);
+                        ViewBag.Data = dt;
+                    }
+                    //Connection String to Excel Workbook  
+                    else if (extension.Trim() == ".xls")
+                    {
+                        conString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + filePath + ";Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=2\"";
+                        dt = Utility.ConvertXSLXtoDataTable(filePath, conString);
+                        ViewBag.Data = dt;
+                    }
+                    else if (extension.Trim() == ".xlsx")
+                    {
+                        conString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + filePath + ";Extended Properties=\"Excel 12.0;HDR=Yes;IMEX=2\"";
+                        dt = Utility.ConvertXSLXtoDataTable(filePath, conString);
+                        ViewBag.Data = dt;
+                    }
+                }
+
+                try
+                {
+
+                    foreach (var ex in dt.excelContent)
+                    {
+                        int id = _questionsType.GetAllRecords().Where(x => x.Name == ex.Type).FirstOrDefault().Id;
+
+                        if (string.IsNullOrEmpty(ex.Category) || string.IsNullOrEmpty(ex.Question))
+                        {
+                            InitializeViews(null);
+                            return View(_questionnaireViewModel);
+                        }
+
+                        if (id == 1)
+                        {
+                            if (string.IsNullOrEmpty(ex.Option) || string.IsNullOrEmpty(ex.Value))
+                            {
+                                InitializeViews(null);
+                                return View(_questionnaireViewModel);
+                            }
+                        }
+
+                        if (id == 3)
+                        {
+                            if (string.IsNullOrEmpty(ex.Option) || string.IsNullOrEmpty(ex.Value))
+                            {
+                                InitializeViews(null);
+                                return View(_questionnaireViewModel);
+                            }
+
+                            if (dt.excelContent.Where(x => x.Question == ex.Question && x.Type == ex.Type).Count() != 2)
+                            {
+                                InitializeViews(null);
+                                return View(_questionnaireViewModel);
+                            }
+                        }
+                    }
+
+                    Questionnaire questionnaire = new Questionnaire();
+                    Category category;
+
+                    List<Question> Listquestion = new List<Question>();
+                    List<Category> Listcategory = new List<Category>();
+                    List<Option> Listoption = new List<Option>();
+
+                    Option option;
+
+                    questionnaire.Name = dt.Name;
+                    questionnaire.Description = dt.Name;
+                    questionnaire.CreationDate = DateTime.Now;
+                    questionnaire.User_Id = new UsersServices().GetByUserName(User.Identity.Name).Id;
+                    questionnaire.Template = true;
+                    questionnaire.Instructions = dt.Name;
+
+                    ValidateQuestionnaireModel(questionnaire);
+
+                    _questionnaireService.Add(questionnaire);
+
+                    string LastCategory = "";
+                    string LastQuestion = "";
+
+                    foreach (var ex in dt.excelContent.Select(x => x.Category).Distinct())
+                    {
+
+                        if (LastCategory != ex)
+                        {
+                            category = new Category();
+                            int i = 1;
+                            category.Name = ex;
+                            category.Questionnaire_Id = questionnaire.Id;
+                            category.CreationDate = DateTime.Now;
+                            category.User_Id = new UsersServices().GetByUserName(User.Identity.Name).Id;
+                            category.Description = ex;
+
+                            _categoryService.Add(category);
+                            Listcategory.Add(category);
+
+                            LastCategory = ex;
+
+                            foreach (var ez in dt.excelContent.Where(x => x.Category == ex).Select(x => new { x.Question, x.Positive, x.Type }).Distinct())
+                            {
+                                if (LastQuestion != ez.Question)
+                                {
+
+                                    Question question = new Question();
+
+                                    question.Category_Id = category.Id;
+                                    question.Text = ez.Question;
+                                    question.CreationDate = DateTime.Now;
+                                    question.Positive = (ez.Positive == "VERDADERO" || ez.Positive == "1") ? true : false;
+                                    question.QuestionType_Id = _questionsType.GetAllRecords().Where(x => x.Name == ez.Type).FirstOrDefault().Id;
+                                    question.SortOrder = i;
+
+                                    _questionsServices.Add(question);
+                                    Listquestion.Add(question);
+
+                                    LastQuestion = ez.Question;
+                                    i += 1;
+                                }
+                            }
+                        }
+                    }
+
+                    foreach (var q in Listquestion)
+                    {
+                        if (q.QuestionType_Id == 1)
+                        {
+                            dt.excelContent.Where(x => x.Question == q.Text).ToList().ForEach(x =>
+                            {
+                                option = new Option();
+                                option.Text = x.Option;
+                                option.CreationDate = DateTime.Now;
+                                option.Value = int.Parse(x.Value);
+                                option.Question_Id = q.Id;
+                                option.Questionnaire_Id = questionnaire.Id;
+
+                                _optionsServices.Add(option);
+                            });
+                        }
+
+                        if (q.QuestionType_Id == 3)
+                        {
+                            if (!string.IsNullOrEmpty(dt.excelContent.Where(x => x.Question == q.Text).FirstOrDefault().Option) &&
+
+                                !string.IsNullOrEmpty(dt.excelContent.Where(x => x.Question == q.Text).FirstOrDefault().Value))
+                            {
+                                dt.excelContent.Where(x => x.Question == q.Text).ToList().ForEach(x =>
+                                {
+                                    option = new Option();
+                                    option.Text = x.Option;
+                                    option.CreationDate = DateTime.Now;
+                                    option.Value = int.Parse(x.Value);
+                                    option.Question_Id = q.Id;
+                                    option.Questionnaire_Id = questionnaire.Id;
+
+                                    _optionsServices.Add(option);
+                                });
+                            }
+                        }
+
+                    }
+
+
+                }
+                catch (Exception e)
+                {
+                    return Json("error" + e.Message);
+                }
+                //return RedirectToAction("Index");  
+            }
+
+            //return View(postedFile);  
+            InitializeViews(null);
+            return View(_questionnaireViewModel);
+
+
+        }
+
         private ActionResult RedirectToLogOn()
         {
             ModelState.AddModelError(ViewRes.Controllers.Shared.UnauthorizedAccess, ViewRes.Controllers.Shared.UnauthorizedText);
@@ -183,7 +416,7 @@ namespace Medinet.Controllers
             object resultado;
             if (user.Role.Name == "HRAdministrator")
             {
-                if(user.Company.CompaniesType.Name == "Owner")
+                if (user.Company.CompaniesType.Name == "Owner")
                     resultado = _questionnaireService.RequestList(sidx, sord, page, rows, filters);
                 else
                     resultado = _questionnaireService.RequestList(user, sidx, sord, page, rows, filters);
@@ -235,7 +468,7 @@ namespace Medinet.Controllers
             else
                 questionnaire = new Questionnaire();
             _questionnaireViewModel = new QuestionnaireViewModel(questionnaire, templatesList, role);
-        } 
+        }
 
         private void ValidateQuestionnaireModel(Questionnaire questionnaire)
         {
@@ -262,6 +495,6 @@ namespace Medinet.Controllers
         //        return true;
         //    return false;
         //}
-    
+
     }
 }

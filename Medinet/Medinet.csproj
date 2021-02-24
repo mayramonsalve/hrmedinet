@@ -140,6 +140,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\CustomExcelClass\Utility.cs" />
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -175,6 +176,7 @@
     <Compile Include="Models\AccountModels.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\CustomExcelModels\ExcelRead.cs" />
     <Compile Include="Models\Helpers\CustomHtmlHelpers.cs" />
     <Compile Include="Models\ViewModels\CategoryViewModel.cs" />
     <Compile Include="Models\ViewModels\ChartReportViewModel.cs" />
@@ -1197,6 +1199,7 @@
     <Content Include="Views\Home\HRMedinet.aspx" />
     <Content Include="Views\Home\MapUS.aspx" />
     <Content Include="Views\Home\Services.aspx" />
+    <Content Include="Views\Questionnaires\LoadExcel.aspx" />
     <Content Include="Views\Seniorities\Create.aspx" />
     <Content Include="Views\Seniorities\Details.aspx" />
     <Content Include="Views\Seniorities\Edit.aspx" />
