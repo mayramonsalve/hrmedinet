@@ -32,7 +32,7 @@ namespace MedinetClassLibrary.Services
                 _repository.SaveChanges();
                 return true;
             }
-            catch(Exception ex)
+            catch
             {
                 return false;
             }

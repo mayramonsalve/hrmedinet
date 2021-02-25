@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Medinet.Models.ViewModels.QuestionnaireViewModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Medinet.Models.ViewModels.LoadExcelViewModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%: ViewRes.Views.Shared.Shared.GenericTitle %> <%: ViewRes.Views.Questionnaire.Create.TitleCreate %>
@@ -20,25 +20,14 @@
             { %>
         <div class="span-23 prepend-1 last">
             <% Html.EnableClientValidation(); %>
-            <%: Html.ValidationSummary(ViewRes.Views.Shared.Errors.ErrorInApplication, new { @class = "errorAplication" })%>
-            <%--<% Html.RenderPartial("Form", Model.questionnaire); %>--%>
-            <%--<div class="span-24 last">
-                <h4><%: Html.Label("Importar") %></h4>
-            </div>
-            <div class="span-24 last"><%: Html.TextBox("ExcelFile",null, new { @class = "input-background large", @readonly="readonly"})%></div>--%>
+            <%:Html.ValidationSummary(ViewRes.Views.Shared.Errors.ErrorInApplication, new { @class = "errorAplication" })%>
+            <% Html.RenderPartial("FormLoadExcel", Model); %>
 
             <div class="button-padding-top">
-                <%: Html.ValidationSummary(ViewRes.Views.Shared.Errors.ErrorInApplication, new { @class = "errorAplication" })%>
-                <input type="file" name="postedFile" />
-                <div>
-                    <input type="submit" class="button" value="<%: ViewRes.Views.Shared.Shared.CreateButton %>" />
-                </div>
+                <input type="submit" class="button" value="<%: ViewRes.Views.Shared.Shared.CreateButton %>" />
             </div>
         </div>
         <% } %>
-    </div>
-    <div class="span-24 last">
-        <%: Html.ActionLink(ViewRes.Views.Shared.Shared.BackToList, "Index") %>
     </div>
 
 </asp:Content>

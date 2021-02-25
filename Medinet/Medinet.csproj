@@ -69,8 +69,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.0.5\lib\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -80,25 +81,28 @@
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Rotativa.1.4.0\lib\net40\Rotativa.dll</HintPath>
+      <HintPath>..\..\Dll Medinet\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Management" />
     <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\System.Net.Http.dll</HintPath>
+      <HintPath>..\..\Dll Medinet\System.Net.Http.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\Dll Medinet\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\..\Dll Medinet\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\Dll Medinet\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\Dll Medinet\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mobile" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -112,18 +116,19 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
+      <HintPath>..\..\Dll Medinet\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20505.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <HintPath>..\..\Dll Medinet\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\..\Dll Medinet\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\..\Dll Medinet\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\..\Dll Medinet\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -185,6 +190,7 @@
     <Compile Include="Models\ViewModels\ClimateScaleViewModel.cs" />
     <Compile Include="Models\ViewModels\ContactUsViewModel.cs" />
     <Compile Include="Models\ViewModels\AnalyticalReportViewModel.cs" />
+    <Compile Include="Models\ViewModels\LoadExcelViewModel.cs" />
     <Compile Include="Models\ViewModels\RankingViewModel.cs" />
     <Compile Include="Models\ViewModels\DemoViewModel.cs" />
     <Compile Include="Models\ViewModels\PositionLevelViewModel.cs" />
@@ -608,9 +614,7 @@
     <Content Include="Dependencies\Extreme.Numerics.Net40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Dependencies\Extreme.Numerics.SinglePrecision.Net40.dll" />
     <Content Include="Dependencies\FiftyOne.Foundation.dll" />
     <Content Include="Dependencies\itextsharp.dll" />
     <Content Include="Dependencies\JqueryWizardDocs\demo.html" />
@@ -626,12 +630,6 @@
     <Content Include="Reports\HRAdministratorQuestionnaireReport.ascx" />
     <Content Include="Reports\QuestionnaireReport.aspx" />
     <Content Include="Reports\TestByCompanyReport.aspx" />
-    <Content Include="Rotativa\libeay32.dll" />
-    <Content Include="Rotativa\libgcc_s_dw2-1.dll" />
-    <Content Include="Rotativa\mingwm10.dll" />
-    <Content Include="Rotativa\README.txt" />
-    <Content Include="Rotativa\ssleay32.dll" />
-    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\AnalyticalReport.js" />
     <Content Include="Scripts\ar-en.js">
       <SubType>Designer</SubType>
@@ -1199,6 +1197,7 @@
     <Content Include="Views\Home\HRMedinet.aspx" />
     <Content Include="Views\Home\MapUS.aspx" />
     <Content Include="Views\Home\Services.aspx" />
+    <Content Include="Views\Questionnaires\FormLoadExcel.ascx" />
     <Content Include="Views\Questionnaires\LoadExcel.aspx" />
     <Content Include="Views\Seniorities\Create.aspx" />
     <Content Include="Views\Seniorities\Details.aspx" />
@@ -1483,7 +1482,6 @@
     <Content Include="Views\Shared\Print.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Browsers\qt.browser" />
     <None Include="App_Data\51Degrees.mobi-Lite-2013.01.03.xml.gz" />
     <None Include="Content\Images\Background\medinet-bg.psd" />
     <None Include="Content\Images\img-galeria\estadisticasdetalladas.psd" />

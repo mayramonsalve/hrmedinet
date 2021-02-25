@@ -129,6 +129,9 @@
   <data name="InstructionsRequired" xml:space="preserve">
     <value>The Instructions field is required.</value>
   </data>
+  <data name="postedFileRequired" xml:space="preserve">
+    <value>You must attach a valid file.</value>
+  </data>
   <data name="Template" xml:space="preserve">
     <value>Template</value>
   </data>

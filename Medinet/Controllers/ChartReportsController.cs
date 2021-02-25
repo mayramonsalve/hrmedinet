@@ -20,7 +20,6 @@ using System.Text;
 using System.Collections;
 using System.Data;
 using evointernal;
-using Rotativa;
 
 namespace Medinet.Controllers
 {
@@ -128,7 +127,7 @@ namespace Medinet.Controllers
             PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
             pdfDoc.Open();
             AddHeader(pdfDoc, test_id);
-            Paragraph para = new Paragraph("Texto", new Font(Font.FontFamily.HELVETICA, 8f));
+            Paragraph para = new Paragraph("Texto", new Font(Font.HELVETICA, 8f));
             para.SpacingAfter = 9f;
             para.Alignment = Element.ALIGN_JUSTIFIED;
             Image chart = Image.GetInstance(GeneralPercentageChartByte("Tooltip", "Pie", test_id, 1, true));
@@ -165,7 +164,7 @@ namespace Medinet.Controllers
             pngAssociated.Alignment = Element.ALIGN_RIGHT;// | Image.TEXTWRAP;
             pdfDoc.Add(pngCompany);
             pdfDoc.Add(pngAssociated);
-            Font font = new Font(Font.FontFamily.COURIER, 15f, Font.NORMAL);
+            Font font = new Font(Font.COURIER, 15f, Font.NORMAL);
             Chunk title = new Chunk(ViewRes.Views.ChartReport.Graphics.PrintPopulation, font);
             Paragraph paragraph = new Paragraph();
             paragraph.Add(title);
@@ -251,7 +250,7 @@ namespace Medinet.Controllers
             byte[] byteArray = ASCIIEncoding.ASCII.GetBytes(html);
             MemoryStream stream = new MemoryStream(byteArray);
             StreamReader reader = new StreamReader(stream);
-            var arrayList = HTMLWorker.ParseToList(reader, null);
+            ArrayList arrayList = HTMLWorker.ParseToList(reader, null);
             List<IElement> htmlarraylist = new List<IElement>();
             foreach (object array in arrayList)
             {
@@ -260,7 +259,7 @@ namespace Medinet.Controllers
                 if (type.Name == "Paragraph")
                 {
                     Paragraph p = (Paragraph)array;
-                    Font font = FontFactory.GetFont("Helvetica", 16, Font.BOLDITALIC, new BaseColor(125, 88, 15));
+                    Font font = FontFactory.GetFont("Helvetica", 16, Font.BOLDITALIC, new Color(125, 88, 15));
                     doc.Add((Paragraph)array);
                 }
                 else
@@ -755,12 +754,12 @@ namespace Medinet.Controllers
             return Json(info);
         }
 
-        public JsonResult GetUnivariateChart(int test_id, string demographic, int? FO_id,
+        public JsonResult GetUnivariateChart(int test_id, string demographic, int? FO_id, 
                                             int? questionnaire_id, int? category_id, int? question_id, int? compare)
         {
             Test test = new TestsServices().GetById(test_id);
             Dictionary<string, object> dictionary;
-            int fot = FO_id.HasValue ? (FO_id.Value == -1 ? test.Company.FunctionalOrganizationTypes.FirstOrDefault().Id : FO_id.Value) : 0;
+            int fot = FO_id.HasValue ? (FO_id.Value == -1 ? test.Company.FunctionalOrganizationTypes.FirstOrDefault().Id : FO_id.Value ) : 0;
             switch (demographic)
             {
                 case "General":
@@ -845,7 +844,7 @@ namespace Medinet.Controllers
             if (questionnaire_id.HasValue)
                 parameters.Add("questionnaire", questionnaire_id.Value);
             if (id.HasValue)
-                if (demographic != "Gender")
+                if(demographic != "Gender")
                     parameters.Add("id", id.Value);
                 else
                     parameters.Add("id", id.Value == 0 ? ViewRes.Views.Shared.Shared.Female : ViewRes.Views.Shared.Shared.Male);
@@ -1014,7 +1013,7 @@ namespace Medinet.Controllers
 
         private string GetTitle(string demographic, string type, string c_fo, string auxdemo)//obtiene el titulo del gráfico
         {
-            switch (type)
+            switch(type)
             {
                 case "Population":
                     switch (demographic)
@@ -1337,7 +1336,7 @@ namespace Medinet.Controllers
             MemoryStream ms = new MemoryStream();
             cd.chart.SaveImage(ms);
             return File(ms.GetBuffer(), @"image/png");
-        }
+        }          
         public FileResult FunctionalOrganizationTypePercentageChart(string chartSize, string chartType, int test_id, int graphic_id, int id_FO)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -1361,7 +1360,7 @@ namespace Medinet.Controllers
             Test test = new TestsServices().GetById(test_id);
             int options = test.GetOptionsByTest().Select(v => v.Value).Max();
             Dictionary<string, object> dictionary;
-            if (country_id.HasValue || region_id.HasValue)
+            if(country_id.HasValue || region_id.HasValue)
                 dictionary = test.GetGeneralAvgAndMedByUbication(questionnaire_id, category_id, question_id,
                             country_id, state_id, region_id);
             else
@@ -1695,7 +1694,7 @@ namespace Medinet.Controllers
             parameters.Add("test", test.Id);
             if (demographic == "FunctionalOrganizationType")
                 parameters.Add("fot", c_fo.Value);
-            else if (demographic == "State")
+            else if(demographic == "State")
                 parameters.Add("country", c_fo.Value);
             parameters.Add("minimumAnswers", test.GetMinimumAnswers(demographic, null, category_id, question_id, true));
             if (questionnaire_id.HasValue)
@@ -1916,7 +1915,7 @@ namespace Medinet.Controllers
             parameters.Add("minimumPeople", test.MinimumPeople);
             if (questionnaire_id.HasValue)
                 parameters.Add("questionnaire", questionnaire_id.Value);
-            if (id.HasValue)
+            if(id.HasValue)
                 parameters.Add("id", id.Value);
             int options = test.GetOptionsByTest().Select(v => v.Value).Max();
             Dictionary<string, object> dictionary = new ChartsServices().GetGraphicDataForFrequencyOrCategory("Category", parameters);
@@ -2208,7 +2207,7 @@ namespace Medinet.Controllers
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("demographic", "Climate");
             parameters.Add("selector", dit.Demographic.Name);
-            if (dit.FOT_Id.HasValue)
+            if(dit.FOT_Id.HasValue)
                 parameters.Add("fot", dit.FOT_Id);
             parameters.Add("company", test.Company_Id);
             Dictionary<string, object> dictionary = new ChartsServices().GetGraphicDataForComparative("Comparative", parameters);
@@ -2241,13 +2240,13 @@ namespace Medinet.Controllers
             _test.CurrentEvaluations = evaluations;
 
             //_details = new GraphicsDetailsServices().GetDetailsByTest(test_id);
-            SelectList _questionnaires = _test.OneQuestionnaire ? new SelectList(new Dictionary<int, string>(), "Key", "Value") ://si es uno o varios cuestionarios
+            SelectList _questionnaires = _test.OneQuestionnaire ? new SelectList(new Dictionary<int, string>(), "Key", "Value")://si es uno o varios cuestionarios
                                             new SelectList(new DemographicSelectorDetailsServices().GetQuestionnairesByTestForDropDownList(test_id), "Key", "Value");
             SelectList _categories;
             User user = new UsersServices().GetByUserName(User.Identity.Name);
             int _questionType = type == "TextAnswers" ? 2 : (type == "Frequency" ? _test.GetQuestionsType() : 1);//es para el reporte de las respuestas de texto,sino es texto,pregunta si es el tipo de pregunta de frecuencia
             Dictionary<string, object> table;
-            switch (type)
+            switch(type)
             {
                 case "Bivariate":
                     demographicsList = new SelectList(new ChartsServices().DemographicsDropDownList(_test), "Key", "Value");
@@ -2267,12 +2266,12 @@ namespace Medinet.Controllers
                     break;
                 case "Satisfaction":
                     string title = GetTitleForSatisfactionTable(demographic);
-                    Dictionary<int, string> tabs = demographic == "Category" && !c_fo.HasValue ? GetSatisfactionTabsByTest(_test)
+                    Dictionary<int, string> tabs = demographic == "Category" && !c_fo.HasValue? GetSatisfactionTabsByTest(_test)
                                                     : new Dictionary<int, string>();
                     Dictionary<string, object> parameters = new Dictionary<string, object>();
                     parameters.Add("demographic", demographic);
                     parameters.Add("test", _test.Id);
-                    if (c_fo.HasValue)
+                    if(c_fo.HasValue)
                         parameters.Add("id", c_fo.Value);
                     parameters.Add("minimumPeople", _test.MinimumPeople);
                     table = (Dictionary<string, object>)new Commands("Satisfaction", parameters).ExecuteCommand();
@@ -2286,7 +2285,7 @@ namespace Medinet.Controllers
                     _demographicsCount = _chartService.GetDemographicsCount(_test);
                     _question = new SelectList(new QuestionsServices().GetQuestionsByCategory(null), "key", "Value");
                     _chartViewModel = new ChartReportViewModel(_test, _chartType, _details, _demographicsCount, _question, _categories, _questionnaires, _condition, compare, user);
-                    break;
+                break;
             }
         }
 
@@ -2362,15 +2361,15 @@ namespace Medinet.Controllers
             return parameters;
         }
 
-        public bool GetUserSession()
+        public bool  GetUserSession()
         {
             int company_id = new UsersServices().GetByUserName(User.Identity.Name).Company_Id;
-
-            if ((new PerformanceEvaluationsServices().GetByCompany(company_id)) != null)
-            {
-                return true;
-
-            }
+           
+            if ((new PerformanceEvaluationsServices().GetByCompany(company_id))!=null ) 
+                {
+                     return true;
+            
+                }
             return false;
         }
 
@@ -2384,16 +2383,16 @@ namespace Medinet.Controllers
         public JsonResult UpdateTableFC(int? questionnaire_id, int? category_id, int? question_id, int test_id, string demographic, int? FO_id, string type, string header)
         {
             Dictionary<string, object> dictionary = new TestsServices().GetById(test_id).GetDataFrequencyCategory(type, demographic, questionnaire_id, category_id, question_id, FO_id, null);
-
+            
             List<string> keys;
             Test test = new TestsServices().GetById(test_id);
             if (test.OneQuestionnaire)
             {
                 if (test.Questionnaire.Options.Count == 0) //test_id == 99 || test_id == 100,si el cuestionario tiene opciones, y si las tiene busca esas opciones
                 {//test.Questionnaire.Options.Count == 0 esto quiere decir que el cuestionario no tiene opciones asociadas
-
+                    
                     //keys = dictionary.Keys.ToList();
-                    keys = question_id.HasValue ? new QuestionsServices().GetById(question_id.Value).Options.Select(q => q.Text).ToList() : new List<string>();
+                    keys=question_id.HasValue?new QuestionsServices().GetById(question_id.Value).Options.Select(q => q.Text).ToList() : new List<string>();
                 }
                 else
                 {
@@ -2402,21 +2401,19 @@ namespace Medinet.Controllers
                     //keys.RemoveAll(k => k == "");
                 }
             }
-            else
-            {
-
+            else { 
+            
                 //se asumio que cuando eran vaRios cuestionarios las opciones eran las mismas para todos
 
                 keys = test.GetOptionsByTest().Select(q => q.Text).ToList();
 
                 //modificar en caso de que los cuestionarios tengan las opciones asociadas a las preguntas y no al cuestionario
-
+            
             }
             //Busco el 
-            int posMayor = 0, cont = 0, contMayor = 0, posActual = 0;
-            foreach (Dictionary<string, double> a in dictionary.Values)
-            {
-
+            int posMayor = 0, cont = 0, contMayor=0, posActual = 0;
+            foreach (Dictionary<string, double> a in dictionary.Values) {
+                 
                 foreach (var key in a.Keys)
                 {
                     cont++;
@@ -2428,7 +2425,7 @@ namespace Medinet.Controllers
                 }
                 posActual++;
                 cont = 0;
-
+               
             }
             Dictionary<string, double> aux = (Dictionary<string, double>)dictionary.Values.ElementAt(posMayor);
             List<object> data = new List<object>();
@@ -2467,7 +2464,7 @@ namespace Medinet.Controllers
             //        answers.Add(sum.Label, sum.TextAnswers);
             //    return Json(answers);
             //}
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            Dictionary<string, object> parameters = new Dictionary<string,object>();
             parameters.Add("demographic", demographic);
             parameters.Add("test", test_id);
             if (questionnaire_id.HasValue)
@@ -2498,7 +2495,7 @@ namespace Medinet.Controllers
             else
                 pvalue = 0.05;
             ChiSquare[] chiSquare = new ChiSquare[2];
-            chiSquare[0] = new ChiSquare(test, demographic, questionnaire_id, category_id, question_id, country_id, FO_id, pvalue, null, null, null);
+            chiSquare[0] = new ChiSquare(test, demographic, questionnaire_id, category_id, question_id, country_id,FO_id, pvalue, null, null, null);
             chiSquare[0].GetAssociation();
             chiS.Add(
                 new
@@ -2567,7 +2564,7 @@ namespace Medinet.Controllers
         [HttpPost]
         public ActionResult LoadTab(string demographic, string type, int test_id, int? FO_id, int? compare_id)
         {
-            int demoCount;
+            int demoCount; 
             InitializeViews(type, demographic, FO_id, test_id, compare_id);
             ViewData["option"] = demographic;
             ViewData["FO_id"] = FO_id;
@@ -2637,14 +2634,14 @@ namespace Medinet.Controllers
                 parameters.Add("questionnaire", test1.Questionnaire_Id);
             else
                 if (id_questionnaire.HasValue)
-                parameters.Add("questionnaire", id_questionnaire.Value);
-            Dictionary<string, object> dictionary = new ChartsServices().GetGraphicDataForFrequencyOrCategory("Category", parameters);
+                    parameters.Add("questionnaire", id_questionnaire.Value);
+            Dictionary <string, object > dictionary = new ChartsServices().GetGraphicDataForFrequencyOrCategory("Category", parameters);
             IEnumerable<KeyValuePair<string, double>> pair = (IEnumerable<KeyValuePair<string, double>>)dictionary.Values.First();
             List<KeyValuePair<string, double>> listOfValues = pair.ToList();
             return Json(listOfValues);
         }
 
-
+        
 
         #endregion
 
@@ -2869,12 +2866,12 @@ namespace Medinet.Controllers
         public ActionResult LoadResult(int result, int test_id, int? questionnaire_id)
         {
             Test test = new TestsServices().GetById(test_id);
-            ResultViewModel resultViewModel = new ResultViewModel(test, false, 0);
+            ResultViewModel resultViewModel = new ResultViewModel(test,false,0);
             WeighingsServices weighingService = new WeighingsServices();
             Results r = new Results(test);
             string partialView = "Report" + result + (questionnaire_id.HasValue ? "Form" : "");
-            int? q = !test.OneQuestionnaire && !questionnaire_id.HasValue && (result == 3 || result == 4) ? test.GetQuestionnairesByTest().First().Id : questionnaire_id;
-            switch (result)
+            int? q = !test.OneQuestionnaire && !questionnaire_id.HasValue && (result == 3 || result == 4) ? test.GetQuestionnairesByTest().First().Id : questionnaire_id ;
+            switch(result)
             {
                 case 1:
                     resultViewModel = GetReport1(weighingService, test, questionnaire_id, r, false);
@@ -2973,7 +2970,7 @@ namespace Medinet.Controllers
             this.InitializeViews("Population", "", null, test_id, null);
             this.series = 1;
             this.tresD = true;
-            return View("PrintPopulation", _chartViewModel);
+            return View("PrintPopulation", _chartViewModel); 
         }
 
         [HttpGet]
@@ -2992,7 +2989,7 @@ namespace Medinet.Controllers
         {
             Test test = new TestsServices().GetById(test_id);
             Test testCompare = new Test();
-            if (compare_id.HasValue)
+            if(compare_id.HasValue)
                 testCompare = new TestsServices().GetById(compare_id.Value);
             MedinetClassLibrary.Models.Graphic graphic = new GraphicsServices().GetById(graphic_id);
             ChiSquare[] chiSquare = new ChiSquare[2];
@@ -3025,7 +3022,7 @@ namespace Medinet.Controllers
                 compareName = "Ninguno";
             ChartReportViewModel chartPrintViewModel = new ChartReportViewModel(
                 test_id, test.Name, graphic, chiSquare,
-                new SummaryTable().UpdateTable(questionnaire_id, category_id, question_id, pValue, test_id, graphic.Demographic, !(elementsCount < 7), FO_id, compare_id),
+                new SummaryTable().UpdateTable(questionnaire_id, category_id, question_id, pValue, test_id, graphic.Demographic, !(elementsCount<7), FO_id, compare_id),
                 FO_id, country_id, category_id, categoryName, question_id, questionText, pValue, elementsCount, compare_id, compareName);
             return chartPrintViewModel;
         }
@@ -3072,7 +3069,7 @@ namespace Medinet.Controllers
         public string UpdateLink(string currentValue, string changeType, string newValue/*, string FO_id*/)
         {
             // 0:controller/action?test_id - 1:graphic_id - 2:elementsCount - 3:category_id - 4:question_id - 5:pValue - 6:FO_id - 7:country_id - 7:compare_id
-            string[] link = currentValue.Split(new char[] { '&' });
+            string[] link = currentValue.Split(new char[]{'&'});
             string newLink = "";
             string newV = "0";
             if (newValue != "")
@@ -3112,7 +3109,7 @@ namespace Medinet.Controllers
 
         #region Analytical
 
-        private AnalyticalReportViewModel InitializeAnalyticalView(int test_id, int? country, int? state,
+        private AnalyticalReportViewModel InitializeAnalyticalView(int test_id, int? country, int? state, 
                                                                     int? region, bool? Print)
         {
             Test Test = new TestsServices().GetById(test_id);
@@ -3194,9 +3191,6 @@ namespace Medinet.Controllers
         {
             if (GetAuthorization(test_id))
             {
-                if (print == true)
-                    return PartialView(InitializeAnalyticalView(test_id, country_id, state_id, region_id, print));
-
                 return View(InitializeAnalyticalView(test_id, country_id, state_id, region_id, print));
             }
             else
@@ -3229,7 +3223,7 @@ namespace Medinet.Controllers
             //}
             //string html = PrintAnalytical(test_id, country_id, state_id, region_id, true);
             return new PdfResult(GetHttpUrl() + "/ChartReports/PrintAnalytical?test_id=" + test_id +
-                "&country=" + country_id + "&state=" + state_id + "&region=" + region_id +
+                "&country=" + country_id + "&state=" + state_id + "&region=" + region_id + 
                 "&print=true", "PdfAnalytical", true);
 
         }
@@ -3242,7 +3236,7 @@ namespace Medinet.Controllers
         {
             RankingViewModel rvm = InitializeRankingTabs(questionnaire_id, demographic, FO_id, company_id);
 
-            switch (demographic)
+            switch(demographic)
             {
                 case "Internal":
                     return PartialView("RankingInternal", rvm);
@@ -3271,17 +3265,17 @@ namespace Medinet.Controllers
             SelectList sectors = null;
             SelectList companies = null;
             SelectList countries = null;
-            Dictionary<int, string> FO = null;
-            Dictionary<string, int> demographicsCount = null;
+            Dictionary<int,string> FO = null;
+            Dictionary<string,int> demographicsCount = null;
             int company = company_id.HasValue ? company_id.Value : (UserLogged.Role.Name == "HRAdministrator" ? 0 : UserLogged.Company_Id);
             int fo = fot.HasValue ? fot.Value : 0;
             Rankings auxRanking = new Rankings(new QuestionnairesServices().GetById(questionnaire_id),
                             new CompaniesServices().GetById(company_id.HasValue ? company_id.Value : UserLogged.Company_Id), UserLogged);
             if (UserLogged.Role.Name == "HRAdministrator")
             {
-                if (company_id.HasValue)
+                if(company_id.HasValue)
                     ranking = GetInternalRanking(questionnaire_id, company_id.Value, fot, demographic == "Tabs" ? "Gender" : demographic, UserLogged);
-                if (demographic == "GeneralCountry" || demographic == "Customer")
+                if( demographic == "GeneralCountry" || demographic == "Customer")
                     sectors = new SelectList(new CompanySectorsServices().GetCompanySectorsForDropDownList(), "Key", "Value");
             }
             else if (demographic != "GeneralCountry")
@@ -3319,17 +3313,17 @@ namespace Medinet.Controllers
             SelectList companies = null;
             Dictionary<Company, double> resultsByCompany = new Dictionary<Company, double>();
 
-            if (UserLogged.Role.Name == "HRAdministrator")
-            {
-                sectors = new SelectList(new CompanySectorsServices().GetCompanySectorsForDropDownList(), "Key", "Value");
-                companies = new SelectList(new CompaniesServices().GetCustomersByAssociatedForDropDownList(UserLogged.Company_Id), "Key", "Value");
-                return new RankingViewModel(questionnaire_id, sectors, companies, null, null, null, UserLogged, ranking, 0, 0);
-            }
-            else
-            {
-                ranking = GetExternalRanking(questionnaire, UserLogged.Company.CompanySector_Id, null, "General", UserLogged);
-                return new RankingViewModel(questionnaire_id, sectors, companies, null, null, null, UserLogged, ranking, UserLogged.Company_Id, 0);
-            }
+                if (UserLogged.Role.Name == "HRAdministrator")
+                {
+                    sectors = new SelectList(new CompanySectorsServices().GetCompanySectorsForDropDownList(), "Key", "Value");
+                    companies = new SelectList(new CompaniesServices().GetCustomersByAssociatedForDropDownList(UserLogged.Company_Id), "Key", "Value");
+                    return new RankingViewModel(questionnaire_id, sectors, companies, null, null, null, UserLogged, ranking, 0, 0);
+                }
+                else
+                {
+                    ranking = GetExternalRanking(questionnaire, UserLogged.Company.CompanySector_Id, null, "General", UserLogged);
+                    return new RankingViewModel(questionnaire_id, sectors, companies, null, null, null, UserLogged, ranking, UserLogged.Company_Id, 0);
+                }
         }
 
         [Authorize(Roles = "HRCompany, HRAdministrator, CompanyManager")]
@@ -3337,7 +3331,7 @@ namespace Medinet.Controllers
         {
             //if (GetAuthorization(questionnaire))
             //{
-            return View(InitializeRankingViewGeneral(new UsersServices().GetByUserName(User.Identity.Name), false, questionnaire, 0));
+                return View(InitializeRankingViewGeneral(new UsersServices().GetByUserName(User.Identity.Name), false, questionnaire, 0));
             //}
             //else
             //    return RedirectToLogOn();
@@ -3379,13 +3373,13 @@ namespace Medinet.Controllers
             country = country_id.HasValue && country_id.Value != 0 ? new CountriesServices().GetById(country_id.Value).Name : "";
             company = company_id.HasValue && company_id.Value != 0 ? new CompaniesServices().GetById(company_id.Value).Name : "";
             foname = fot.HasValue && fot.Value != 0 ? new FunctionalOrganizationTypesServices().GetById(fot.Value).Name : "";
-            switch (demographic)
+            switch(demographic)
             {
                 case "External":
                     nameTH = ViewRes.Views.ChartReport.Graphics.CompanyTab;
                     title = ViewRes.Views.ChartReport.Ranking.External;
                     resultRanking = rankingClass.FillRankingDictionary(resultRanking, ViewRes.Views.ChartReport.Ranking.General, GetExternalRanking(questionnaire_id, sector_id, country_id, "General", UserLogged));
-                    if (UserLogged.Role.Name == "HRAdministrator")
+                    if(UserLogged.Role.Name == "HRAdministrator")
                         resultRanking = rankingClass.FillRankingDictionary(resultRanking, ViewRes.Views.ChartReport.Ranking.Customers, GetExternalRanking(questionnaire_id, sector_id, country_id, "Customer", UserLogged));
                     resultRanking = rankingClass.FillRankingDictionary(resultRanking, ViewRes.Views.ChartReport.Ranking.ByCountry, GetExternalRanking(questionnaire_id, sector_id, country_id, "GeneralCountry", UserLogged));
                     break;
@@ -3470,7 +3464,7 @@ namespace Medinet.Controllers
                     {
                         companyName = dic.Key,
                         companyClimate = dic.Value,
-                        show = userVal || (dic.Key == companyName) || intern
+                        show = userVal || (dic.Key == companyName)  || intern
                     });
             }
             return Json(listObj);
@@ -3480,7 +3474,7 @@ namespace Medinet.Controllers
         {
             bool associated = demographic == "Customer" ? true : false;
             Dictionary<Company, double> resultsByCompany = new Rankings().GetRankingForCompany(UserLogged, new Test(), sector_id, questionnaire_id, country_id, associated);
-            Dictionary<string, double> companyC = new Dictionary<string, double>();
+            Dictionary<string,double> companyC = new Dictionary<string,double>();
             foreach (KeyValuePair<Company, double> companyDouble in resultsByCompany.OrderByDescending(key => key.Value))
             {
                 companyC.Add(companyDouble.Key.Name, companyDouble.Value);
@@ -3492,19 +3486,11 @@ namespace Medinet.Controllers
         {
             Questionnaire questionnaire = new QuestionnairesServices().GetById(questionnaire_id);
             Company company = new CompaniesServices().GetById(company_id.HasValue ? company_id.Value : UserLogged.Company_Id);
-            Dictionary<string, double> resultsByDemo = new Rankings(questionnaire, company, UserLogged).GetClimateByDemographic(demographic, fot);
+            Dictionary<string, double> resultsByDemo = new Rankings(questionnaire,company,UserLogged).GetClimateByDemographic(demographic, fot);
             return resultsByDemo;
         }
 
         #endregion
-
-        public ActionResult ConvertToPDF(int test_id, int? country_id, int? state_id, int? region_id)
-        {
-            bool print = true;
-            string cusomtswitches = string.Format("--print-media-type --ignore-load-errors --header-html {0} --footer-html {1}", new { data = "" }, new { data = "" });
-            var printpdf = new ActionAsPdf("AnalyticalReport", new { test_id, country_id, state_id, region_id, print });
-            return printpdf;
-        }
 
         public JsonResult LoadQuestionnaires(int test_id)
         {
@@ -3515,7 +3501,7 @@ namespace Medinet.Controllers
         }
         public int FindMaxAge(IEnumerable<Option> list)
         {
-
+            
             int maxAge = int.MinValue;
             foreach (Option type in list)
             {

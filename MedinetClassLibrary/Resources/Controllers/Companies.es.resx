@@ -139,10 +139,10 @@
     <value>Teléfono ya está en uso.</value>
   </data>
   <data name="ShowClimate" xml:space="preserve">
-    <value>Mostrar resultado</value>
+    <value>Mostrar clima</value>
   </data>
   <data name="ShowClimateInvalid" xml:space="preserve">
-    <value>Para mostrar el resultado de esta compañía debe seleccionar un Sector de compañía.</value>
+    <value>Para mostrar el clima de esta compañía debe seleccionar un Sector de compañía.</value>
   </data>
   <data name="Url" xml:space="preserve">
     <value>Url</value>

@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="PathCreate" xml:space="preserve">
-    <value>Escalas de resultado &gt; Crear</value>
+    <value>Escalas de clima &gt; Crear</value>
   </data>
   <data name="TitleCreate" xml:space="preserve">
-    <value>Crear escala de resultado</value>
+    <value>Crear escala de clima</value>
   </data>
 </root>

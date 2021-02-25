@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="PathEdit" xml:space="preserve">
-    <value>Rangos de resultado &gt; Editar</value>
+    <value>Rangos de clima &gt; Editar</value>
   </data>
   <data name="TitleEdit" xml:space="preserve">
-    <value>Editar rango de resultado</value>
+    <value>Editar rango de clima</value>
   </data>
 </root>

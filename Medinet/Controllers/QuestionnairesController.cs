@@ -19,13 +19,14 @@ namespace Medinet.Controllers
     //[Authorize(Roles = "HRCompany, HRAdministrator")]
     public class QuestionnairesController : Controller
     {
-
+        
         private QuestionnairesServices _questionnaireService;
         private CategoriesServices _categoryService;
         private QuestionsServices _questionsServices;
         private QuestionsTypeServices _questionsType;
-        private OptionsServices _optionsServices;
+        private OptionsServices _optionsServices; 
         private QuestionnaireViewModel _questionnaireViewModel;
+        private LoadExcelViewModel _loadExcelViewModel;
 
         public QuestionnairesController()
         {
@@ -37,10 +38,10 @@ namespace Medinet.Controllers
         }
 
         public QuestionnairesController(QuestionnairesServices _questionnaireService,
-                                            CategoriesServices _categoryService,
-                                            QuestionsServices _questionsServices,
-                                            QuestionsTypeServices _questionsType,
-                                            OptionsServices _optionsServices)
+                                                    CategoriesServices _categoryService,
+                                                    QuestionsServices _questionsServices,
+                                                    QuestionsTypeServices _questionsType,
+                                                    OptionsServices _optionsServices)
         {
             this._questionnaireService = _questionnaireService;
             this._categoryService = _categoryService;
@@ -54,7 +55,7 @@ namespace Medinet.Controllers
             User userLogged = new UsersServices().GetByUserName(User.Identity.Name);
             return new SharedHrAuthorization(userLogged,
                 new CompaniesServices().GetById(new UsersServices().GetById(questionnaire.User_Id).Company_Id),
-                userLogged.Company.CompaniesType.Name == "Owner").isAuthorizated();
+                userLogged.Company.CompaniesType.Name=="Owner").isAuthorizated();
         }
 
         [Authorize(Roles = "HRCompany, HRAdministrator")]
@@ -70,21 +71,21 @@ namespace Medinet.Controllers
         [Authorize(Roles = "HRCompany, HRAdministrator")]
         public ActionResult Create(Questionnaire questionnaire)
         {
-            questionnaire.CreationDate = DateTime.Now;
-            questionnaire.User_Id = new UsersServices().GetByUserName(User.Identity.Name).Id;
-            User user = new UsersServices().GetByUserName(User.Identity.Name.ToString());
-            if (user.Role.Name == "HRAdministrator")
-                questionnaire.Template = true;
-            else
-                questionnaire.Template = false;
-            ValidateQuestionnaireModel(questionnaire);
-            if (ModelState.IsValid)
-            {
-                if (_questionnaireService.Add(questionnaire))
-                    return RedirectToAction("Index");
-            }
-            InitializeViews(null);
-            return View(_questionnaireViewModel);
+                questionnaire.CreationDate = DateTime.Now;
+                questionnaire.User_Id = new UsersServices().GetByUserName(User.Identity.Name).Id;
+                User user = new UsersServices().GetByUserName(User.Identity.Name.ToString());
+                if (user.Role.Name == "HRAdministrator")
+                    questionnaire.Template = true;
+                else
+                    questionnaire.Template = false;
+                ValidateQuestionnaireModel(questionnaire);
+                if (ModelState.IsValid)
+                {
+                    if (_questionnaireService.Add(questionnaire))
+                        return RedirectToAction("Index");
+                }
+                InitializeViews(null);
+                return View(_questionnaireViewModel);
         }
 
         [Authorize(Roles = "HRCompany")]
@@ -175,7 +176,7 @@ namespace Medinet.Controllers
         [Authorize(Roles = "HRCompany, HRAdministrator")]
         public ActionResult Index()
         {
-            InitializeViews(null);
+            InitializeViews(null);         
             return View(_questionnaireViewModel);
         }
 
@@ -194,14 +195,15 @@ namespace Medinet.Controllers
         [Authorize(Roles = "HRCompany, HRAdministrator")]
         public ActionResult LoadExcel()
         {
-            return View();
+            //return View(new LoadExcelViewModel(new LoadExcel()));
+            return View(new LoadExcelViewModel());
         }
 
         [HttpPost]
         [Authorize(Roles = "HRCompany, HRAdministrator")]
         public ActionResult LoadExcel(HttpPostedFileBase postedFile)
         {
-
+           
             if (postedFile != null && postedFile.ContentLength > (1024 * 1024 * 50))  // 50MB limit  
             {
                 ModelState.AddModelError("postedFile", "Your file is to large. Maximum size allowed is 50MB !");
@@ -244,6 +246,10 @@ namespace Medinet.Controllers
                         ViewBag.Data = dt;
                     }
                 }
+                else
+                {
+                    ModelState.AddModelError("postedFile","");
+                }
 
                 try
                 {
@@ -254,16 +260,16 @@ namespace Medinet.Controllers
 
                         if (string.IsNullOrEmpty(ex.Category) || string.IsNullOrEmpty(ex.Question))
                         {
-                            InitializeViews(null);
-                            return View(_questionnaireViewModel);
+                            //return View(new LoadExcelViewModel(new LoadExcel()));
+                            return View(new LoadExcelViewModel());
                         }
 
                         if (id == 1)
                         {
                             if (string.IsNullOrEmpty(ex.Option) || string.IsNullOrEmpty(ex.Value))
                             {
-                                InitializeViews(null);
-                                return View(_questionnaireViewModel);
+                                //return View(new LoadExcelViewModel(new LoadExcel()));
+                                return View(new LoadExcelViewModel());
                             }
                         }
 
@@ -271,14 +277,14 @@ namespace Medinet.Controllers
                         {
                             if (string.IsNullOrEmpty(ex.Option) || string.IsNullOrEmpty(ex.Value))
                             {
-                                InitializeViews(null);
-                                return View(_questionnaireViewModel);
+                                //return View(new LoadExcelViewModel(new LoadExcel()));
+                                return View(new LoadExcelViewModel());
                             }
 
                             if (dt.excelContent.Where(x => x.Question == ex.Question && x.Type == ex.Type).Count() != 2)
                             {
-                                InitializeViews(null);
-                                return View(_questionnaireViewModel);
+                                //return View(new LoadExcelViewModel(new LoadExcel()));
+                                return View(new LoadExcelViewModel());
                             }
                         }
                     }
@@ -298,8 +304,6 @@ namespace Medinet.Controllers
                     questionnaire.User_Id = new UsersServices().GetByUserName(User.Identity.Name).Id;
                     questionnaire.Template = true;
                     questionnaire.Instructions = dt.Name;
-
-                    ValidateQuestionnaireModel(questionnaire);
 
                     _questionnaireService.Add(questionnaire);
 
@@ -334,7 +338,7 @@ namespace Medinet.Controllers
                                     question.Category_Id = category.Id;
                                     question.Text = ez.Question;
                                     question.CreationDate = DateTime.Now;
-                                    question.Positive = (ez.Positive == "VERDADERO" || ez.Positive == "1") ? true : false;
+                                    question.Positive = (ez.Positive == "VERDADERO" || ez.Positive == int.Parse("1").ToString()) ? true : false;
                                     question.QuestionType_Id = _questionsType.GetAllRecords().Where(x => x.Name == ez.Type).FirstOrDefault().Id;
                                     question.SortOrder = i;
 
@@ -393,12 +397,12 @@ namespace Medinet.Controllers
                 {
                     return Json("error" + e.Message);
                 }
-                //return RedirectToAction("Index");  
+                //return RedirectToAction("Index");
             }
 
             //return View(postedFile);  
-            InitializeViews(null);
-            return View(_questionnaireViewModel);
+            //return View(new LoadExcelViewModel(new LoadExcel()));
+            return View(new LoadExcelViewModel());
 
 
         }
@@ -416,7 +420,7 @@ namespace Medinet.Controllers
             object resultado;
             if (user.Role.Name == "HRAdministrator")
             {
-                if (user.Company.CompaniesType.Name == "Owner")
+                if(user.Company.CompaniesType.Name == "Owner")
                     resultado = _questionnaireService.RequestList(sidx, sord, page, rows, filters);
                 else
                     resultado = _questionnaireService.RequestList(user, sidx, sord, page, rows, filters);
@@ -468,7 +472,7 @@ namespace Medinet.Controllers
             else
                 questionnaire = new Questionnaire();
             _questionnaireViewModel = new QuestionnaireViewModel(questionnaire, templatesList, role);
-        }
+        } 
 
         private void ValidateQuestionnaireModel(Questionnaire questionnaire)
         {
@@ -495,6 +499,6 @@ namespace Medinet.Controllers
         //        return true;
         //    return false;
         //}
-
+    
     }
 }

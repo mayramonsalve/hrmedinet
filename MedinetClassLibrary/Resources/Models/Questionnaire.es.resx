@@ -129,6 +129,9 @@
   <data name="InstructionsRequired" xml:space="preserve">
     <value>El campo Instrucciones es requerido.</value>
   </data>
+  <data name="postedFile" xml:space="preserve">
+    <value>Debe de adjuntar un archivo valido.</value>
+  </data>
   <data name="Template" xml:space="preserve">
     <value>Plantilla</value>
   </data>

@@ -124,7 +124,7 @@
     <value>/Content/Images/icon-system/help.es.png</value>
   </data>
   <data name="HRMedinetText1" xml:space="preserve">
-    <value>Es una herramienta automatizada que le permite realizar evaluaciones de resultado organizacional fácil y rápidamente, apoyados en la tecnología web y las mejores prácticas del mundo tecnológico.</value>
+    <value>Es una herramienta automatizada que le permite realizar evaluaciones de clima organizacional fácil y rápidamente, apoyados en la tecnología web y las mejores prácticas del mundo tecnológico.</value>
   </data>
   <data name="HRMedinetText2" xml:space="preserve">
     <value>No tiene limitaciones geográficas, ni de cantidad de usuarios y puede utilizarse tanto en equipos de computación, como en dispositivos móviles para mayor flexibilidad.</value>
@@ -133,7 +133,7 @@
     <value>Mediciones</value>
   </data>
   <data name="MedinetText" xml:space="preserve">
-    <value>Ofrecemos soluciones de evaluación de Resultado Organizacional que le permiten detectar proactivamente  los problemas, utilizando instrumentos confiables y un  análisis estadístico especializado que lo ayudarán a potenciar el desarrollo del capital humano, en favor del crecimiento profesional y organizacional de su empresa.</value>
+    <value>Ofrecemos soluciones de evaluación de Clima Organizacional que le permiten detectar proactivamente  los problemas, utilizando instrumentos confiables y un  análisis estadístico especializado que lo ayudarán a potenciar el desarrollo del capital humano, en favor del crecimiento profesional y organizacional de su empresa.</value>
   </data>
   <data name="PathIndex" xml:space="preserve">
     <value>Página de inicio</value>
@@ -196,7 +196,7 @@
     <value>Para un mejor funcionamiento de la aplicación recomendamos el uso de Internet Explorer 9, Firefox o Google Chrome. Versiones muy antiguas (Internet Explorer menor a la versión 8), pueden presentar algunos problemas.</value>
   </data>
   <data name="MetaDescription" xml:space="preserve">
-    <value>HRMedinet es una herramienta que permite determinar proactivamente el resultado de su empresa, de forma inmediata y con alcance global, agilizando la toma de decisiones, debido a su robusta capacidad de análisis estadístico.</value>
+    <value>HRMedinet es una herramienta que permite determinar proactivamente el clima de su empresa, de forma inmediata y con alcance global, agilizando la toma de decisiones, debido a su robusta capacidad de análisis estadístico.</value>
   </data>
   <data name="HelpMsg" xml:space="preserve">
     <value>Ayuda</value>
