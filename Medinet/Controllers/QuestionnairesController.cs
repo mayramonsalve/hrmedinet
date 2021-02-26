@@ -402,7 +402,7 @@ namespace Medinet.Controllers
 
             //return View(postedFile);  
             //return View(new LoadExcelViewModel(new LoadExcel()));
-            return View(new LoadExcelViewModel());
+            return RedirectToAction("Index");
 
 
         }
